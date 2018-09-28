@@ -11,3 +11,6 @@
 `config.plist` boots and works with Sierra and High Sierra.
 
 Currently, there is no web drivers for Nvidia in Mojave. You must use either use AMD or IGPU. AMD works out of the box with Lilu and Whatever green kexts found in this repo. IGPU requires modifcations of the config to work.
+# How to use
+
+The best way to use this EFI config is visit the [releases page](https://github.com/cbabb/ga-z270x-ug/releases). Create an empty `EFI` folder on the mounted EFI partition of the macOS disk. Drag both the `BOOT` and `CLOVER` folders into it. There are no serials present. You will need to generate it with Clover config.
