@@ -25,7 +25,7 @@
 					<key>Comment</key>
 					<string>Rename HDAS to HDEF</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>SERBUw==</data>
 					<key>Replace</key>
