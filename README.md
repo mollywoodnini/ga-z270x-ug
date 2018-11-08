@@ -1,3 +1,5 @@
+# *This repo is under revision. Some items missings.*
+
 # Hardware
 
 * Gigabyte Z270X Ultra Gaming https://www.gigabyte.com/Motherboard/GA-Z270X-Ultra-Gaming-rev-10#kf
@@ -8,9 +10,42 @@
 
 # Supported Versions
 
-`config.plist` boots and works with Sierra and High Sierra.
+`config.plist` boots and works High Sierra 10.13.6.
 
-Currently, there is no web drivers for Nvidia in Mojave. You must use either use AMD or IGPU. AMD works out of the box with Lilu and Whatever green kexts found in this repo. IGPU requires modifcations of the config to work.
+Currently, there is no web drivers for Nvidia in Mojave. You must use either use AMD or IGPU. AMD works out of the box with `Lilu` and `WhateverGreen` kexts found in this repo. IGPU requires modifcations of the config to work.
+
+# Installation
+
+Please read all of the instructions before you start installing!
+
+## Pre-Install
+
+* Create a vanilla installer and clone this repo.
+* Boot Install from USB.
+* Format SSD as APFS.
+* Start install as normal.
+* At 72% system will reboot.
+* Boot from USB - Preboot on <driveName>. System will reboot shortly.
+* Boot from USB - Preboot on <driveName>.
+* Install will complete. Took 10 minutes for me.
+* Boot from USB - Now you can choose macOS on <driveName>
+
+## Post-Install
+
+* Copy EFI from USB to SSD.
+* The `config.plist` is only usable for booting the USB. You must instead use the `post-config.plist` to complete install.
+* Delete `config.plist` and rename `post-config.plist` to `config.plist`.
+* Install required kexts using a kext installer like KextWizard or do it manually. The bare minimum will remain in Clover for Recovery.
+* Install Nvidia web drivers. You need `EmuVariableUefi-64.efi` in Clover to make the GPU work.
+* Install any additional required software now for devices. 
+* Rebuild kext cache `sudo kextcache -i /`
+* Shutdown. Do not restart.
+* You can now boot from the SSD instead of the USB.
+* If the system booted without GPU acceleration, open System Preferences and change to use Nvidia Web Drivers and reboot.
+
+## NZXT Control
+
+Unfortunately it is impossible to control the pump speed with any OS other than Windows. As a result you must alter how the hardware is plugged in. You must make sure the radiator fans are plugged into a header that is PWM capable. For example my radiator fans are plugged into a splitter, and the splitter plugged into SYSTEM_FAN_2. In BIOS fan control SYSTEM_FAN_2 is set to monitor CPU temp using a custom fan curve. Idle temps as low as 23c, average of 30c. Standard casual use between 30-45c. Gaming between 50-70c.
 
 # Notes
 
@@ -18,4 +53,4 @@ Hardware acceleration is enabled for IGPU while using dedicated graphics. If you
 
 # Report
 
-I installed macOS in late August. I have had a stable build since then. The only thing I did that broke things was try to control fans with a program. Upon use, the fans kicked on high and attempting to adjust the speed instantly powered the machine off. I use the built-in motherboard fan controls and unplugged the USB cable from the NZXT pump. I set my own fan curves and have idle temps of 30c and gaming temps of 50-70c.
+I installed macOS in late August. I have had a stable build since then. The only thing I did that broke things was try to control fans with a program. Upon use, the fans kicked on high and attempting to adjust the speed instantly powered the machine off. 
