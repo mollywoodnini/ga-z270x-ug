@@ -22,22 +22,25 @@ Please read all of the instructions before you start installing!
 
 * Create a vanilla installer and clone this repo.
 * Edit the `post-config.plist` to fill in the blanks for `SMBIOS` !!
+* Copy USB_EFI to mounted USB EFI partition.
+* Compress INSTALL_EFI and copy to USB.
 * Boot Install from USB.
 * Format SSD as APFS.
 * Start install as normal.
 * At 72% system will reboot.
-* Boot from USB - Preboot on <driveName>. System will reboot shortly.
-* Boot from USB - Preboot on <driveName>.
+* Boot from USB - Preboot on *drive_Name*. System will reboot shortly.
+* Boot from USB - Preboot on *drive_Name*.
 * Install will complete. Took 10 minutes for me.
 * Boot from USB - Now you can choose macOS on <driveName>
 
 ## Post-Install
 
-* Copy EFI from USB to SSD.
+* Copy INSTALL_EFI.zip from USB to SSD and extract.
 * The `config.plist` is only usable for booting the USB. You must instead use the `post-config.plist` to complete install.
-* Delete `config.plist` and rename `post-config.plist` to `config.plist`.
-* Install required kexts using a kext installer like [KextWizard](https://www.osx86.net/files/file/4304-kext-wizard-3711/) or do it manually. The bare minimum will remain in Clover for Recovery.
-* Install Nvidia web drivers. You need `EmuVariableUefi-64.efi` in Clover to make the GPU work.
+* Rename `post-config.plist` to `config.plist`.
+* Copy INSTALL_EFI to mounted SSD EFI partition.
+* Install required kexts using a kext installer like [KextWizard](https://www.osx86.net/files/file/4304-kext-wizard-3711/) or do it manually. The bare minimum will remain in Clover for Recovery. See folder Post_Install_Kexts.
+* Install Nvidia web drivers. You need `EmuVariableUefi-64.efi` in Clover to make the GPU work. It's already there.
 * Install any additional required software now for devices. 
 * Rebuild kext cache `sudo kextcache -i /`
 * Shutdown. Do not restart.
