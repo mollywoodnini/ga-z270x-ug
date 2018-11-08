@@ -47,9 +47,17 @@ Please read all of the instructions before you start installing!
 
 Unfortunately it is impossible to control the pump speed with any OS other than Windows. As a result you must alter how the hardware is plugged in. You must make sure the radiator fans are plugged into a header that is PWM capable. For example my radiator fans are plugged into a splitter, and the splitter plugged into SYSTEM_FAN_2. In BIOS fan control SYSTEM_FAN_2 is set to monitor CPU temp using a custom fan curve. Idle temps as low as 23c, average of 30c. Standard casual use between 30-45c. Gaming between 50-70c.
 
-# Notes
+## Hardware Accel with IGPU
 
 Hardware acceleration is enabled for IGPU while using dedicated graphics. If you have disabled IGPU in BIOS, you can turn it back on, set the size to 128mb and use PCI GPU as default.
+
+## Brightness Control
+
+If your monitor supports brightness control within Windows, you can control it in macOS.
+https://github.com/KAMIKAZEUA/NativeDisplayBrightness/releases
+
+You can map the keys how you like. However, Logitech G keys do not allow mapping past F12. You can use an LUA script to map it as you wish. I have a G910. I forked an existing gist and modified it.
+https://gist.github.com/cbabb/85047be7ced0f789c3c7a5941603cd7a
 
 # Report
 
