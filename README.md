@@ -1,5 +1,3 @@
-# *This repo is under revision. Some items missings.*
-
 # Hardware
 
 * Gigabyte Z270X Ultra Gaming https://www.gigabyte.com/Motherboard/GA-Z270X-Ultra-Gaming-rev-10#kf
@@ -63,6 +61,8 @@ https://github.com/KAMIKAZEUA/NativeDisplayBrightness/releases
 You can map the keys how you like. However, Logitech G keys do not allow mapping past F12. You can use an LUA script to map it as you wish. I have a G910. I forked an existing gist and modified it.
 https://gist.github.com/cbabb/85047be7ced0f789c3c7a5941603cd7a
 
-# Report
+# Final notes
 
-I installed macOS in late August. I have had a stable build since then. The only thing I did that broke things was try to control fans with a program. Upon use, the fans kicked on high and attempting to adjust the speed instantly powered the machine off. 
+I installed macOS in late August. I have had a stable build since then. The only thing I did that broke things was try to control fans with a program. Upon use, the fans kicked on high and attempting to adjust the speed instantly powered the machine off.
+
+[Need help?](https://www.reddit.com/message/compose/?to=cbabbx)
