@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Gigabyte Z270X Ultra Gaming USB install config</string>
+	<string>Gigabyte Z270X Ultra Gaming Installed Config</string>
 	<key>ACPI</key>
 	<dict>
 		<key>DSDT</key>
@@ -154,19 +154,19 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 -disablegfxfirmware</string>
+		<string>dart=0 nvda_drv=1 -disablegfxfirmware</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultLoader</key>
 		<string>boot.efi</string>
 		<key>DefaultVolume</key>
-		<string>LastBootedVolume</string>
+		<string>MacSSD</string>
 		<key>Legacy</key>
 		<string>PBR</string>
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
-		<integer>3</integer>
+		<integer>0</integer>
 		<key>XMPDetection</key>
 		<string>Yes</string>
 	</dict>
@@ -183,7 +183,7 @@
 				<key>Device</key>
 				<string>IntelGFX</string>
 				<key>Disabled</key>
-				<true/>
+				<false/>
 				<key>Key</key>
 				<string>AAPL,GfxYTile</string>
 				<key>Value</key>
@@ -192,10 +192,15 @@
 		</array>
 		<key>Audio</key>
 		<dict>
-			<key>#Inject</key>
+			<key>Inject</key>
 			<integer>11</integer>
 			<key>ResetHDA</key>
 			<true/>
+		</dict>
+		<key>#FakeID</key>
+		<dict>
+			<key>#IntelGFX</key>
+			<string>0x59128086</string>
 		</dict>
 		<key>USB</key>
 		<dict>
@@ -234,13 +239,13 @@
 			<key>ATI</key>
 			<false/>
 			<key>Intel</key>
-			<false/>
+			<true/>
 			<key>NVidia</key>
 			<false/>
 		</dict>
 		<key>NvidiaSingle</key>
 		<false/>
-		<key>#ig-platform-id</key>
+		<key>ig-platform-id</key>
 		<string>0x19020001</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
@@ -289,7 +294,7 @@
 				<key>Comment</key>
 				<string>(c)Pike R. Alpha</string>
 				<key>Disabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>Ym9hcmQtaWQ=</data>
 				<key>InfoPlistPatch</key>
@@ -330,11 +335,21 @@
 		<string>iMac17,1</string>
 		<key>ProductName</key>
 		<string>iMac17,1</string>
+		<key>BoardSerialNumber</key>
+		<string></string>
+		<key>SerialNumber</key>
+		<string></string>
+		<key>SmUUID</key>
+		<string></string>
+		<key>Mobile</key>
+		<false/>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
 		<key>InjectKexts</key>
-		<string>YES</string>
+		<string>Detect</string>
+		<key>NvidiaWeb</key>
+		<true/>
 	</dict>
 </dict>
 </plist>

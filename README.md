@@ -21,6 +21,7 @@ Please read all of the instructions before you start installing!
 ## Pre-Install
 
 * Create a vanilla installer and clone this repo.
+* Edit the `post-config.plist` to fill in the blanks for `SMBIOS` !!
 * Boot Install from USB.
 * Format SSD as APFS.
 * Start install as normal.
@@ -35,7 +36,7 @@ Please read all of the instructions before you start installing!
 * Copy EFI from USB to SSD.
 * The `config.plist` is only usable for booting the USB. You must instead use the `post-config.plist` to complete install.
 * Delete `config.plist` and rename `post-config.plist` to `config.plist`.
-* Install required kexts using a kext installer like KextWizard or do it manually. The bare minimum will remain in Clover for Recovery.
+* Install required kexts using a kext installer like [KextWizard](https://www.osx86.net/files/file/4304-kext-wizard-3711/) or do it manually. The bare minimum will remain in Clover for Recovery.
 * Install Nvidia web drivers. You need `EmuVariableUefi-64.efi` in Clover to make the GPU work.
 * Install any additional required software now for devices. 
 * Rebuild kext cache `sudo kextcache -i /`
