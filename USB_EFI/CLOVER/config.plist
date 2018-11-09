@@ -166,7 +166,7 @@
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
-		<integer>3</integer>
+		<integer>8</integer>
 		<key>XMPDetection</key>
 		<string>Yes</string>
 	</dict>
@@ -178,25 +178,9 @@
 	<key>Devices</key>
 	<dict>
 		<key>AddProperties</key>
-		<array>
-			<dict>
-				<key>Device</key>
-				<string>IntelGFX</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Key</key>
-				<string>AAPL,GfxYTile</string>
-				<key>Value</key>
-				<data>CqqqAA==</data>
-			</dict>
-		</array>
+		<array/>
 		<key>Audio</key>
-		<dict>
-			<key>#Inject</key>
-			<integer>11</integer>
-			<key>ResetHDA</key>
-			<true/>
-		</dict>
+		<dict/>
 		<key>USB</key>
 		<dict>
 			<key>AddClockID</key>
@@ -261,44 +245,6 @@
 		<false/>
 		<key>KextsToPatch</key>
 		<array>
-			<dict>
-				<key>Comment</key>
-				<string>Enable TRIM for SSD</string>
-				<key>Name</key>
-				<string>com.apple.iokit.IOAHCIBlockStorage</string>
-				<key>Find</key>
-				<data>AEFQUExFIFNTRAA=</data>
-				<key>Replace</key>
-				<data>AAAAAAAAAAAAAAA=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>External Drives as Internal to fix Orange Icons</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>RXh0ZXJuYWw=</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>Name</key>
-				<string>AppleAHCIPort</string>
-				<key>Replace</key>
-				<data>SW50ZXJuYWw=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>(c)Pike R. Alpha</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>Ym9hcmQtaWQ=</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>Name</key>
-				<string>AppleGraphicsDevicePolicy</string>
-				<key>Replace</key>
-				<data>Ym9hcmQtaXg=</data>
-			</dict>
 			<dict>
 				<key>Comment</key>
 				<string>USB 10.13.6+ by PMHeart</string>
