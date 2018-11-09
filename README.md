@@ -78,6 +78,6 @@ Internal speakers is used when plugging into the rear (green) speaker jack. If y
 
 # Final notes
 
-I installed macOS in late August. I have had a stable build since then. The only thing I did that broke things was try to control fans with a program. Upon use, the fans kicked on high and attempting to adjust the speed instantly powered the machine off. I mainly made this for myself because I forget *a lot* of the stuff I do. Once I perfect something I like to know how I can repeat it.
+I installed macOS in late August. I have had a stable build since then. The only thing I did that broke things was try to control fans with a program. Upon use, the fans kicked on high and attempting to adjust the speed instantly powered the machine off. Little bugs here and there while learning prompted me to reinstall after learning a lot. I mainly made this for myself because I forget *a lot* of the stuff I do. Once I perfect something I like to know how I can repeat it. I have at this point, literally no issues. I managed to solve a lot.
 
 [Need help?](https://www.reddit.com/message/compose/?to=cbabbx)
