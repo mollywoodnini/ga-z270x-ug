@@ -70,13 +70,14 @@ https://gist.github.com/cbabb/85047be7ced0f789c3c7a5941603cd7a
 AppleALC with an unmodified AppleHDA, using layout 11.
 
 * Out: Digital Out, Internal Speakers, Line out, Line out.
+* USB Out: Razer Kraken 7.1
 * In: Internal mic, Line in
 * USB In: Logitech HD Pro Webcam C910, Razer Kraken 7.1
 
-Internal speakers is used when plugging into the rear (green) speaker jack. When the webcam is plugged in, it creates an audio problem for programs like Premiere Pro or Audition. Not sure what the issue is there. If you are a gamer, like myself, and do like to stream I have not ran into any problem using a USB headset with mic or the webcam. If you want to set that up, [here is a great video](https://www.youtube.com/watch?v=F2OzfwFHjhE).
+Internal speakers is used when plugging into the rear (green) speaker jack. If you are a gamer, like myself, and do like to stream I have not ran into any problem using a USB headset with mic or the webcam. If you want to set that up, [here is a great video](https://www.youtube.com/watch?v=F2OzfwFHjhE).
 
 # Final notes
 
-I installed macOS in late August. I have had a stable build since then. The only thing I did that broke things was try to control fans with a program. Upon use, the fans kicked on high and attempting to adjust the speed instantly powered the machine off.
+I installed macOS in late August. I have had a stable build since then. The only thing I did that broke things was try to control fans with a program. Upon use, the fans kicked on high and attempting to adjust the speed instantly powered the machine off. I mainly made this for myself because I forget *a lot* of the stuff I do. Once I perfect something I like to know how I can repeat it.
 
 [Need help?](https://www.reddit.com/message/compose/?to=cbabbx)
