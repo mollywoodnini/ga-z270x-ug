@@ -62,7 +62,7 @@ Hardware acceleration is enabled for IGPU while using dedicated graphics. If you
 If your monitor supports brightness control within Windows, you can control it in macOS.
 https://github.com/KAMIKAZEUA/NativeDisplayBrightness/releases
 
-You can map the keys how you like. However, Logitech G keys do not allow mapping past F12. You can use an LUA script to map it as you wish. I have a G910. I forked an existing gist and modified it.
+You can map the keys how you like. However, Logitech G keys do not allow mapping past F12. You can use an LUA script to map it as you wish. I have a G910. I forked an existing gist and modified it. Unassigned G6 and G7, then scripted G6 and G7 to be F18 and F19. The script will override what you set through the UI. If you do not unassign you will get the error tone when adjusting brightness.
 https://gist.github.com/cbabb/85047be7ced0f789c3c7a5941603cd7a
 
 ## Audio Input/Output
