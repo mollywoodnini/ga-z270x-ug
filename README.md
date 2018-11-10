@@ -82,7 +82,7 @@ All of these do something a little different to enable NVRAM when not natively s
 
 ## NZXT Control
 
-**Specific to my build:** Unfortunately it is impossible to control the pump speed with any OS other than Windows. As a result you must alter how the hardware is plugged in. You must make sure the radiator fans are plugged into a header that is PWM capable. For example my radiator fans are plugged into a splitter, and the splitter plugged into SYSTEM_FAN_2. In BIOS fan control SYSTEM_FAN_2 is set to monitor CPU temp using a custom fan curve. Idle temps as low as 23c, average of 30c. Standard casual use between 30-45c. Gaming between 50-70c. The pump is plugged into CPU_FAN and functions on its own. You do need to remove the USB plug from it. This means no lights (doesn't bother me). If you do not, it will run using Silent mode all the time. This results in high temps. 
+**Specific to my build:** Unfortunately it is impossible to control the pump speed with any OS other than Windows. As a result you must alter how the hardware is plugged in. You must make sure the radiator fans are plugged into a header that is PWM capable. For example my radiator fans are plugged into a splitter, and the splitter plugged into CPU_FAN. In BIOS fan control CPU_FAN is set to monitor CPU temp using a custom fan curve. Idle temps as low as 23c, average of 30c. Standard casual use between 30-45c. Gaming between 50-70c. The pump is plugged into SYS_PUMP and set to monitor CPU with the curve Full Speed. You do need to remove the USB plug from it. This means no lights (doesn't bother me). If you do not, it will run using Silent mode all the time. This results in high temps.
 
 ## Hardware Accel with IGPU
 
