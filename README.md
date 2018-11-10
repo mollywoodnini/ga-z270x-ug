@@ -47,11 +47,11 @@ Please read all of the instructions before you start installing! For the sake of
 ## Pre-Install
 
 * Create a vanilla installer and clone or download this repo.
-* Edit the `post-config.plist` in SSD_EFI to fill in the blanks for `SMBIOS` !!
+* If you want iMessage, iCloud and FaceTime, edit the `post-config.plist` in SSD_EFI to fill in the blanks for `SMBIOS` !!
 * Copy USB_EFI to mounted USB EFI partition.
 * Compress SSD_EFI and copy to USB.
 * Boot Install from USB.
-* Format SSD as APFS (or) Format HDD as HFS+
+* Format SSD as APFS (or) Format HDD as HFS+.
 * Start install as normal.
 * At 72% / 2mins left, system will reboot.
 * Boot from USB - *Preboot on drive_Name*. System will reboot shortly.
@@ -96,10 +96,9 @@ If your monitor supports brightness control within Windows, as mine does, you ca
 
 AppleALC with an unmodified AppleHDA, using layout 11.
 
-* Out: Digital Out, Internal Speakers, Line out, Line out.
-* USB Out: Razer Kraken 7.1
+* Out: Digital Out, Internal Speakers, Line out 1, Line out 2.
 * In: Internal mic, Line in
-* USB In: Logitech HD Pro Webcam C910, Razer Kraken 7.1
+* USB: [Logitech C910 1080p HD Pro](https://www.newegg.com/Product/Product.aspx?Item=N82E16826104385), [KRAKEN 7.1](https://www.razer.com/gaming-audio/razer-kraken-71-v2)
 
 Internal speakers is used when plugging into the rear (green) speaker jack. If you are a gamer, like myself, and do like to stream I have not ran into any problem using a USB headset with mic or the webcam. If you want to set that up, [here is a great video](https://www.youtube.com/watch?v=F2OzfwFHjhE). The only issue I have with audio is using Adobe programs. Audition will not properly work with USB mics. I have tried both of my devices and the program reports all audio as suddenly not working.
 
@@ -110,6 +109,10 @@ Following this [guide by RehabMan](https://www.tonymacx86.com/threads/guide-crea
 ## Gaming
 
 I do love games. What little games that can run on Mac natively from Steam run very well. HITMAN, DiRT Rally, WoW, Smite, LoL, Euro Truck Sim 2, and lots more run at 60fps with settings maxed out. I can stream and not suffer from from performance loss. I did the first time around because my install was degraded due to constant fiddling. Using [Wine](http://wineskin.urgesoftware.com/tiki-index.php) I can run Platinum, Gold and Silver rated games with mostly no issues. 
+
+## Back it up!
+
+The most important part once satisfied with the install. Set up TimeMachine so if something goes wrong, you can recover. This also means don't erase your USB drive. I keep mine stored away just in case.
 
 # Final notes
 
