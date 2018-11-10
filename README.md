@@ -25,7 +25,19 @@ My first attempt from nothing involved [using a VM](https://techsviewer.com/inst
 * Xcode for properly editing plist files. Clover config is known to cause problems according to RehabMan. As was proven to me when I was making patches for things.
 * [GitBook Hackintosh Guide](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/) for explanations and details on each part of the process.
 * [Clover Installer](https://bitbucket.org/RehabMan/clover/downloads/) RehabMan fork to make a generic EFI.
-* 
+
+# Kexts
+
+Keep them updated!
+
+* [AppleALC](https://github.com/acidanthera/AppleALC/releases)
+* [CodedCommander](https://bitbucket.org/RehabMan/os-x-eapd-codec-commander/downloads/)
+* [FakeSMC](https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/)
+* [IntelMausiEthernet](https://bitbucket.org/RehabMan/os-x-intel-network/downloads/)
+* [Lilu](https://github.com/acidanthera/Lilu/releases)
+* [USBInjectAll](https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads/)
+* [WhateverGreen](https://github.com/acidanthera/WhateverGreen/releases)
+* [XHCI-Unsupported](https://github.com/RehabMan/OS-X-USB-Inject-All/archive/master.zip)
 
 # Installation
 
@@ -61,6 +73,12 @@ Please read all of the instructions before you start installing! For the sake of
 * You can now boot from the SSD instead of the USB.
 * **Nvidia only:** If the system booted without GPU acceleration, open System Preferences and change to use Nvidia Web Drivers and reboot.
 
+## NVRAM
+
+`AptioMemoryFix-64.efi` - `OsxAptioFixDrv-64.efi` - `OsxAptioFix2Drv-64.efi` - `OsxAptioFix3Drv-64.efi`
+
+All of these do something a little different to enable NVRAM when not natively supported. I tried all of them and AptioMemoryFix works best. I did not get the *Recovered Files* folder in the trash upon reboot. The others led to faulty boots with a low resolution only to have the system grind to a halt mid boot and have to kill the power. OsxAptioFix2Drv was the one that did that every reboot. You can easily change which one you want to use after you have installed. Clear what's stored first, replace the efi and rebuild kextcache.
+
 ## NZXT Control
 
 **Specific to my build:** Unfortunately it is impossible to control the pump speed with any OS other than Windows. As a result you must alter how the hardware is plugged in. You must make sure the radiator fans are plugged into a header that is PWM capable. For example my radiator fans are plugged into a splitter, and the splitter plugged into SYSTEM_FAN_2. In BIOS fan control SYSTEM_FAN_2 is set to monitor CPU temp using a custom fan curve. Idle temps as low as 23c, average of 30c. Standard casual use between 30-45c. Gaming between 50-70c. The pump is plugged into CPU_FAN and functions on its own. You do need to remove the USB plug from it. This means no lights (doesn't bother me). If you do not, it will run using Silent mode all the time. This results in high temps. 
@@ -83,6 +101,10 @@ AppleALC with an unmodified AppleHDA, using layout 11.
 * USB In: Logitech HD Pro Webcam C910, Razer Kraken 7.1
 
 Internal speakers is used when plugging into the rear (green) speaker jack. If you are a gamer, like myself, and do like to stream I have not ran into any problem using a USB headset with mic or the webcam. If you want to set that up, [here is a great video](https://www.youtube.com/watch?v=F2OzfwFHjhE). The only issue I have with audio is using Adobe programs. Audition will not properly work with USB mics. I have tried both of my devices and the program reports all audio as suddenly not working.
+
+## USB Port Patching
+
+*work in progress*
 
 # Final notes
 
