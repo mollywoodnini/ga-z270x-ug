@@ -104,7 +104,7 @@ Internal speakers is used when plugging into the rear (green) speaker jack. If y
 
 ## USB Port Patching
 
-Following this [guide by RehabMan](https://www.tonymacx86.com/threads/guide-creating-a-custom-ssdt-for-usbinjectall-kext.211311/) I created an SSDT to fix the USB port layout. The device ID for this board is `0xa2af`.
+Following this [guide by RehabMan](https://www.tonymacx86.com/threads/guide-creating-a-custom-ssdt-for-usbinjectall-kext.211311/) I created an SSDT to fix the USB port layout. The device ID for this board is `0xa2af`. You can try the one here, or make your own. Do keep in mind your port count may vary if you do not have the same hardware. Once created you can remove the USB port limit patch from the config.
 
 # Final notes
 
