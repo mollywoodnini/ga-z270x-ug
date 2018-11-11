@@ -18,7 +18,7 @@
     11. [Back it up!](#back-it-up)
 6. [Final Notes](#final-notes)
 
-# Hardware [&uarr;](#contents)
+# Hardware <sup>[&uarr;](#contents)</sup>
 
 * [Gigabyte Z270X Ultra Gaming](https://www.gigabyte.com/Motherboard/GA-Z270X-Ultra-Gaming-rev-10#kf)
 * [Intel i5 6600K](https://ark.intel.com/products/88191/Intel-Core-i5-6600K-Processor-6M-Cache-up-to-3-90-GHz-) 3.5 Ghz (OC 4.3 - 1.3v)
