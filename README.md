@@ -1,3 +1,23 @@
+# Contents
+
+1. [Hardware](#hardware)
+2. [Supported Versions](#supported-versions)
+3. [Tools and Sources](tools-and-sources)
+4. [Kexts](#kexts)
+5. [Installation](#installation)
+    1. [Pre-Install](#pre-install)
+    2. [Post-Install](#post-install)
+    3. [NVRAM](#nvram)
+    4. [NZXT Control](#nzxt-control)
+    5. [IGPU Options](#igpu-options)
+    6. [Gaming](#gaming)
+    7. [Temperatures](#temperatures)
+    8. [Brightnesss Control](#brightness-control)
+    9. [Audio Input/Output](#audio-inputoutput)
+    10. [USB Port Patching](#usb-port-patching)
+    11. [Back it up!](#back-it-up)
+6. [Final Notes](#final-notes)
+
 # Hardware
 
 * [Gigabyte Z270X Ultra Gaming](https://www.gigabyte.com/Motherboard/GA-Z270X-Ultra-Gaming-rev-10#kf)
