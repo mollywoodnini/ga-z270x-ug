@@ -35,7 +35,7 @@
 
 High Sierra 10.13.6.
 
-Currently, there is no web drivers for Nvidia in Mojave. You must use either use AMD or IGPU. AMD works out of the box with `Lilu` and `WhateverGreen` kexts found in this repo. IGPU requires booting with a fake ID at first until you generate kextcache with the proper platform ID for next boot. If Nvidia drivers for Mojave get out, I'll update this with a version for it.
+Currently, there is no web drivers for Nvidia in Mojave. You must use either use AMD or IGPU. AMD works out of the box with `Lilu` and `WhateverGreen` kexts found in this repo. IGPU requires booting with a fake ID at first until you generate kextcache with the proper platform ID for next boot. If Nvidia drivers for Mojave get release, I'll update this with a version for it.
 
 # Tools and Sources <sub>[&uarr;](#contents)</sub>
 
@@ -121,12 +121,7 @@ All of these do something a little different to enable NVRAM when not natively s
 
 **Specific to my build:** Unfortunately it is impossible to control the pump speed with any OS other than Windows. As a result you must alter how the hardware is plugged in. You must make sure the radiator fans are plugged into a header that is PWM capable. For example my radiator fans are plugged into a splitter, and the splitter plugged into CPU_FAN. In BIOS fan control CPU_FAN is set to monitor CPU temp using a custom fan curve. The pump is plugged into SYS_PUMP and set to monitor CPU with the curve Full Speed. You do *need* to remove the USB plug from it. This means no lights (doesn't bother me). If you do not, it *will* run using Silent mode all the time. This results in very high temps; upwards of 80c. I use Intel Power Gadget to monitor hardware. But you can use the HWMonitor app that comes with the FakeSMC package. If you have a different brand AIO water cooler, you can try plugging it in the same way and see what you get.
 
-My radiator fan curve is as follows:
-20c, 25%
-32c, 35%
-42c, 50%
-52c, 65%
-62c, 100%
+My radiator fan curve is as follows: (20c, 25%) (32c, 35%) (42c, 50%) (52c, 65%) (62c, 100%)
 
 ## IGPU Options <sub>[&uarr;](#contents)</sub>
 
@@ -136,7 +131,7 @@ Not using dedicated a GPU? 6th gen is `0x19120000` and 7th gen is `0x59120000`. 
 
 ## Gaming <sub>[&uarr;](#contents)</sub>
 
-What little games that can run on Mac natively from Steam run very well. HITMAN, DiRT Rally, WoW, Smite, LoL, Euro Truck Sim 2, and lots more run at 60fps with settings maxed out. I can stream and not suffer from from performance loss. I did the first time around because my install was degraded due to constant fiddling. Using [Wine](http://wineskin.urgesoftware.com/tiki-index.php) I can run Platinum, Gold and Silver rated games with mostly no issues. I don't like vysnc so I limit my frames to 75 or 60 depending on what the game settings allow. Considering my monitor is FreeSync and AMD is better supported in macOS, I need to get an RX580 or Vega.
+What little games that can run on Mac natively from Steam run very well. HITMAN, DiRT Rally, WoW, Smite, LoL, Euro Truck Sim 2, and more run at 60fps with settings maxed out. I can stream and not suffer from from performance loss. I did the first time around because my install was degraded due to constant fiddling. Using [Wine](http://wineskin.urgesoftware.com/tiki-index.php) I can run Platinum, Gold and Silver rated games with mostly no issues. I don't like vysnc so I limit my frames to 75 or 60 depending on what the game settings allow. Considering my monitor is FreeSync and AMD is better supported in macOS, I need to get an RX580 or Vega.
 
 ## Temperatures <sub>[&uarr;](#contents)</sub>
 
