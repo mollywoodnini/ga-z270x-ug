@@ -4,7 +4,8 @@
 2. [Supported Versions](#supported-versions-)
 3. [Tools and Sources](#tools-and-sources-)
 4. [Kexts](#kexts-)
-5. [Installation](#installation)
+5. [BIOS](#bios-)
+6. [Installation](#installation)
     1. [Pre-Install](#pre-install-)
     2. [Post-Install](#post-install-)
     3. [NVRAM](#nvram-)
@@ -16,7 +17,7 @@
     9. [Audio Input/Output](#audio-inputoutput-)
     10. [USB Port Patching](#usb-port-patching-)
     11. [Back it up!](#back-it-up-)
-6. [Final Notes](#final-notes-)
+7. [Final Notes](#final-notes-)
 
 # Hardware <sub>[&uarr;](#contents)</sub>
 
@@ -60,6 +61,22 @@ Keep them updated!
 * [WhateverGreen](https://github.com/acidanthera/WhateverGreen/releases)
 * [XHCI-Unsupported](https://github.com/RehabMan/OS-X-USB-Inject-All/archive/master.zip)
 
+# BIOS <sub>[&uarr;](#contents)</sub>
+
+BIOS Page
+* BIOS Features > Windows 8/10 Features > Other OS
+* BIOS Features > Storage Boot Option Control > UEFI Only
+
+Peripherals Page
+* Initial Display Output > PCIe Slot
+* Peripherals > XHCI Hand-off > Enable
+* Network Stack > Wake on LAN > Disabled
+
+Chipset Page
+* VTd > Disabled
+* Internal Graphics > Enabled > 128MB
+
+
 # Installation <sub>[&uarr;](#contents)</sub>
 
 Please read all of the instructions before you start installing! For the sake of avoiding confusion for myself and others, I made two EFI folders.
@@ -87,7 +104,7 @@ Please read all of the instructions before you start installing! For the sake of
 * **AMD Only:** Works out of box. You do need to remove Nvidia specifics from the config. Remove `nvda_drv=1` from Boot Arguments. Remove `NvidiaWeb=Yes` from System Parameters.
 * Rename `post-config.plist` to `config.plist`.
 * Copy SSD_EFI to mounted SSD EFI partition.
-* Install required kexts using a kext installer like KextWizard or do it manually. The bare minimum will remain in Clover for Recovery. See folder Post_Install_Kexts.
+* Install required kexts using a kext installer like KextWizard or do it manually. The bare minimum will remain in Clover for Recovery. See folder Post_Install_Kexts. Don't forget to run Repair Permissions if using KextWizard.
 * Install any additional required software now for devices. 
 * Rebuild kext cache `sudo kextcache -i /`
 * Shutdown. Do not restart.
@@ -103,6 +120,13 @@ All of these do something a little different to enable NVRAM when not natively s
 ## NZXT Control <sub>[&uarr;](#contents)</sub>
 
 **Specific to my build:** Unfortunately it is impossible to control the pump speed with any OS other than Windows. As a result you must alter how the hardware is plugged in. You must make sure the radiator fans are plugged into a header that is PWM capable. For example my radiator fans are plugged into a splitter, and the splitter plugged into CPU_FAN. In BIOS fan control CPU_FAN is set to monitor CPU temp using a custom fan curve. The pump is plugged into SYS_PUMP and set to monitor CPU with the curve Full Speed. You do *need* to remove the USB plug from it. This means no lights (doesn't bother me). If you do not, it *will* run using Silent mode all the time. This results in very high temps; upwards of 80c. I use Intel Power Gadget to monitor hardware. But you can use the HWMonitor app that comes with the FakeSMC package. If you have a different brand AIO water cooler, you can try plugging it in the same way and see what you get.
+
+My radiator fan curve is as follows:
+20c, 25%
+32c, 35%
+42c, 50%
+52c, 65%
+62c, 100%
 
 ## IGPU Options <sub>[&uarr;](#contents)</sub>
 
