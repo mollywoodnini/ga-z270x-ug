@@ -1,9 +1,9 @@
 # Contents
 
-1. [Hardware](#hardware)
-2. [Supported Versions](#supported-versions)
-3. [Tools and Sources](tools-and-sources)
-4. [Kexts](#kexts)
+1. [Hardware](#hardware-)
+2. [Supported Versions](#supported-versions-)
+3. [Tools and Sources](#tools-and-sources-)
+4. [Kexts](#kexts-)
 5. [Installation](#installation)
     1. [Pre-Install](#pre-install-)
     2. [Post-Install](#post-install-)
@@ -16,7 +16,7 @@
     9. [Audio Input/Output](#audio-inputoutput-)
     10. [USB Port Patching](#usb-port-patching-)
     11. [Back it up!](#back-it-up-)
-6. [Final Notes](#final-notes)
+6. [Final Notes](#final-notes-)
 
 # Hardware <sub>[&uarr;](#contents)</sub>
 
