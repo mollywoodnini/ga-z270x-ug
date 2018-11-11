@@ -51,7 +51,7 @@ Please read all of the instructions before you start installing! For the sake of
 * Copy USB_EFI to mounted USB EFI partition.
 * Compress SSD_EFI and copy to USB.
 * Boot Install from USB.
-* Format SSD as APFS (or) Format HDD as HFS+.
+* Format SSD as APFS.
 * Start install as normal.
 * At 72% / 2mins left, system will reboot.
 * Boot from USB - *Preboot on drive_Name*. System will reboot shortly.
