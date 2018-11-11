@@ -2,7 +2,7 @@
 
 * [Gigabyte Z270X Ultra Gaming](https://www.gigabyte.com/Motherboard/GA-Z270X-Ultra-Gaming-rev-10#kf)
 * [Intel i5 6600K](https://ark.intel.com/products/88191/Intel-Core-i5-6600K-Processor-6M-Cache-up-to-3-90-GHz-) 3.5 Ghz (OC 4.3 - 1.3v)
-* [NZXT Kraken X52](https://www.nzxt.com/products/kraken-x52) Water cooler
+* [NZXT Kraken X52 AIO](https://www.nzxt.com/products/kraken-x52) Water cooler
 * G.Skill 16GB DDR4 2400
 * EVGA Nvidia 980Ti
 * 850 Evo 250GB
@@ -63,11 +63,11 @@ Please read all of the instructions before you start installing! For the sake of
 
 * Copy SSD_EFI.zip from USB to SSD and extract.
 * The USB `config.plist` is only usable for booting the USB. You must instead use the `post-config.plist` to complete install.
+* **Nvidia Only:** You need `EmuVariableUefi-64.efi` in Clover to make the GPU work. It's already there. Install the web drivers.
+* **AMD Only:** Works out of box. You do need to remove Nvidia specifics from the config. Remove `nvda_drv=1` from Boot Arguments. Remove `NvidiaWeb=Yes` from System Parameters.
 * Rename `post-config.plist` to `config.plist`.
 * Copy SSD_EFI to mounted SSD EFI partition.
 * Install required kexts using a kext installer like KextWizard or do it manually. The bare minimum will remain in Clover for Recovery. See folder Post_Install_Kexts.
-* **Nvidia Only:** You need `EmuVariableUefi-64.efi` in Clover to make the GPU work. It's already there. Install the web drivers.
-* **AMD Only:** Works out of box. You do need to remove Nvidia specifics from the config. Remove `nvda_drv=1` from Boot Arguments. Remove `NvidiaWeb=Yes` from System Parameters.
 * Install any additional required software now for devices. 
 * Rebuild kext cache `sudo kextcache -i /`
 * Shutdown. Do not restart.
@@ -82,11 +82,13 @@ All of these do something a little different to enable NVRAM when not natively s
 
 ## NZXT Control
 
-**Specific to my build:** Unfortunately it is impossible to control the pump speed with any OS other than Windows. As a result you must alter how the hardware is plugged in. You must make sure the radiator fans are plugged into a header that is PWM capable. For example my radiator fans are plugged into a splitter, and the splitter plugged into CPU_FAN. In BIOS fan control CPU_FAN is set to monitor CPU temp using a custom fan curve. The pump is plugged into SYS_PUMP and set to monitor CPU with the curve Full Speed. You do *need* to remove the USB plug from it. This means no lights (doesn't bother me). If you do not, it *will* run using Silent mode all the time. This results in very high temps; upwards of 80c. I use Intel Power Gadget to monitor hardware. But you can use the HWMonitor app that comes with the FakeSMC package.
+**Specific to my build:** Unfortunately it is impossible to control the pump speed with any OS other than Windows. As a result you must alter how the hardware is plugged in. You must make sure the radiator fans are plugged into a header that is PWM capable. For example my radiator fans are plugged into a splitter, and the splitter plugged into CPU_FAN. In BIOS fan control CPU_FAN is set to monitor CPU temp using a custom fan curve. The pump is plugged into SYS_PUMP and set to monitor CPU with the curve Full Speed. You do *need* to remove the USB plug from it. This means no lights (doesn't bother me). If you do not, it *will* run using Silent mode all the time. This results in very high temps; upwards of 80c. I use Intel Power Gadget to monitor hardware. But you can use the HWMonitor app that comes with the FakeSMC package. If you have a different brand AIO water cooler, you can try plugging it in the same way and see what you get.
 
-## Hardware Accel with IGPU
+## IGPU Options
 
-Hardware acceleration is enabled for IGPU 6600K while using dedicated graphics. If you have disabled IGPU in BIOS, you can turn it back on, set the size to 128mb and use PCI GPU as default. If you are using a 6700K you don't need to change the platform ID as they are the same.
+Hardware acceleration is enabled for IGPU 6600K while using dedicated graphics. If you have disabled IGPU in BIOS, you can turn it back on, set the size to 128mb and use PCI GPU as default. If you are using a 6700K you don't need to change the platform ID as they are the same. If you are using the 7th gen 7600K or 7700K the platform ID is `0x59120001`.
+
+Not using dedicated a GPU? 6th gen is `0x19120000` and 7th gen is `0x59120000`. You do need to remove Nvidia specifics from the config. Remove `nvda_drv=1` from Boot Arguments. Remove `NvidiaWeb=Yes` from System Parameters. Under Graphics > Inject set Intel to NO. Under Devices > AddProperties set Item 0 to Disabled.
 
 ## Gaming
 
@@ -102,7 +104,7 @@ If your monitor supports brightness control within Windows, as mine does, you ca
 
 ## Audio Input/Output
 
-AppleALC with an unmodified AppleHDA, using layout 11.
+Realtek ALC1220. AppleALC with an unmodified AppleHDA, using layout 11.
 
 * Out: Digital Out, Internal Speakers, Line out 1, Line out 2.
 * In: Internal mic, Line in
@@ -112,7 +114,7 @@ Internal speakers is used when plugging into the rear (green) speaker jack. If y
 
 ## USB Port Patching
 
-Following this [guide by RehabMan](https://www.tonymacx86.com/threads/guide-creating-a-custom-ssdt-for-usbinjectall-kext.211311/) I created an SSDT to fix the USB port layout. The device ID for this board is `0xa2af`. You can try the one here, or make your own. Do keep in mind your port count may vary if you do not have the same hardware. Once created you can remove the USB port limit patch from the config.
+Following this [guide by RehabMan](https://www.tonymacx86.com/threads/guide-creating-a-custom-ssdt-for-usbinjectall-kext.211311/) I created an SSDT to fix the USB port layout. The device ID for this board is `0xa2af`. You can try the one here, or make your own. Do keep in mind your port count may vary if you do not have the same hardware. Once created you can remove or disable the USB port limit patch from the config. Using Mojave? You need to use a [different patch](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/).
 
 ## Back it up!
 
