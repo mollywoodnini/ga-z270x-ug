@@ -145,3 +145,5 @@ The most important part once satisfied with the install. Set up TimeMachine so i
 I installed macOS in late August. I had a mostly stable build while learning. The only thing I did that broke things was try to control fans with a program. Upon use, the fans kicked on high and attempting to adjust the speed instantly powered the machine off. Little bugs here and there prompted me to reinstall after learning a lot. I mainly made this for myself because I forget *a lot* of the stuff I do. Once I perfect something I like to know how I can repeat it. I have at this point, just one issue as metioned above. I managed to solve a lot otherwise. It's stable, cool and silent. I have Linux in the flavor of Ubuntu, and sadly a Windows 10 install. Games that just don't run on either *Nix platform, I have Windows; used sparingly. Sleep works nicely. I didn't include it in either config because I didn't want to get forgotten about while setting up, and the system sleep only to bug out. Darkwake 8 or 9 works.
 
 [Need help?](https://www.reddit.com/message/compose/?to=cbabbx)
+
+*[Back to top](#top)*
