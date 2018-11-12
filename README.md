@@ -55,13 +55,21 @@ My first attempt from nothing involved [using a VM](https://techsviewer.com/inst
 Keep them updated!
 
 * [AppleALC](https://github.com/acidanthera/AppleALC/releases)
+    * Makes native audio work.
 * [CodedCommander](https://bitbucket.org/RehabMan/os-x-eapd-codec-commander/downloads/)
+    * Helps prevent audio breaking after sleep.
 * [FakeSMC](https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/)
+    * Essential to make all this happen.
 * [IntelMausiEthernet](https://bitbucket.org/RehabMan/os-x-intel-network/downloads/)
+    * The LAN port on this board uses Intel
 * [Lilu](https://github.com/acidanthera/Lilu/releases)
+    * System patching plugin
 * [USBInjectAll](https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads/)
+    * Make all the USB ports and hubs visible.
 * [WhateverGreen](https://github.com/acidanthera/WhateverGreen/releases)
+    * Graphics fixup plugin.
 * [XHCI-Unsupported](https://github.com/RehabMan/OS-X-USB-Inject-All/archive/master.zip)
+    * More USB support.
 
 # Installation
 
@@ -158,6 +166,8 @@ Realtek ALC1220. AppleALC with an unmodified AppleHDA, using layout 11. Already 
 * USB: [Logitech C910 1080p HD Pro](https://www.newegg.com/Product/Product.aspx?Item=N82E16826104385), [KRAKEN 7.1](https://www.razer.com/gaming-audio/razer-kraken-71-v2)
 
 Internal speakers is used when plugging into the rear (green) speaker jack. If you are a gamer, like myself, and do like to stream I have not ran into any problem using a USB headset with mic or the webcam. If you want to set that up, [here is a great video](https://www.youtube.com/watch?v=F2OzfwFHjhE). The only issue I have with audio is using Adobe programs. Audition will not properly work with USB mics. I have tried both of my devices and the program reports all audio as suddenly not working. Still looking into a fix for this.
+
+If you do not like the sound of your audio (sounds flat) you can use [eqMac](https://bitgapp.com/eqmac/) or [Boom3D](https://www.globaldelight.com/boom/index.php). I use the latter.
 
 # Back it up!
 
