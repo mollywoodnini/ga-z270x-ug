@@ -24,7 +24,7 @@
 [Image](https://lh3.googleusercontent.com/bJwQTQrU3FZzbroALtFoXNoaqq3OoUtAW0H_spIx0SzBvYnVR7z7N68JnU7q6unJFpousxQuk7lE1WgwL7BiUSi3lTnBIsASxMoX06okXhHp47I_Bxf0vQ5G-GR7BhzGIs1ZEcKoKgT84lFvq5Qa5XF0zV6JG_sUl_8vwbYh8SXlQ_DJh9eh8iiSlsWFBTSXcixMnFxzhK9TroWygfZzLxAwAnFhTZmyXScv-iAwzaTQcTFTo_Nk_97x5OYcW0GktExh_81miv79PKEAPffOjD2MVXbRAZ7d1m0Jz5rlCzQYPo4aV6Ca9dcShtUSXhZKnVXc3hJSfimesFz2e-61Dc1F_RtLdscux2mByzRPpwPgE_61NJCxmKIM3meARF-M5N5jW6QExbcRUb2ehvh5NGV-L0j3bgUXVIBmMxmg32Ry4UUAw2KhWTRE-PokpGvb67FF0kLb8FLRgKG1bhdZC9bbBH_ooOOMI1DT9A3Fm0Ek083MxQ3HWDhhMat9dLAoNQ4ztx8qu7IGZ96TkaRQkaZsEP-TbZ1zE_uixtcrh7kciLIAvvUpWynxMhz-BBw6y-vYEU01sXD1muq9Cx-AJ8ZjfrJ2NON3grOexs5Z6t3WsDX_neF5Rcvu8gKyuM2EvrfxMae9Y0je6QaHE_Yvttj3yTQNPQXVqhAVWAH0KRhH9Q=w908-h681-no)
 
 * [Gigabyte Z270X Ultra Gaming](https://www.gigabyte.com/Motherboard/GA-Z270X-Ultra-Gaming-rev-10#kf)
-* [Intel i5 6600K](https://ark.intel.com/products/88191/Intel-Core-i5-6600K-Processor-6M-Cache-up-to-3-90-GHz-) 3.5 Ghz (OC 4.3 - 1.3v)
+* [Intel i5 6600K](https://ark.intel.com/products/88191/Intel-Core-i5-6600K-Processor-6M-Cache-up-to-3-90-GHz-) 3.5 Ghz (OC 4.3)
 * [NZXT Kraken X52 AIO](https://www.nzxt.com/products/kraken-x52) Water cooler
 * G.Skill 16GB DDR4 2400
 * EVGA Nvidia 980Ti
@@ -78,6 +78,7 @@ Chipset Page
 * VTd > Disabled
 * Internal Graphics > Enabled > 128MB
 
+Overclock is set to 4.3GHz. Voltage is 1.295. LoadLine Calibration is High. Memory XMP Profile 1.
 
 # Installation <sub>[&uarr;](#contents)</sub>
 
