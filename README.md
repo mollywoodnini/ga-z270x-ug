@@ -87,7 +87,7 @@ My overclock is optional. The above BIOS settings are required. I set CPU to 4.3
 ## Pre-Install
 
 * Create a vanilla installer and clone or download this repo.
-    `sudo /PathToApp/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/USBName`
+    * `sudo /PathToApp/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/USBName`
 * If you want iMessage, iCloud and FaceTime, edit the `post-config.plist` in SSD_EFI to fill in the blanks for `SMBIOS` !!
 * Copy USB_EFI to mounted USB EFI partition.
 * Compress SSD_EFI and copy to USB.
