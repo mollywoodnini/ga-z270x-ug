@@ -90,7 +90,12 @@ Chipset Page
 * VTd > Disabled
 * Internal Graphics > Enabled > 128MB
 
-My overclock is optional. The above BIOS settings are required. I set CPU to 4.3GHz. Voltage is 1.295. LoadLine Calibration is High. Memory XMP Profile 1.
+My overclock is optional. The above BIOS settings are *required*.
+
+* CPU upgrade 4.2GHz.
+* Voltage 1.225
+* LoadLine Calibration High.
+* Memory XMP Profile 1.
 
 ## Pre-Install
 
@@ -131,7 +136,7 @@ All of these do something a little different to enable NVRAM when not natively s
 
 ## Water Cooling
 
-**Specific to my build:** Unfortunately it is impossible to control the pump speed with any OS other than Windows. As a result you must alter how the hardware is plugged in. You must make sure the radiator fans are plugged into a header that is PWM capable. For example my radiator fans are plugged into a splitter, and the splitter plugged into CPU_FAN. In BIOS fan control CPU_FAN is set to monitor CPU temp using a custom fan curve. The pump is plugged into SYS_PUMP and set to monitor CPU with the curve Full Speed. You do *need* to remove the USB plug from it. This means no lights (doesn't bother me). If you do not, it *will* run using Silent mode all the time. This results in very high temps; upwards of 80c. I use Intel Power Gadget to monitor hardware. But you can use the HWMonitor app that comes with the FakeSMC package. If you have a different brand AIO water cooler, you can try plugging it in the same way and see what you get. You'll need to tinker with your hardware first so you don't hit 100c during install where the CPU gets maxed out.
+**Specific to my build:** Unfortunately it is impossible to control the pump speed with any OS other than Windows. As a result you must alter how the hardware is plugged in. You must make sure the radiator fans are plugged into a header that is PWM capable. For example my radiator fans are plugged into a splitter, and the splitter plugged into CPU_FAN. In BIOS fan control CPU_FAN is set to monitor CPU temp using a custom fan curve. The pump was plugged into SYS_PUMP and set to monitor CPU with the curve Full Speed; but I discovered I could get even better results by not plugging into any header . You do *need* to remove the USB plug from it. This means no lights (doesn't bother me). If you do not, it *will* run using Silent mode all the time. This results in very high temps; upwards of 80c. I use Intel Power Gadget to monitor hardware. But you can use the HWMonitor app that comes with the FakeSMC package. If you have a different brand AIO water cooler, you can try plugging it in the same way and see what you get. You'll need to tinker with your hardware first so you don't hit 100c during install where the CPU gets maxed out.
 
 My radiator fan curve is as follows: (20c, 25%) (32c, 35%) (42c, 50%) (52c, 65%) (62c, 100%)
 
@@ -147,7 +152,7 @@ Following this [guide by RehabMan](https://www.tonymacx86.com/threads/guide-crea
 
 # Gaming
 
-What little games that can run on Mac natively from Steam run very well. HITMAN, DiRT Rally, WoW, Smite, LoL, Euro Truck Sim 2, and more run at 60fps with settings maxed out. I can stream and not suffer from from performance loss. I did the first time around because my install was degraded due to constant fiddling. Using [Wine](http://wineskin.urgesoftware.com/tiki-index.php) I can run Platinum, Gold and Silver rated games with mostly no issues. I don't like vysnc so I limit my frames to 75 or 60 depending on what the game settings allow. Considering my monitor is FreeSync and AMD is better supported in macOS, I need to get an RX580 or Vega.
+What little games that can run on Mac natively from Steam run very well. HITMAN, DiRT Rally, WoW, Smite, LoL, Euro Truck Sim 2, and more run at 60fps with settings maxed out. I can stream and not suffer from from performance loss. I did the first time around because my install was degraded due to constant fiddling. Using [Wine](http://wineskin.urgesoftware.com/tiki-index.php) I can run Platinum, Gold and Silver rated games with mostly no issues. I don't like vysnc turned on in game so I limit my frames to 75 or 60 depending on what the game settings allow. Considering my monitor is FreeSync and AMD is better supported in macOS, I need to get an RX580 or Vega. If you followed the guide an enabled QuickSync (hardware rendering) you can use [GameShow](http://www.gameshow.net) to strem and record your gameplay. If you want to use OBS, [here is a great video](https://www.youtube.com/watch?v=F2OzfwFHjhE). I could not get this program to use hardware accleration. It does work, but the quality meh.
 
 # Temperatures
 
@@ -165,7 +170,7 @@ Realtek ALC1220. AppleALC with an unmodified AppleHDA, using layout 11. Already 
 * In: Internal mic, Line in
 * USB: [Logitech C910 1080p HD Pro](https://www.newegg.com/Product/Product.aspx?Item=N82E16826104385), [KRAKEN 7.1](https://www.razer.com/gaming-audio/razer-kraken-71-v2)
 
-Internal speakers is used when plugging into the rear (green) speaker jack. If you are a gamer, like myself, and do like to stream I have not ran into any problem using a USB headset with mic or the webcam. If you want to set that up, [here is a great video](https://www.youtube.com/watch?v=F2OzfwFHjhE). The only issue I have with audio is using Adobe programs. Audition will not properly work with USB mics. I have tried both of my devices and the program reports all audio as suddenly not working. Still looking into a fix for this.
+Internal speakers is used when plugging into the rear (green) speaker jack. If you are a gamer, like myself, and do like to stream I have not ran into any problem using a USB headset with mic or the webcam. The only issue I have with audio is using Adobe programs. Audition will not properly work with USB mics. I have tried both of my devices and the program reports all audio as suddenly not working. Still looking into a fix for this.
 
 If you do not like the sound of your audio (sounds flat) you can use [eqMac](https://bitgapp.com/eqmac/) or [Boom3D](https://www.globaldelight.com/boom/index.php). I use the latter.
 
