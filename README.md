@@ -24,7 +24,7 @@
 [Image](https://lh3.googleusercontent.com/bJwQTQrU3FZzbroALtFoXNoaqq3OoUtAW0H_spIx0SzBvYnVR7z7N68JnU7q6unJFpousxQuk7lE1WgwL7BiUSi3lTnBIsASxMoX06okXhHp47I_Bxf0vQ5G-GR7BhzGIs1ZEcKoKgT84lFvq5Qa5XF0zV6JG_sUl_8vwbYh8SXlQ_DJh9eh8iiSlsWFBTSXcixMnFxzhK9TroWygfZzLxAwAnFhTZmyXScv-iAwzaTQcTFTo_Nk_97x5OYcW0GktExh_81miv79PKEAPffOjD2MVXbRAZ7d1m0Jz5rlCzQYPo4aV6Ca9dcShtUSXhZKnVXc3hJSfimesFz2e-61Dc1F_RtLdscux2mByzRPpwPgE_61NJCxmKIM3meARF-M5N5jW6QExbcRUb2ehvh5NGV-L0j3bgUXVIBmMxmg32Ry4UUAw2KhWTRE-PokpGvb67FF0kLb8FLRgKG1bhdZC9bbBH_ooOOMI1DT9A3Fm0Ek083MxQ3HWDhhMat9dLAoNQ4ztx8qu7IGZ96TkaRQkaZsEP-TbZ1zE_uixtcrh7kciLIAvvUpWynxMhz-BBw6y-vYEU01sXD1muq9Cx-AJ8ZjfrJ2NON3grOexs5Z6t3WsDX_neF5Rcvu8gKyuM2EvrfxMae9Y0je6QaHE_Yvttj3yTQNPQXVqhAVWAH0KRhH9Q=w908-h681-no)
 
 * [Gigabyte Z270X Ultra Gaming](https://www.gigabyte.com/Motherboard/GA-Z270X-Ultra-Gaming-rev-10#kf)
-* [Intel i5 6600K](https://ark.intel.com/products/88191/Intel-Core-i5-6600K-Processor-6M-Cache-up-to-3-90-GHz-) 3.5 Ghz (OC 4.3)
+* [Intel i5 6600K](https://ark.intel.com/products/88191/Intel-Core-i5-6600K-Processor-6M-Cache-up-to-3-90-GHz-) 3.5 Ghz (OC 4.2)
 * [NZXT Kraken X52 AIO](https://www.nzxt.com/products/kraken-x52) Water cooler
 * G.Skill 16GB DDR4 2400
 * EVGA Nvidia 980Ti
@@ -57,8 +57,8 @@ Keep them updated!
 * [AppleALC](https://github.com/acidanthera/AppleALC/releases)
     * Makes native audio work.
 * [CodedCommander](https://bitbucket.org/RehabMan/os-x-eapd-codec-commander/downloads/)
-    * Helps prevent audio breaking after sleep.
-* [FakeSMC](https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/)
+    * Helps prevent audio breaking after sleep. *(optional)*
+* [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases)
     * Essential to make all this happen.
 * [IntelMausiEthernet](https://bitbucket.org/RehabMan/os-x-intel-network/downloads/)
     * The LAN port on this board uses Intel
@@ -68,8 +68,6 @@ Keep them updated!
     * Make all the USB ports and hubs visible.
 * [WhateverGreen](https://github.com/acidanthera/WhateverGreen/releases)
     * Graphics fixup plugin.
-* [XHCI-Unsupported](https://github.com/RehabMan/OS-X-USB-Inject-All/archive/master.zip)
-    * More USB support.
 
 # Installation
 
@@ -121,7 +119,7 @@ My overclock is optional. The above BIOS settings are *required*.
 * **AMD Only:** Works out of box. You do need to remove Nvidia specifics from the config. Remove `nvda_drv=1` from Boot Arguments. Remove `NvidiaWeb=Yes` from System Parameters.
 * Rename `post-config.plist` to `config.plist`.
 * Copy SSD_EFI to mounted SSD EFI partition.
-* Install required kexts using a kext installer like KextWizard or do it manually. The bare minimum will remain in Clover for Recovery. See folder Post_Install_Kexts. Don't forget to run Repair Permissions if using KextWizard.
+* Install required kexts using a kext installer like KextWizard or do it manually. Don't forget to run Repair Permissions if using KextWizard.
 * Install any additional required software now for devices. 
 * Rebuild kext cache `sudo kextcache -i /`
 * Shutdown. Do not restart.
