@@ -25,7 +25,8 @@
 
 * [Gigabyte Z270X Ultra Gaming](https://www.gigabyte.com/Motherboard/GA-Z270X-Ultra-Gaming-rev-10#kf)
 * [Intel i5 6600K](https://ark.intel.com/products/88191/Intel-Core-i5-6600K-Processor-6M-Cache-up-to-3-90-GHz-) 3.5 Ghz (OC 4.2)
-* [NZXT Kraken X52 AIO](https://www.nzxt.com/products/kraken-x52) Water cooler
+* [NZXT Kraken X62 AIO](https://www.nzxt.com/products/kraken-x52) Water cooler
+* [Cryorig H7 Plus](http://www.cryorig.com/h7plus_us.php) Air Cooler
 * G.Skill 16GB DDR4 2400
 * EVGA Nvidia 980Ti
 * 850 Evo 250GB
@@ -137,6 +138,9 @@ All of these do something a little different to enable NVRAM when not natively s
 **Specific to my build:** Unfortunately it is impossible to control the pump speed with any OS other than Windows. As a result you must alter how the hardware is plugged in. You must make sure the radiator fans are plugged into a header that is PWM capable. For example my radiator fans are plugged into a splitter, and the splitter plugged into CPU_FAN. In BIOS fan control CPU_FAN is set to monitor CPU temp using a custom fan curve. The pump was plugged into SYS_PUMP and set to monitor CPU with the curve Full Speed; but I discovered I could get even better results by not plugging into any header . You do *need* to remove the USB plug from it. This means no lights (doesn't bother me). If you do not, it *will* run using Silent mode all the time. This results in very high temps; upwards of 80c. I use Intel Power Gadget to monitor hardware. But you can use the HWMonitor app that comes with the FakeSMC package. If you have a different brand AIO water cooler, you can try plugging it in the same way and see what you get. You'll need to tinker with your hardware first so you don't hit 100c during install where the CPU gets maxed out.
 
 My radiator fan curve is as follows: (20c, 25%) (32c, 35%) (42c, 50%) (52c, 65%) (62c, 100%)
+
+Update: 
+Unfortunately, the water cooler was not as reliable as I had hoped. Just under two years old and the pcb board on the pump failed. Submitted a warranty claim and have since purchased an H7 Plus. It's ideal for multiple OS use and especially so since I have an overclock.
 
 ## IGPU Options
 
