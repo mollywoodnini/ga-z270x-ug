@@ -9,7 +9,7 @@
     2. [Pre-Install](#pre-install)
     3. [Post-Install](#post-install)
     4. [NVRAM](#nvram)
-    5. [Water cooling](#water-cooling)
+    5. [Water or Air cooling](#cooling)
     6. [IGPU Options](#igpu-options)
     7. [USB Port Patching](#usb-port-patching)
 6. [Gaming](#gaming)
@@ -21,7 +21,7 @@
 
 # Hardware
 
-[Image](https://lh3.googleusercontent.com/bJwQTQrU3FZzbroALtFoXNoaqq3OoUtAW0H_spIx0SzBvYnVR7z7N68JnU7q6unJFpousxQuk7lE1WgwL7BiUSi3lTnBIsASxMoX06okXhHp47I_Bxf0vQ5G-GR7BhzGIs1ZEcKoKgT84lFvq5Qa5XF0zV6JG_sUl_8vwbYh8SXlQ_DJh9eh8iiSlsWFBTSXcixMnFxzhK9TroWygfZzLxAwAnFhTZmyXScv-iAwzaTQcTFTo_Nk_97x5OYcW0GktExh_81miv79PKEAPffOjD2MVXbRAZ7d1m0Jz5rlCzQYPo4aV6Ca9dcShtUSXhZKnVXc3hJSfimesFz2e-61Dc1F_RtLdscux2mByzRPpwPgE_61NJCxmKIM3meARF-M5N5jW6QExbcRUb2ehvh5NGV-L0j3bgUXVIBmMxmg32Ry4UUAw2KhWTRE-PokpGvb67FF0kLb8FLRgKG1bhdZC9bbBH_ooOOMI1DT9A3Fm0Ek083MxQ3HWDhhMat9dLAoNQ4ztx8qu7IGZ96TkaRQkaZsEP-TbZ1zE_uixtcrh7kciLIAvvUpWynxMhz-BBw6y-vYEU01sXD1muq9Cx-AJ8ZjfrJ2NON3grOexs5Z6t3WsDX_neF5Rcvu8gKyuM2EvrfxMae9Y0je6QaHE_Yvttj3yTQNPQXVqhAVWAH0KRhH9Q=w908-h681-no)
+image to come soon.
 
 * [Gigabyte Z270X Ultra Gaming](https://www.gigabyte.com/Motherboard/GA-Z270X-Ultra-Gaming-rev-10#kf)
 * [Intel i5 6600K](https://ark.intel.com/products/88191/Intel-Core-i5-6600K-Processor-6M-Cache-up-to-3-90-GHz-) 3.5 Ghz (OC 4.2)
@@ -127,20 +127,22 @@ My overclock is optional. The above BIOS settings are *required*.
 * You can now boot from the SSD instead of the USB.
 * **Nvidia only:** If the system booted without GPU acceleration, open System Preferences and change to use Nvidia Web Drivers and reboot.
 
+When there is a security update, DO NOT update the same day. Wait a few days as there could be potential issues with kexts and drivers. Nvidia drivers come days after a patch.
+
 ## NVRAM
 
 `AptioMemoryFix-64.efi` - `OsxAptioFixDrv-64.efi` - `OsxAptioFix2Drv-64.efi` - `OsxAptioFix3Drv-64.efi`
 
 All of these do something a little different to enable NVRAM when not natively supported. I tried all of them and AptioMemoryFix works best. I did not get the *Recovered Files* folder in the trash upon reboot. The others led to faulty boots with a low resolution only to have the system grind to a halt mid boot and have to kill the power. OsxAptioFix2Drv was the one that did that every reboot. You can easily change which one you want to use after you have installed. Clear what's stored first, replace the efi and rebuild kextcache.
 
-## Water Cooling
+## Cooling
 
-**Specific to my build:** Unfortunately it is impossible to control the pump speed with any OS other than Windows. As a result you must alter how the hardware is plugged in. You must make sure the radiator fans are plugged into a header that is PWM capable. For example my radiator fans are plugged into a splitter, and the splitter plugged into CPU_FAN. In BIOS fan control CPU_FAN is set to monitor CPU temp using a custom fan curve. The pump was plugged into SYS_PUMP and set to monitor CPU with the curve Full Speed; but I discovered I could get even better results by not plugging into any header . You do *need* to remove the USB plug from it. This means no lights (doesn't bother me). If you do not, it *will* run using Silent mode all the time. This results in very high temps; upwards of 80c. I use Intel Power Gadget to monitor hardware. But you can use the HWMonitor app that comes with the FakeSMC package. If you have a different brand AIO water cooler, you can try plugging it in the same way and see what you get. You'll need to tinker with your hardware first so you don't hit 100c during install where the CPU gets maxed out.
-
-My radiator fan curve is as follows: (20c, 25%) (32c, 35%) (42c, 50%) (52c, 65%) (62c, 100%)
+**Specific to my build:** It is *impossible* to control the pump speed with any OS other than Windows. As a result you must alter how the hardware is plugged in. You must make sure the radiator fans are plugged into a header that is PWM capable. For example my radiator fans are plugged into a splitter, and the splitter plugged into CPU_FAN. In BIOS fan control CPU_FAN is set to monitor CPU temp using a custom fan curve. The pump was plugged into SYS_PUMP and set to monitor CPU with the curve Full Speed; but I discovered I could get even better results by not plugging into any header . You do *need* to remove the USB plug from it. This means no lights (doesn't bother me). If you do not, it *will* run using Silent mode all the time. This results in very high temps; upwards of 80c. I use Intel Power Gadget to monitor hardware. But you can use the HWMonitor app that comes with the FakeSMC package. If you have a different brand AIO water cooler, you can try plugging it in the same way and see what you get. You'll need to tinker with your hardware first so you don't hit 100c during install where the CPU gets maxed out.
 
 Update: 
 Unfortunately, the water cooler was not as reliable as I had hoped. Just under two years old and the pcb board on the pump failed. Submitted a warranty claim and have since purchased an H7 Plus. It's ideal for multiple OS use and especially so since I have an overclock.
+
+The radiator fans for the water cooler and the air cooler use the same curve: (20c, 25%) (32c, 35%) (42c, 50%) (52c, 65%) (62c, 100%)
 
 ## IGPU Options
 
@@ -158,7 +160,7 @@ What little games that can run on Mac natively from Steam run very well. HITMAN,
 
 # Temperatures
 
-Idle for a few hours temps drop to 22c. Light use is around 30c. Gaming ranges from 40c to 60c. I ran a terminal test with `yes > /dev/null &`. After one hour average temp was 58.2c. Highest was 61.7c. Eliminating CAM and using BIOS results in consistent temps across all three operating systems.
+Idle for a few hours temps drop to 22c. Light use is around ~30c. Gaming ranges from 40c to 60c. I ran a terminal test with `yes > /dev/null &`. After one hour average temp was ~58c. Highest was ~62c. +/- 2c for air vs water cooling. There is hardly any difference. Especially if you set up a good airflow.
 
 # Brightness Control
 
