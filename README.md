@@ -24,8 +24,8 @@
 image to come soon.
 
 * [Gigabyte Z270X Ultra Gaming](https://www.gigabyte.com/Motherboard/GA-Z270X-Ultra-Gaming-rev-10#kf)
-* [Intel i5 6600K](https://ark.intel.com/products/88191/Intel-Core-i5-6600K-Processor-6M-Cache-up-to-3-90-GHz-) 3.5 Ghz (OC 4.2)
-* [NZXT Kraken X62 AIO](https://www.nzxt.com/products/kraken-x52) Water cooler
+* [Intel i5 6600K](https://ark.intel.com/products/88191/Intel-Core-i5-6600K-Processor-6M-Cache-up-to-3-90-GHz-) 3.5 Ghz (OC 4.4)
+* [NZXT Kraken X62 AIO](https://www.nzxt.com/products/kraken-x52) Water cooler (removed)
 * [Cryorig H7 Plus](http://www.cryorig.com/h7plus_us.php) Air Cooler
 * G.Skill 16GB DDR4 2400
 * EVGA Nvidia 980Ti
@@ -91,8 +91,8 @@ Chipset Page
 
 My overclock is optional. The above BIOS settings are *required*.
 
-* CPU upgrade 4.2GHz.
-* Voltage 1.225
+* CPU upgrade 4.4GHz.
+* Voltage 1.290
 * LoadLine Calibration High.
 * Memory XMP Profile 1.
 
@@ -186,6 +186,6 @@ The most important part once satisfied with the install. Set up TimeMachine so i
 
 I installed macOS in late August. I had a mostly stable build while learning. The only thing I did that broke things was try to control fans with a program. Upon use, the fans kicked on high and attempting to adjust the speed instantly powered the machine off. Little bugs here and there prompted me to reinstall after learning a lot. I mainly made this for myself because I forget *a lot* of the stuff I do. Once I perfect something I like to know how I can repeat it. I have at this point, just one issue as metioned above. I managed to solve a lot otherwise. It's stable, cool and silent. I have Linux in the flavor of Ubuntu, and sadly a Windows 10 install. Games that just don't run on either *Nix platform, I have Windows; used sparingly. Sleep works nicely. I didn't include it in either config because I didn't want it to get forgotten about while setting up, and the system sleep only to bug out. Darkwake 8 or 9 works. Hibernate sort of works. Hit or miss. But I don't use hibernate at all. You can disable with `sudo pmset -a hibernatemode 0` and then `sudo rm /var/vm/sleepimage`.
 
-[Need help?](https://www.reddit.com/message/compose/?to=cbabbx)
+Need help? [Twitter](https://twitter.com/icedterminal) | [electronic mail](mailto:icedterminal@gmail.com)
 
 *[Back to top](#top)*
