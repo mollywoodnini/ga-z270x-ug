@@ -36,6 +36,8 @@ image to come soon.
 
 # Supported Versions
 
+![about this mac](https://i.imgur.com/Y4yBImz.jpg)
+
 High Sierra 10.13.6.
 
 Currently, there is no web drivers for Nvidia in Mojave. You must use either use AMD or IGPU. AMD works out of the box with `Lilu` and `WhateverGreen` kexts found in this repo. IGPU requires booting with a fake ID at first until you generate kextcache with the proper platform ID for next boot. If Nvidia drivers for Mojave get release, I'll update this with a version for it.
@@ -162,7 +164,11 @@ What little games that can run on Mac natively from Steam run very well. HITMAN,
 
 Idle for a few hours temps drop to 22c. Light use is around ~30c. Gaming ranges from 40c to 60c. I ran a terminal test with `yes > /dev/null &`. After one hour average temp was ~58c. Highest was ~62c. +/- 2c for air vs water cooling. There is hardly any difference. Especially if you set up a good airflow.
 
+![intel power gadget](https://i.imgur.com/bxP9MhG.jpg)
+
 # Brightness Control
+
+![status bar](https://i.imgur.com/GPTe0Le.jpg)
 
 If your monitor supports brightness control within Windows, as mine does, you can [control it in macOS](https://github.com/KAMIKAZEUA/NativeDisplayBrightness/releases). You can map the keys how you like using this app. However, Logitech G keys do not allow mapping past F12. You can use an LUA script to map it as you wish. I have a [G910](https://www.logitechg.com/en-us/products/gaming-keyboards/rgb-gaming-keyboard-g910.html). I forked an existing gist and modified it. Unassigned G6 and G7, then scripted G6 and G7 to be F18 and F19. The script will override what you set through the UI. If you do not unassign you will get the error tone when adjusting brightness. You can see that script here: https://gist.github.com/cbabb/85047be7ced0f789c3c7a5941603cd7a
 
