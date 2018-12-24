@@ -21,7 +21,7 @@
 
 # Hardware
 
-image to come soon.
+[imgur album](https://imgur.com/a/EpuzdPX)
 
 * [Gigabyte Z270X Ultra Gaming](https://www.gigabyte.com/Motherboard/GA-Z270X-Ultra-Gaming-rev-10#kf)
 * [Intel i5 6600K](https://ark.intel.com/products/88191/Intel-Core-i5-6600K-Processor-6M-Cache-up-to-3-90-GHz-) 3.5 Ghz (OC 4.4)
