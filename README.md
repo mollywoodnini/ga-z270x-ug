@@ -166,6 +166,8 @@ Idle for a few hours temps drop to 22c. Light use is around ~30c. Gaming ranges 
 
 ![intel power gadget](https://i.imgur.com/bxP9MhG.jpg)
 
+![intel power gadget max](https://i.imgur.com/OwzMBSF.png)
+
 # Brightness Control
 
 ![status bar](https://i.imgur.com/GPTe0Le.jpg)
