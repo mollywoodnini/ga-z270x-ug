@@ -23,16 +23,15 @@
 
 [imgur album](https://imgur.com/a/EpuzdPX)
 
-* [Gigabyte Z270X Ultra Gaming](https://www.gigabyte.com/Motherboard/GA-Z270X-Ultra-Gaming-rev-10#kf)
-* [Intel i5 6600K](https://ark.intel.com/products/88191/Intel-Core-i5-6600K-Processor-6M-Cache-up-to-3-90-GHz-) 3.5 Ghz (OC 4.4)
-* [NZXT Kraken X62 AIO](https://www.nzxt.com/products/kraken-x52) Water cooler (removed)
-* [Cryorig H7 Plus](http://www.cryorig.com/h7plus_us.php) Air Cooler
-* G.Skill 16GB DDR4 2400
-* EVGA Nvidia 980Ti
-* 850 Evo 250GB
-* WD Blue 1TB, 4TB
-* WD Green 2TB
-* [Dell SE2717H/HX](https://www.newegg.com/Product/Product.aspx?Item=N82E16824260491)
+* Board: [Gigabyte Z270X Ultra Gaming](https://www.gigabyte.com/Motherboard/GA-Z270X-Ultra-Gaming-rev-10#kf)
+* CPU: [Intel i5 6600K](https://ark.intel.com/products/88191/Intel-Core-i5-6600K-Processor-6M-Cache-up-to-3-90-GHz-) 3.5 Ghz (OC 4.4)
+* Cooler: [Cryorig H7 Plus](http://www.cryorig.com/h7plus_us.php) (air)
+* RAM: [G.Skill 16GB DDR4 2400](https://www.newegg.com/Product/Product.aspx?Item=N82E16820231888)
+* GPU: [EVGA Nvidia 980Ti FTW](https://www.newegg.com/Product/Product.aspx?Item=9SIAE8D8HT3759)
+* SSD: [Samsung 850 Evo 250GB](https://www.newegg.com/Product/Product.aspx?Item=9SIA4P02S09329) & [Toshiba OCZ 240GB](https://www.newegg.com/Product/Product.aspx?Item=N82E16820168335)
+* HDD: WD Blue [1TB](https://www.newegg.com/Product/Product.aspx?item=N82E16822235014) & [4TB](https://www.newegg.com/Product/Product.aspx?Item=N82E16822235011)
+* HDD: WD Green [2TB](https://www.newegg.com/Product/Product.aspx?Item=9SIAAEE4F65325)
+* Display: [Dell SE2717H/HX](https://www.newegg.com/Product/Product.aspx?Item=N82E16824260491)
 
 # Supported Versions
 
