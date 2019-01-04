@@ -9,14 +9,14 @@
     2. [Pre-Install](#pre-install)
     3. [Post-Install](#post-install)
     4. [NVRAM](#nvram)
-    5. [Cooling & Temperatures](#cooling)
-    6. [IGPU Options](#igpu-options)
-    7. [USB Port Patching](#usb-port-patching)
-6. [Gaming](#gaming)
-7. [Brightness Control](#brightness-control)
-8. [Audio Input/Output](#audio-inputoutput)
-9. [Back it up!](#back-it-up)
-10. [Final Notes](#final-notes)
+    5. [IGPU Options](#igpu-options)
+    6. [USB Port Patching](#usb-port-patching)
+6. [Cooling & Temperatures](#cooling--temperatures)
+7. [Gaming](#gaming)
+8. [Brightness Control](#brightness-control)
+9. [Audio Input/Output](#audio-inputoutput)
+10. [Back it up!](#back-it-up)
+11. [Final Notes](#final-notes)
 
 # Hardware
 
@@ -135,16 +135,26 @@ When there is a security update, DO NOT update the same day. Wait a few days to 
 
 All of these do something a little different to enable NVRAM when not natively supported. I tried all of them and AptioMemoryFix works best. I did not get the *Recovered Files* folder in the trash upon reboot. The others led to faulty boots with a low resolution only to have the system grind to a halt mid boot and have to kill the power. OsxAptioFix2Drv was the one that did that every reboot. You can easily change which one you want to use after you have installed. Clear what's stored first, replace the efi and rebuild kextcache.
 
-## Cooling & Temperatures
+## IGPU Options
+
+Hardware acceleration is enabled for IGPU 6600K while using dedicated graphics. If you have disabled IGPU in BIOS, you can turn it back on, set the size to 128mb and use PCI GPU as default. If you are using a 6700K you don't need to change the platform ID as they are the same. If you are using the 7th gen 7600K or 7700K the platform ID is `0x59120001`.
+
+Not using dedicated a GPU? 6th gen is `0x19120000` and 7th gen is `0x59120000`. You do need to remove Nvidia specifics from the config. Remove `nvda_drv=1` from Boot Arguments. Remove `NvidiaWeb=Yes` from System Parameters. Under Graphics > Inject set Intel to NO. Under Devices > AddProperties set Item 0 to Disabled.
+
+## USB Port Patching
+
+Following this [guide by RehabMan](https://www.tonymacx86.com/threads/guide-creating-a-custom-ssdt-for-usbinjectall-kext.211311/) I created an SSDT to fix the USB port layout. The device ID for this board is `0xa2af`. You can try the one here, or make your own. Do keep in mind your port count may vary if you do not have the same hardware. Once created you can remove or disable the USB port limit patch from the config. Using Mojave? You need to use a [different patch](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/).
+
+# Cooling & Temperatures
 
 Previously I used an NZXT X62. It is *impossible* to control the pump speed with any OS other than Windows. I no longer use Windows as my daily OS. As a result it ran in silent mode all the time and led to high temps. Unfortunately, the water cooler was not as reliable as I had hoped. Just under two years old the pcb board on the pump failed. Submitted a warranty claim and have since purchased an H7 Plus. It's ideal for multiple OS use and especially so since I have an overclock.
 
 Idle for a few hours temps drop to 22c. Light use is around ~30c. Gaming ranges from 40c to 60c. I ran a terminal test with `yes > /dev/null &`. After one hour average temp was ~58c. Highest was ~62c. This was about the same for water cooling when it worked. Fan setup below.
 
 * Exahust
-    * Roof & Rear: [Corsair AF140](https://www.corsair.com/us/en/Categories/Products/Fans/Air-Series™-AF140-Quiet-Edition-High-Airflow-140mm-Fan/p/CO-9050009-WW) x3
+* Roof & Rear: [Corsair AF140](https://www.corsair.com/us/en/Categories/Products/Fans/Air-Series™-AF140-Quiet-Edition-High-Airflow-140mm-Fan/p/CO-9050009-WW) x3
 * Intake
-    * Front: [Fractal Design Venturi HP-14](http://www.fractal-design.com/home/product/casefans/venturi-series/venturi-hp-14-pwm) x2
+* Front: [Fractal Design Venturi HP-14](http://www.fractal-design.com/home/product/casefans/venturi-series/venturi-hp-14-pwm) x2
 
 Using the built-in SmartFan 5 features:
 * CPU_FAN: Monitor CPU. Temp interval 3. Mode PWM.
@@ -159,21 +169,11 @@ The fan curves are set so the front intake and rear exhaust line up nicely with 
 3. Hot air won't get stuck and accumulate in the case.
 4. Synced speeds means lower overall fan RPM to keep cool. AKA Quiet.
 
-Heat from the GPU and the ambient heat from board rise and are sucked out roof. These fans do increase as the ambient temp rises. They remain quiet and rarely exceed 50% of max RPM. Using Temp interval 2 and 3 functions like a hysteresis feature found in cooling software. When you open your browser, your CPU spikes 30c > 40c > 30c in a matter of a second. Using interval 1 means the fans act aggresive in response to rising temps. It fluctuates the fan speed in real time. This can get annoying hearing the fans go *hmmm* > *WHIRRRR* > *hmmm* over and over. Setting it to 2 creates a gap or delay in response. If sustained at a certain temp for a time, the fans will pick up speed. Setting it 3 further increases that gap or delay. This setting is mostly preference. But we all like a quiet computer!
+Heat from the GPU and the ambient heat from the board rise and are sucked out roof. These fans do increase as the ambient temp rises. They remain quiet and rarely exceed 50% of max RPM. Using Temp interval 2 and 3 functions like a hysteresis feature found in cooling software. When you open your browser, your CPU spikes 30c > 40c > 30c in a matter of a second. Using interval 1 means the fans act aggresive in response to rising temps. It fluctuates the fan speed in real time. This can get annoying hearing the fans go *hmmm* > *WHIRRRR* > *hmmm* over and over. Setting it to 2 creates a gap or delay in response. If sustained at a certain temp for a time, the fans will pick up speed. Setting it 3 further increases that gap or delay. This setting is mostly preference. But we all like a quiet computer!
 
 ![intel power gadget](https://i.imgur.com/bxP9MhG.jpg)
 
 ![intel power gadget max](https://i.imgur.com/OwzMBSF.png)
-
-## IGPU Options
-
-Hardware acceleration is enabled for IGPU 6600K while using dedicated graphics. If you have disabled IGPU in BIOS, you can turn it back on, set the size to 128mb and use PCI GPU as default. If you are using a 6700K you don't need to change the platform ID as they are the same. If you are using the 7th gen 7600K or 7700K the platform ID is `0x59120001`.
-
-Not using dedicated a GPU? 6th gen is `0x19120000` and 7th gen is `0x59120000`. You do need to remove Nvidia specifics from the config. Remove `nvda_drv=1` from Boot Arguments. Remove `NvidiaWeb=Yes` from System Parameters. Under Graphics > Inject set Intel to NO. Under Devices > AddProperties set Item 0 to Disabled.
-
-## USB Port Patching
-
-Following this [guide by RehabMan](https://www.tonymacx86.com/threads/guide-creating-a-custom-ssdt-for-usbinjectall-kext.211311/) I created an SSDT to fix the USB port layout. The device ID for this board is `0xa2af`. You can try the one here, or make your own. Do keep in mind your port count may vary if you do not have the same hardware. Once created you can remove or disable the USB port limit patch from the config. Using Mojave? You need to use a [different patch](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/).
 
 # Gaming
 
