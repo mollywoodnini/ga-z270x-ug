@@ -40,7 +40,7 @@
 
 High Sierra 10.13.6.
 
-Currently, there is no web drivers for Nvidia in Mojave. You must use either use AMD or IGPU. AMD works out of the box with `Lilu` and `WhateverGreen` kexts found in this repo. IGPU requires booting with a fake ID at first until you generate kextcache with the proper platform ID for next boot. If Nvidia drivers for Mojave get release, I'll update this with a version for it.
+Currently, there is no web drivers for Nvidia in Mojave. You must use either use AMD or IGPU. AMD works out of the box with `Lilu` and `WhateverGreen` kexts found in this repo. IGPU requires booting with a fake ID at first until you generate kextcache with the proper platform ID for next boot. If Nvidia drivers for Mojave get released, I'll update this with a version for it.
 
 # Tools and Sources
 
@@ -60,13 +60,13 @@ Keep them updated!
 * [AppleALC](https://github.com/acidanthera/AppleALC/releases)
     * Makes native audio work.
 * [CodedCommander](https://bitbucket.org/RehabMan/os-x-eapd-codec-commander/downloads/)
-    * Helps prevent audio breaking after sleep. *(optional)*
-* [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases)
-    * Essential to make all this happen.
+    * Helps prevent audio breaking after sleep. *(optional only if you use sleep)*
+* [VirtualSMC](https://github.com/acidanthera/VirtualSMC/releases) or [FakeSMC](https://bitbucket.org/RehabMan/os-x-fakesmc-kozlek/downloads/)
+    * Essential to make all this happen. If you want hardware monitors use FakeSMC.
 * [IntelMausiEthernet](https://bitbucket.org/RehabMan/os-x-intel-network/downloads/)
     * The LAN port on this board uses Intel
 * [Lilu](https://github.com/acidanthera/Lilu/releases)
-    * System patching plugin
+    * System patching plugin.
 * [USBInjectAll](https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads/)
     * Make all the USB ports and hubs visible.
 * [WhateverGreen](https://github.com/acidanthera/WhateverGreen/releases)
@@ -158,7 +158,7 @@ Following this [guide by RehabMan](https://www.tonymacx86.com/threads/guide-crea
 
 # Gaming
 
-What little games that can run on Mac natively from Steam run very well. HITMAN, DiRT Rally, WoW, Smite, LoL, Euro Truck Sim 2, and more run at 60fps with settings maxed out. I can stream and not suffer from from performance loss. I did the first time around because my install was degraded due to constant fiddling. Using [Wine](http://wineskin.urgesoftware.com/tiki-index.php) I can run Platinum, Gold and Silver rated games with mostly no issues. I don't like vysnc turned on in game so I limit my frames to 75 or 60 depending on what the game settings allow. Considering my monitor is FreeSync and AMD is better supported in macOS, I need to get an RX580 or Vega. If you followed the guide an enabled QuickSync (hardware rendering) you can use [GameShow](http://www.gameshow.net) to strem and record your gameplay. If you want to use OBS, [here is a great video](https://www.youtube.com/watch?v=F2OzfwFHjhE). I could not get this program to use hardware accleration. It does work, but the quality meh.
+What little games that can run on Mac natively from Steam run very well. HITMAN, DiRT Rally, WoW, Smite, LoL, Euro Truck Sim 2, and more run at 60fps with settings maxed out. I can stream and not suffer from from performance loss. I did the first time around because my install was degraded due to constant fiddling. Using [Wine](http://wineskin.urgesoftware.com/tiki-index.php) I can run Platinum, Gold and Silver rated games with mostly no issues. I don't like vysnc turned on in game so I limit my frames to 75 or 60 depending on what the game settings allow. Considering my monitor is FreeSync and AMD is better supported in macOS, I need to get an RX580 or Vega. If you followed the guide an enabled QuickSync (hardware rendering) you can use [Wirecast](http://www.gameshow.net) to strem and record your gameplay. [Gameshow](http://www.gameshow.net) was the suggested software to use but it has since been killed off and is no longer for sale. If you want to use OBS, [here is a great video](https://www.youtube.com/watch?v=F2OzfwFHjhE). I could not get this program to use hardware accleration. It does work, but the quality meh and it can consume too much CPU.
 
 # Temperatures
 
@@ -185,6 +185,9 @@ Realtek ALC1220. AppleALC with an unmodified AppleHDA, using layout 11. Already 
 Internal speakers is used when plugging into the rear (green) speaker jack. If you are a gamer, like myself, and do like to stream I have not ran into any problem using a USB headset with mic or the webcam. The only issue I have with audio is using Adobe programs. Audition will not properly work with USB mics. I have tried both of my devices and the program reports all audio as suddenly not working. Still looking into a fix for this.
 
 If you do not like the sound of your audio (sounds flat) you can use [eqMac](https://bitgapp.com/eqmac/) or [Boom3D](https://www.globaldelight.com/boom/index.php). I use the latter.
+
+Update:
+I *think* I have found a solution for the audio hardware issue in Adobe programs. Both my headset and webcam/mic are USB devices and that's the cause of the hardware bugging out. If I use a mic that uses the dedicated jack on the computer I do not have this problem. For whatever reason I thought I would try using a different audio layout. I changed from `11` to `1`, rebuilt kextcache and rebooted. No dice. I did noticed that with a `1` the volume was muted every reboot. I changed it back `11`, rebuilt kextcache and rebooted. To my surprise it appears to have worked. I don't get the warning audio hardware is not responding.
 
 # Back it up!
 
