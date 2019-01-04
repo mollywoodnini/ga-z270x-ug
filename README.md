@@ -9,15 +9,14 @@
     2. [Pre-Install](#pre-install)
     3. [Post-Install](#post-install)
     4. [NVRAM](#nvram)
-    5. [Water or Air cooling](#cooling)
+    5. [Cooling & Temperatures](#cooling)
     6. [IGPU Options](#igpu-options)
     7. [USB Port Patching](#usb-port-patching)
 6. [Gaming](#gaming)
-7. [Temperatures](#temperatures)
-8. [Brightness Control](#brightness-control)
-9. [Audio Input/Output](#audio-inputoutput)
-10. [Back it up!](#back-it-up)
-11. [Final Notes](#final-notes)
+7. [Brightness Control](#brightness-control)
+8. [Audio Input/Output](#audio-inputoutput)
+9. [Back it up!](#back-it-up)
+10. [Final Notes](#final-notes)
 
 # Hardware
 
@@ -136,11 +135,35 @@ When there is a security update, DO NOT update the same day. Wait a few days to 
 
 All of these do something a little different to enable NVRAM when not natively supported. I tried all of them and AptioMemoryFix works best. I did not get the *Recovered Files* folder in the trash upon reboot. The others led to faulty boots with a low resolution only to have the system grind to a halt mid boot and have to kill the power. OsxAptioFix2Drv was the one that did that every reboot. You can easily change which one you want to use after you have installed. Clear what's stored first, replace the efi and rebuild kextcache.
 
-## Cooling
+## Cooling & Temperatures
 
-Previously I used an NZXT X62. It is *impossible* to control the pump speed with any OS other than Windows. As a result you must alter how the hardware is plugged in. You must make sure the radiator fans are plugged into a header that is PWM capable. For example my radiator fans are plugged into a splitter, and the splitter plugged into CPU_FAN. In BIOS fan control CPU_FAN is set to monitor CPU temp using a custom fan curve. The pump was plugged into SYS_PUMP and set to monitor CPU with the curve Full Speed; but I discovered I could get even better results by not plugging into any header . You do *need* to remove the USB plug from it. This means no lights (doesn't bother me). If you do not, it *will* run using Silent mode all the time. This results in very high temps; upwards of 80c. If you have a different brand AIO water cooler, you can try plugging it in the same way and see what you get. You'll need to tinker with your hardware first so you don't hit 100c during install where the CPU gets maxed out.
+Previously I used an NZXT X62. It is *impossible* to control the pump speed with any OS other than Windows. I no longer use Windows as my daily OS. As a result it ran in silent mode all the time and led to high temps. Unfortunately, the water cooler was not as reliable as I had hoped. Just under two years old the pcb board on the pump failed. Submitted a warranty claim and have since purchased an H7 Plus. It's ideal for multiple OS use and especially so since I have an overclock.
 
-Unfortunately, the water cooler was not as reliable as I had hoped. Just under two years old the pcb board on the pump failed. Submitted a warranty claim and have since purchased an H7 Plus. It's ideal for multiple OS use and especially so since I have an overclock.
+Idle for a few hours temps drop to 22c. Light use is around ~30c. Gaming ranges from 40c to 60c. I ran a terminal test with `yes > /dev/null &`. After one hour average temp was ~58c. Highest was ~62c. This was about the same for water cooling when it worked. Fan setup below.
+
+* Exahust
+    * Roof & Rear: [Corsair AF140](https://www.corsair.com/us/en/Categories/Products/Fans/Air-Series™-AF140-Quiet-Edition-High-Airflow-140mm-Fan/p/CO-9050009-WW) x3
+* Intake
+    * Front: [Fractal Design Venturi HP-14](http://www.fractal-design.com/home/product/casefans/venturi-series/venturi-hp-14-pwm) x2
+
+Using the built-in SmartFan 5 features:
+* CPU_FAN: Monitor CPU. Temp interval 3. Mode PWM.
+* CPU_OPT: *unused*
+* SYS_FAN1: Roof exhaust. Monitor board. Temp interval 2. Mode Voltage.
+* SYS_FAN2: Front intake. Monitor CPU. Temp interval 3. Mode PWM.
+* SYS_FAN3: Rear exhaust. Monitor CPU. Temp interval 3. Mode Voltage.
+
+The fan curves are set so the front intake and rear exhaust line up nicely with the speed of the CPU fans.
+1. This is to ensure good airflow.
+2. Less drag between fans.
+3. Hot air won't get stuck and accumulate in the case.
+4. Synced speeds means lower overall fan RPM to keep cool. AKA Quiet.
+
+Heat from the GPU and the ambient heat from board rise and are sucked out roof. These fans do increase as the ambient temp rises. They remain quiet and rarely exceed 50% of max RPM. Using Temp interval 2 and 3 functions like a hysteresis feature found in cooling software. When you open your browser, your CPU spikes 30c > 40c > 30c in a matter of a second. Using interval 1 means the fans act aggresive in response to rising temps. It fluctuates the fan speed in real time. This can get annoying hearing the fans go *hmmm* > *WHIRRRR* > *hmmm* over and over. Setting it to 2 creates a gap or delay in response. If sustained at a certain temp for a time, the fans will pick up speed. Setting it 3 further increases that gap or delay. This setting is mostly preference. But we all like a quiet computer!
+
+![intel power gadget](https://i.imgur.com/bxP9MhG.jpg)
+
+![intel power gadget max](https://i.imgur.com/OwzMBSF.png)
 
 ## IGPU Options
 
@@ -155,14 +178,6 @@ Following this [guide by RehabMan](https://www.tonymacx86.com/threads/guide-crea
 # Gaming
 
 What little games that can run on Mac natively from Steam run very well. HITMAN, DiRT Rally, WoW, Smite, LoL, Euro Truck Sim 2, and more run at 60fps with settings maxed out. I can stream and not suffer from from performance loss. I did the first time around because my install was degraded due to constant fiddling. Using [Wine](http://wineskin.urgesoftware.com/tiki-index.php) I can run Platinum, Gold and Silver rated games with mostly no issues. I don't like vysnc turned on in game so I limit my frames to 75 or 60 depending on what the game settings allow. Considering my monitor is FreeSync and AMD is better supported in macOS, I need to get an RX580 or Vega. If you followed the guide an enabled QuickSync (hardware rendering) you can use [Wirecast](http://www.gameshow.net) to strem and record your gameplay. [Gameshow](http://www.gameshow.net) was the suggested software to use but it has since been killed off and is no longer for sale. If you want to use OBS, [here is a great video](https://www.youtube.com/watch?v=F2OzfwFHjhE). I could not get this program to use hardware accleration. It does work, but the quality is meh and it can consume too much CPU.
-
-# Temperatures
-
-Idle for a few hours temps drop to 22c. Light use is around ~30c. Gaming ranges from 40c to 60c. I ran a terminal test with `yes > /dev/null &`. After one hour average temp was ~58c. Highest was ~62c. +/- 2c for air vs water cooling. There is hardly any difference. Especially if you set up a good airflow.
-
-![intel power gadget](https://i.imgur.com/bxP9MhG.jpg)
-
-![intel power gadget max](https://i.imgur.com/OwzMBSF.png)
 
 # Brightness Control
 
