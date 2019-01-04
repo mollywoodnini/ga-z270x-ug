@@ -37,7 +37,7 @@
 
 ![about this mac](https://i.imgur.com/Y4yBImz.jpg)
 
-High Sierra 10.13.6.
+High Sierra 10.13.6 (17G4015).
 
 Currently, there is no web drivers for Nvidia in Mojave. You must use either use AMD or IGPU. AMD works out of the box with `Lilu` and `WhateverGreen` kexts found in this repo. IGPU requires booting with a fake ID at first until you generate kextcache with the proper platform ID for next boot. If Nvidia drivers for Mojave get released, I'll update this with a version for it.
 
@@ -100,7 +100,7 @@ My overclock is optional. The above BIOS settings are *required*.
 ## Pre-Install
 
 * Create a vanilla installer and clone or download this repo.
-    * `sudo /PathToApp/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/USBName`
+    * `sudo /PathToApp/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/<USBName>`
 * If you want iMessage, iCloud and FaceTime, edit the `post-config.plist` in SSD_EFI to fill in the blanks for `SMBIOS` !!
 * Copy USB_EFI to mounted USB EFI partition.
 * Compress SSD_EFI and copy to USB.
@@ -108,10 +108,10 @@ My overclock is optional. The above BIOS settings are *required*.
 * Format SSD as APFS.
 * Start install as normal.
 * At 72% / 2mins left, system will reboot.
-* Boot from USB - *Preboot on drive_Name*. System will reboot shortly.
-* Boot from USB - *Preboot on drive_Name*.
+* Boot from USB - *Preboot on <drive_Name>*. System will reboot shortly.
+* Boot from USB - *Preboot on <drive_Name>*.
 * Install will complete. Took 10 minutes for me.
-* Boot from USB - Now you can choose *macOS on drive_Name*
+* Boot from USB - Now you can choose *macOS on <drive_Name>*
 
 ## Post-Install
 
@@ -128,7 +128,7 @@ My overclock is optional. The above BIOS settings are *required*.
 * You can now boot from the SSD instead of the USB.
 * **Nvidia only:** If the system booted without GPU acceleration, open System Preferences and change to use Nvidia Web Drivers and reboot.
 
-When there is a security update, DO NOT update the same day. Wait a few days as there could be potential issues with kexts and drivers. Nvidia drivers come days after a patch.
+When there is a security update, DO NOT update the same day. Wait a few days to a week as there could be potential issues with kexts and drivers. Nvidia drivers come days after a patch.
 
 ## NVRAM
 
@@ -138,12 +138,9 @@ All of these do something a little different to enable NVRAM when not natively s
 
 ## Cooling
 
-**Specific to my build:** It is *impossible* to control the pump speed with any OS other than Windows. As a result you must alter how the hardware is plugged in. You must make sure the radiator fans are plugged into a header that is PWM capable. For example my radiator fans are plugged into a splitter, and the splitter plugged into CPU_FAN. In BIOS fan control CPU_FAN is set to monitor CPU temp using a custom fan curve. The pump was plugged into SYS_PUMP and set to monitor CPU with the curve Full Speed; but I discovered I could get even better results by not plugging into any header . You do *need* to remove the USB plug from it. This means no lights (doesn't bother me). If you do not, it *will* run using Silent mode all the time. This results in very high temps; upwards of 80c. I use Intel Power Gadget to monitor hardware. But you can use the HWMonitor app that comes with the FakeSMC package. If you have a different brand AIO water cooler, you can try plugging it in the same way and see what you get. You'll need to tinker with your hardware first so you don't hit 100c during install where the CPU gets maxed out.
+Previously I used an NZXT X62. It is *impossible* to control the pump speed with any OS other than Windows. As a result you must alter how the hardware is plugged in. You must make sure the radiator fans are plugged into a header that is PWM capable. For example my radiator fans are plugged into a splitter, and the splitter plugged into CPU_FAN. In BIOS fan control CPU_FAN is set to monitor CPU temp using a custom fan curve. The pump was plugged into SYS_PUMP and set to monitor CPU with the curve Full Speed; but I discovered I could get even better results by not plugging into any header . You do *need* to remove the USB plug from it. This means no lights (doesn't bother me). If you do not, it *will* run using Silent mode all the time. This results in very high temps; upwards of 80c. If you have a different brand AIO water cooler, you can try plugging it in the same way and see what you get. You'll need to tinker with your hardware first so you don't hit 100c during install where the CPU gets maxed out.
 
-Update: 
-Unfortunately, the water cooler was not as reliable as I had hoped. Just under two years old and the pcb board on the pump failed. Submitted a warranty claim and have since purchased an H7 Plus. It's ideal for multiple OS use and especially so since I have an overclock.
-
-The radiator fans for the water cooler and the air cooler use the same curve: (20c, 25%) (32c, 35%) (42c, 50%) (52c, 65%) (62c, 100%)
+Unfortunately, the water cooler was not as reliable as I had hoped. Just under two years old the pcb board on the pump failed. Submitted a warranty claim and have since purchased an H7 Plus. It's ideal for multiple OS use and especially so since I have an overclock.
 
 ## IGPU Options
 
@@ -157,7 +154,7 @@ Following this [guide by RehabMan](https://www.tonymacx86.com/threads/guide-crea
 
 # Gaming
 
-What little games that can run on Mac natively from Steam run very well. HITMAN, DiRT Rally, WoW, Smite, LoL, Euro Truck Sim 2, and more run at 60fps with settings maxed out. I can stream and not suffer from from performance loss. I did the first time around because my install was degraded due to constant fiddling. Using [Wine](http://wineskin.urgesoftware.com/tiki-index.php) I can run Platinum, Gold and Silver rated games with mostly no issues. I don't like vysnc turned on in game so I limit my frames to 75 or 60 depending on what the game settings allow. Considering my monitor is FreeSync and AMD is better supported in macOS, I need to get an RX580 or Vega. If you followed the guide an enabled QuickSync (hardware rendering) you can use [Wirecast](http://www.gameshow.net) to strem and record your gameplay. [Gameshow](http://www.gameshow.net) was the suggested software to use but it has since been killed off and is no longer for sale. If you want to use OBS, [here is a great video](https://www.youtube.com/watch?v=F2OzfwFHjhE). I could not get this program to use hardware accleration. It does work, but the quality meh and it can consume too much CPU.
+What little games that can run on Mac natively from Steam run very well. HITMAN, DiRT Rally, WoW, Smite, LoL, Euro Truck Sim 2, and more run at 60fps with settings maxed out. I can stream and not suffer from from performance loss. I did the first time around because my install was degraded due to constant fiddling. Using [Wine](http://wineskin.urgesoftware.com/tiki-index.php) I can run Platinum, Gold and Silver rated games with mostly no issues. I don't like vysnc turned on in game so I limit my frames to 75 or 60 depending on what the game settings allow. Considering my monitor is FreeSync and AMD is better supported in macOS, I need to get an RX580 or Vega. If you followed the guide an enabled QuickSync (hardware rendering) you can use [Wirecast](http://www.gameshow.net) to strem and record your gameplay. [Gameshow](http://www.gameshow.net) was the suggested software to use but it has since been killed off and is no longer for sale. If you want to use OBS, [here is a great video](https://www.youtube.com/watch?v=F2OzfwFHjhE). I could not get this program to use hardware accleration. It does work, but the quality is meh and it can consume too much CPU.
 
 # Temperatures
 
@@ -185,7 +182,7 @@ Internal speakers is used when plugging into the rear (green) speaker jack. If y
 
 If you do not like the sound of your audio (sounds flat) you can use [eqMac](https://bitgapp.com/eqmac/) or [Boom3D](https://www.globaldelight.com/boom/index.php). I use the latter.
 
-Update:
+**Update:**
 I *think* I have found a solution for the audio hardware issue in Adobe programs. Both my headset and webcam/mic are USB devices and that's the cause of the hardware bugging out. If I use a mic that uses the dedicated jack on the computer I do not have this problem. For whatever reason I thought I would try using a different audio layout. I changed from `11` to `1`, rebuilt kextcache and rebooted. No dice. I did noticed that with a `1` the volume was muted every reboot. I changed it back `11`, rebuilt kextcache and rebooted. To my surprise it appears to have worked. I don't get the warning audio hardware is not responding.
 
 # Back it up!
@@ -194,7 +191,7 @@ The most important part once satisfied with the install. Set up TimeMachine so i
 
 # Final notes
 
-I installed macOS in late August. I had a mostly stable build while learning. The only thing I did that broke things was try to control fans with a program. Upon use, the fans kicked on high and attempting to adjust the speed instantly powered the machine off. Little bugs here and there prompted me to reinstall after learning a lot. I mainly made this for myself because I forget *a lot* of the stuff I do. Once I perfect something I like to know how I can repeat it. I have at this point, just one issue as metioned above. I managed to solve a lot otherwise. It's stable, cool and silent. I have Linux in the flavor of Ubuntu, and sadly a Windows 10 install. Games that just don't run on either *Nix platform, I have Windows; used sparingly. Sleep works nicely. I didn't include it in either config because I didn't want it to get forgotten about while setting up, and the system sleep only to bug out. Darkwake 8 or 9 works. Hibernate sort of works. Hit or miss. But I don't use hibernate at all. You can disable with `sudo pmset -a hibernatemode 0` and then `sudo rm /var/vm/sleepimage`.
+I installed macOS in late August. I had a mostly stable build while learning. The only thing I did that broke things was try to control fans with a program. Upon use, the fans kicked on high and attempting to adjust the speed instantly powered the machine off. Little bugs here and there prompted me to reinstall after learning a lot. I mainly made this for myself because I forget *a lot* of the stuff I do. Once I perfect something I like to know how I can repeat it. I have at this point, just one issue as metioned above. I managed to solve a lot otherwise. It's stable, cool and silent. I have Linux in the flavor of Ubuntu, and sadly a Windows 10 install sharing the other SSD. Games that just don't run on either *Nix platform, I have Windows; used sparingly. Sleep works nicely. I didn't include it in either config because I didn't want it to get forgotten about while setting up, and the system sleep only to bug out. Darkwake 8 or 9 works. Hibernate sort of works. Hit or miss. But I don't use hibernate at all. You can disable with `sudo pmset -a hibernatemode 0` and then `sudo rm /var/vm/sleepimage`.
 
 Need help? [Twitter](https://twitter.com/icedterminal) | [electronic mail](mailto:icedterminal@gmail.com)
 
