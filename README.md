@@ -152,9 +152,9 @@ Previously I used an NZXT X62. It is *impossible* to control the pump speed with
 Idle for a few hours temps drop to 22c. Light use is around ~30c. Gaming ranges from 40c to 60c. I ran a terminal test with `yes > /dev/null &`. After one hour average temp was ~58c. Highest was ~62c. This was about the same for water cooling when it worked. Fan setup below.
 
 * Exahust
-* Roof & Rear: [Corsair AF140](https://www.corsair.com/us/en/Categories/Products/Fans/Air-Series™-AF140-Quiet-Edition-High-Airflow-140mm-Fan/p/CO-9050009-WW) x3
+    * Roof & Rear: [Corsair AF140](https://www.corsair.com/us/en/Categories/Products/Fans/Air-Series™-AF140-Quiet-Edition-High-Airflow-140mm-Fan/p/CO-9050009-WW) x3
 * Intake
-* Front: [Fractal Design Venturi HP-14](http://www.fractal-design.com/home/product/casefans/venturi-series/venturi-hp-14-pwm) x2
+    * Front: [Fractal Design Venturi HP-14](http://www.fractal-design.com/home/product/casefans/venturi-series/venturi-hp-14-pwm) x2
 
 Using the built-in SmartFan 5 features:
 * CPU_FAN: Monitor CPU. Temp interval 3. Mode PWM.
@@ -163,7 +163,7 @@ Using the built-in SmartFan 5 features:
 * SYS_FAN2: Front intake. Monitor CPU. Temp interval 3. Mode PWM.
 * SYS_FAN3: Rear exhaust. Monitor CPU. Temp interval 3. Mode Voltage.
 
-The fan curves are set so the front intake and rear exhaust line up nicely with the speed of the CPU fans.
+The fan curves are set so the front intake and rear exhaust line up nicely with the speed of the CPU fans. It lets the CPU get to about 45c before the curve gets steeper.
 1. This is to ensure good airflow.
 2. Less drag between fans.
 3. Hot air won't get stuck and accumulate in the case.
@@ -202,7 +202,7 @@ I *think* I have found a solution for the audio hardware issue in Adobe programs
 
 # Back it up!
 
-The most important part once satisfied with the install. Set up TimeMachine so if something goes wrong, you can recover. This also means don't erase your USB drive. I keep mine stored away just in case.
+The most important part once satisfied with the install. Set up TimeMachine so if something goes wrong, you can recover. This also means **don't** erase your USB drive. I keep mine stored away just in case. If you don't have enough, you can pick one up from Newegg, Amazon or BestBuy for less than $10.
 
 # Final notes
 
