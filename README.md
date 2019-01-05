@@ -20,7 +20,7 @@
 
 # Hardware
 
-[imgur album](https://imgur.com/a/EpuzdPX)
+[Picture](https://i.imgur.com/fAS78bK.jpg)
 
 * Board: [Gigabyte Z270X Ultra Gaming](https://www.gigabyte.com/Motherboard/GA-Z270X-Ultra-Gaming-rev-10#kf)
 * CPU: [Intel i5 6600K](https://ark.intel.com/products/88191/Intel-Core-i5-6600K-Processor-6M-Cache-up-to-3-90-GHz-) 3.5 Ghz (OC 4.4)
@@ -34,7 +34,7 @@
 
 # Supported Versions
 
-![about this mac](https://i.imgur.com/Y4yBImz.jpg)
+![aboutMac](https://i.imgur.com/k9kDGeN.png)
 
 High Sierra 10.13.6 (17G4015).
 
@@ -171,9 +171,14 @@ The fan curves are set so the front intake and rear exhaust line up nicely with 
 
 Heat from the GPU and the ambient heat from the board rise and are sucked out roof. These fans do increase as the ambient temp rises. They remain quiet and rarely exceed 50% of max RPM. Using Temp interval 2 and 3 functions like a hysteresis feature found in cooling software. When you open your browser, your CPU spikes 30c > 40c > 30c in a matter of a second. Using interval 1 means the fans act aggresive in response to rising temps. It fluctuates the fan speed in real time. This can get annoying hearing the fans go *hmmm* > *WHIRRRR* > *hmmm* over and over. Setting it to 2 creates a gap or delay in response. If sustained at a certain temp for a time, the fans will pick up speed. Setting it to 3 further increases that gap or delay. This setting is mostly preference. But we all like a quiet computer!
 
-![intel power gadget](https://i.imgur.com/bxP9MhG.jpg)
+TIP: HWMonitor doesn't label fans. You can easily change that. Open `/Applications/HWMonitor.app/Contents/Resources/en.lproj/Localizable.strings` in xcode editor. Change the names accordingly. Here's mine:
 
-![intel power gadget max](https://i.imgur.com/OwzMBSF.png)
+* "MB Fan 0" = "CPU_FAN";
+* "MB Fan 1" = "SYS_FAN1 Roof";
+* "MB Fan 2" = "SYS_FAN2 Front";
+* "MB Fan 3" = "SYS_FAN3 Rear";
+
+![hwmonitor](https://i.imgur.com/NiEBojN.png)
 
 # Gaming
 
@@ -181,9 +186,9 @@ What little games that can run on Mac natively from Steam run very well. HITMAN,
 
 # Brightness Control
 
-![status bar](https://i.imgur.com/GPTe0Le.jpg)
-
 If your monitor supports brightness control within Windows, as mine does, you can [control it in macOS](https://github.com/KAMIKAZEUA/NativeDisplayBrightness/releases). You can map the keys how you like using this app. However, Logitech G keys do not allow mapping past F12. You can use an LUA script to map it as you wish. I have a [G910](https://www.logitechg.com/en-us/products/gaming-keyboards/rgb-gaming-keyboard-g910.html). I forked an existing gist and modified it. Unassigned G6 and G7, then scripted G6 and G7 to be F18 and F19. The script will override what you set through the UI. If you do not unassign you will get the error tone when adjusting brightness. You can see that script here: https://gist.github.com/icedterminal/85047be7ced0f789c3c7a5941603cd7a
+
+![status bar](https://i.imgur.com/GPTe0Le.jpg)
 
 # Audio Input/Output
 
@@ -195,10 +200,12 @@ Realtek ALC1220. AppleALC with an unmodified AppleHDA, using layout 11. Already 
 
 Internal speakers is used when plugging into the rear (green) speaker jack. If you are a gamer, like myself, and do like to stream I have not ran into any problem using a USB headset with mic or the webcam. The only issue I have with audio is using Adobe programs. Audition will not properly work with USB mics. I have tried both of my devices and the program reports all audio as suddenly not working. Still looking into a fix for this.
 
-If you do not like the sound of your audio (sounds flat) you can use [eqMac](https://bitgapp.com/eqmac/) or [Boom3D](https://www.globaldelight.com/boom/index.php). I use the latter.
+If you do not like the sound of your audio (sounds flat) you can use [eqMac](https://bitgapp.com/eqmac/), [Boom3D or Boom2](https://www.globaldelight.com/store). I use the latter, Boom2.
 
 **Update:**
 I *think* I have found a solution for the audio hardware issue in Adobe programs. Both my headset and webcam/mic are USB devices and that's the cause of the hardware bugging out. If I use a mic that uses the dedicated jack on the computer I do not have this problem. For whatever reason I thought I would try using a different audio layout. I changed from `11` to `1`, rebuilt kextcache and rebooted. No dice. I did noticed that with a `1` the volume was muted every reboot. I changed it back `11`, rebuilt kextcache and rebooted. To my surprise it appears to have worked. I don't get the warning audio hardware is not responding.
+
+![boom2](https://i.imgur.com/zGeVWTn.png)
 
 # Back it up!
 
