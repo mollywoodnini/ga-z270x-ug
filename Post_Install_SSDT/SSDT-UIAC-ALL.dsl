@@ -1,7 +1,3 @@
-// SSDT-UIAC-ALL.dsl for Gigabyte Z270X Ultra Gaming
-// Forked from RehabMan
-//
-
 DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
 {
     Device(UIAC)
@@ -47,23 +43,23 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
                     },
                     "HS09", Package()
                     {
-                        "UsbConnector", 0,
+                        "UsbConnector", 2,
                         "port", Buffer() { 9, 0, 0, 0 },
                     },
                     "HS10", Package()
                     {
-                        "UsbConnector", 0,
+                        "UsbConnector", 2,
                         "port", Buffer() { 10, 0, 0, 0 },
                     },
-                    "HS13", Package()
+                    "HS11", Package()
                     {
-                        "UsbConnector", 0,
-                        "port", Buffer() { 13, 0, 0, 0 },
+                        "UsbConnector", 2,
+                        "port", Buffer() { 11, 0, 0, 0 },
                     },
-                    "HS14", Package()
+                    "HS12", Package()
                     {
-                        "UsbConnector", 0,
-                        "port", Buffer() { 14, 0, 0, 0 },
+                        "UsbConnector", 2,
+                        "port", Buffer() { 12, 0, 0, 0 },
                     },
                     "SS01", Package()
                     {
