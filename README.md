@@ -27,6 +27,7 @@
 * Cooler: [Cryorig H7 Plus](http://www.cryorig.com/h7plus_us.php) (air)
 * RAM: [G.Skill 16GB DDR4 2400](https://www.newegg.com/Product/Product.aspx?Item=N82E16820231888)
 * GPU: [EVGA Nvidia 980Ti FTW](https://www.newegg.com/Product/Product.aspx?Item=9SIAE8D8HT3759)
+* WiFi: [TP-Link Archer T9E](https://www.newegg.com/Product/Product.aspx?Item=33-704-241)
 * SSD: [Samsung 850 Evo 250GB](https://www.newegg.com/Product/Product.aspx?Item=9SIA4P02S09329) & [Toshiba OCZ 240GB](https://www.newegg.com/Product/Product.aspx?Item=N82E16820168335)
 * HDD: WD Blue [1TB](https://www.newegg.com/Product/Product.aspx?item=N82E16822235014) & [4TB](https://www.newegg.com/Product/Product.aspx?Item=N82E16822235011)
 * HDD: WD Green [2TB](https://www.newegg.com/Product/Product.aspx?Item=9SIAAEE4F65325)
@@ -73,6 +74,8 @@ Keep them updated!
 # Installation
 
 Please read all of the instructions before you start installing! For the sake of avoiding confusion for myself and others, I made two EFI folders.
+
+The PCI wifi card I have is supported out of the box without any additional software, kexts, or modifications. It uses the BCM4360 chipset which has drivers already available in macOS.
 
 ## BIOS
 
