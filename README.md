@@ -144,6 +144,8 @@ Hardware acceleration is enabled for IGPU 6600K while using dedicated graphics. 
 
 Not using dedicated a GPU? 6th gen is `0x19120000` and 7th gen is `0x59120000`. You do need to remove Nvidia specifics from the config. Remove `nvda_drv=1` from Boot Arguments. Remove `NvidiaWeb=Yes` from System Parameters. Under Graphics > Inject set Intel to NO. Under Devices > AddProperties set Item 0 to Disabled.
 
+For browsers, hardware acceleration is preffered. Not only does this take a load of CPU cycles, it also saves battery for hackbooks. Unfortunately, Chrome, Opera and Vivaldi do not take advantage of it. They are all based on Chromium (Blink rendering) and suffer from the same issue. I tried multiple flags and settings to force it. Nothing worked. It still used software rendering. Safari does use hardware rendering, but cannot use Netflix or play any other form of DRM content. The Silverlight plugin for Safari was used to watch Netflix many years ago. MS killed it off and due to the security holes in it, Safari will not load the outdated plugin. Your best option for both DRM content and hardware rendering is to use Firefox.
+
 ## USB Port Patching
 
 Following this [guide by RehabMan](https://www.tonymacx86.com/threads/guide-creating-a-custom-ssdt-for-usbinjectall-kext.211311/) I created an SSDT to fix the USB port layout. The device ID for this board is `0xa2af`. You can try the one here, or make your own. Do keep in mind your port count may vary if you do not have the same hardware. Once created you can remove or disable the USB port limit patch from the config. Using Mojave? You need to use a [different patch](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/).
