@@ -39,7 +39,7 @@
 
 High Sierra 10.13.6 (17G4015).
 
-Currently, there is no web drivers for Nvidia in Mojave. You must use either use AMD or IGPU. AMD works out of the box with `Lilu` and `WhateverGreen` kexts found in this repo. IGPU requires booting with a fake ID at first until you generate kextcache with the proper platform ID for next boot. If Nvidia drivers for Mojave get released, I'll update this with a version for it.
+Currently, there is are web drivers for Nvidia in Mojave. You must use either use AMD or IGPU. AMD works out of the box with `Lilu` and `WhateverGreen` kexts found in this repo. IGPU requires booting with a fake ID at first until you generate kextcache with the proper platform ID for next boot. If Nvidia drivers for Mojave get released, I'll update this with a version for it.
 
 # Tools and Sources
 
@@ -76,6 +76,8 @@ Keep them updated!
 Please read all of the instructions before you start installing! For the sake of avoiding confusion for myself and others, I made two EFI folders.
 
 The PCI wifi card I have is supported out of the box without any additional software, kexts, or modifications. It uses the BCM4360 chipset which has drivers already available in macOS.
+
+It's important to pick FakeSMC or VirtualSMC and not change it once installed. I have noticed negative effects from changing to one or the other. In particular with Adobe apps. An unexplained freeze happens not longer after opening one. I noticed this after going from FakeSMC to VirtualSMC. I switched back to FakeSMC but the damage had been done. I simply reinstalled and the problem has since went away.
 
 ## BIOS
 
