@@ -79,6 +79,8 @@ The PCI wifi card I have is supported out of the box without any additional soft
 
 It's important to pick FakeSMC or VirtualSMC and not change it once installed. I have noticed negative effects from changing to one or the other. In particular with Adobe apps. An unexplained freeze happens not longer after opening one. I noticed this after going from FakeSMC to VirtualSMC. I switched back to FakeSMC but the damage had been done. I simply reinstalled and the problem has since went away.
 
+I do not use an NVMe SSD, I use SATAIII. As such, my EFI build lacks the appropriate `nvme.efi` driver. If you need this you can easily get it from Clover installer.
+
 ## BIOS
 
 BIOS Page
