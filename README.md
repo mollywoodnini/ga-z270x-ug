@@ -28,6 +28,7 @@
 * RAM: [G.Skill 16GB DDR4 2400](https://www.newegg.com/Product/Product.aspx?Item=N82E16820231888)
 * GPU: [EVGA Nvidia 980Ti FTW](https://www.newegg.com/Product/Product.aspx?Item=9SIAE8D8HT3759)
 * WiFi: [TP-Link Archer T9E](https://www.newegg.com/Product/Product.aspx?Item=33-704-241)
+* Bluetooth: [Asus BT400](https://www.newegg.com/Product/Product.aspx?Item=N82E16833320166)
 * SSD: [Samsung 850 Evo 250GB](https://www.newegg.com/Product/Product.aspx?Item=9SIA4P02S09329) & [Toshiba OCZ 240GB](https://www.newegg.com/Product/Product.aspx?Item=N82E16820168335)
 * HDD: WD Blue [1TB](https://www.newegg.com/Product/Product.aspx?item=N82E16822235014) & [4TB](https://www.newegg.com/Product/Product.aspx?Item=N82E16822235011)
 * HDD: WD Green [2TB](https://www.newegg.com/Product/Product.aspx?Item=9SIAAEE4F65325)
