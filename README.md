@@ -18,6 +18,9 @@
 10. [Back it up!](#back-it-up)
 11. [Final Notes](#final-notes)
 
+## Other Help
+* [Clean Up Booth Menu](BootMeu.md)
+
 # Hardware
 
 [Picture](https://i.imgur.com/fAS78bK.jpg)
