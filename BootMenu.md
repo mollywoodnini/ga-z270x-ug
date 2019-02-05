@@ -1,3 +1,5 @@
+# Clean Up Boot Menu
+
 When formatting disks using the GPT partition scheme, macOS likes to create EFI partitions. If this isn't a boot disk you can get rid of it. Windows does not do this by default. You must create them or they are created by the installer on the destination disk. If you plan to use ExFAT, format with Windows if you can.
 
 MBR only works with disks up to 2 TB and limits you to 4 Primary Partitions. So larger disks like my 4TB must use GPT. As a result I have a `P0: WD4XXXX` in my boot menu. I can disable boot entries but when I do I am left with empty choices on the boot screen. To get rid of them I need to remove the EFI partitions. I already did my large drive, so I'm using another drive as an example.
