@@ -20,6 +20,7 @@
 
 ## Other Help
 * [Clean Up Boot Menu](BootMenu.md)
+* [Helpful Terminal Commands](https://gist.github.com/icedterminal/e864cdde5e596f709219dd43be5cc943)
 
 # Hardware
 
