@@ -19,7 +19,7 @@
 11. [Final Notes](#final-notes)
 
 ## Other Help
-* [Clean Up Booth Menu](BootMeu.md)
+* [Clean Up Boot Menu](BootMenu.md)
 
 # Hardware
 
