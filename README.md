@@ -202,19 +202,19 @@ What little games that can run on Mac natively from Steam run very well. HITMAN,
 
 If you followed the guide and enabled QuickSync (hardware rendering) you can get reap the benefits like Windows.
 
-* [Wirecast](https://www.telestream.net/wirecast/) by Telestream - Stream to Twitch or YouTube and record your gameplay. [Gameshow](http://www.gameshow.net) was the suggested software to use but it has since been killed off and is no longer for sale. No editing tools but loads of ways you can setup a stream. It's a live encode while recording. It's quality is acceptable.
-* [ScreenFlow](https://www.telestream.net/screenflow/) by Telestream - Recording only. It's not as option laden like Wirecast. However, this software is ideal for those who like to record gaming sessions to edit and post them later. If you have no intent on streaming, this is the software to get. When you are doing recording you will be shown an uncompresseed raw version where you can use some limited editing tools to render out. It's quality is excellent.
-* [Filmora9](https://filmora.wondershare.com/) by Wondershare - Full editing software with the ability to record. I could not get this program to use hardware accleration. It appears to be unsupported. It does work, the quality is acceptable and it can consume too much CPU.
-* If you want to use OBS, [here is a great video](https://www.youtube.com/watch?v=F2OzfwFHjhE). I could not get this program to use hardware accleration. It appears to be unsupported. It does work, but the quality is not acceptable and it can consume too much CPU.
+* [Wirecast](https://www.telestream.net/wirecast/) by Telestream - Stream to Twitch or YouTube and record your gameplay. [Gameshow](http://www.gameshow.net) was the suggested software to use but it has since been killed off and is no longer for sale. No editing tools but loads of ways you can setup a stream. It's a live encode while recording. It's quality is acceptable. Needs to install audio driver to capture system audio.
+* [ScreenFlow](https://www.telestream.net/screenflow/) by Telestream - Recording only. It's not as option laden like Wirecast. However, this software is ideal for those who like to record gaming sessions to edit and post them later. If you have no intent on streaming, this is the software to get. When you are doing recording you will be shown an uncompresseed raw version where you can use some limited editing tools to render out. It's quality is excellent. Needs to install audio driver to capture system audio.
+* [Filmora9](https://filmora.wondershare.com/) by Wondershare - Full editing software with the ability to record. I could not get this program to use hardware accleration. It appears to be unsupported. It does work, the quality is acceptable and it can consume too much CPU. Needs to install audio driver to capture system audio.
+* If you want to use OBS, [here is a great video](https://www.youtube.com/watch?v=F2OzfwFHjhE). I could not get this program to use hardware accleration. It appears to be unsupported. It does work, but the quality is not acceptable and it can consume too much CPU. You need an additional piece of software to record mutiple sources of audio.
 
 Scale is 1 to 5 with 1 being poor and 5 being excellent.
 
 
-| Details | Streaming | Recording | Record Quality | Stream Quality | System Audio | Webcam Audio | Webcam Video |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| Wirecast | ✓ | ✓ | 3 | 5 | ✓ | ✓ | ✓ |
-| ScreenFlow | ✘ | ✓ | 5 | ✘ | ✓ | ✓ | ✓ |
-| OBS | ✓ | ✓ | 1 | 1 | ✓ | ✓ | ✓ |
+| Details | Streaming | Recording | Record Quality | Stream Quality | System Audio | Webcam Audio | Webcam Video | GPU |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Wirecast | ✓ | ✓ | 3 | 5 | ✓ | ✓ | ✓ | ✓ |
+| ScreenFlow | ✘ | ✓ | 5 | ✘ | ✓ | ✓ | ✓ | ✓ |
+| OBS | ✓ | ✓ | 1 | 1 | ✓ | ✓ | ✓ | ✘ |
 
 
 # Brightness Control
