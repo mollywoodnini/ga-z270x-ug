@@ -198,7 +198,7 @@ TIP: HWMonitor doesn't label fans. You can easily change that. Open `/Applicatio
 
 # Gaming
 
-What little games that can run on Mac natively from Steam run very well. HITMAN, DiRT Rally, WoW, Smite, LoL, Euro Truck Sim 2, and a few more run at 60fps with settings maxed out. I can stream and not suffer from from performance loss. I did the first time around because my install was degraded due to constant fiddling. Using [Wine](http://wineskin.urgesoftware.com/tiki-index.php) I can run Platinum, Gold and Silver rated games with mostly no issues. I don't like vysnc turned on in game so I limit my frames to 75 or 60 depending on what the game settings allow. Considering my monitor is FreeSync and AMD is better supported in macOS, I need to get an RX580 or Vega.
+What little games that can run on Mac natively from Steam run very well. HITMAN, DiRT Rally, WoW, Smite, LoL, Euro Truck Sim 2, and a few more run at 60fps with settings maxed out. I can stream and not suffer from from performance loss. I did the first time around because my install was degraded due to constant fiddling. Using [Wine](https://formulae.brew.sh/formula/wine) through [Homebrew](https://brew.sh/), I can run Platinum, Gold and Silver rated games with mostly no issues. I don't like vysnc turned on in game so I limit my frames to 75 or 60 depending on what the game settings allow. Considering my monitor is FreeSync and AMD is better supported in macOS, I need to get an RX580 or Vega. Don't forget to install winetricks!
 
 If you followed the guide and enabled QuickSync (hardware rendering) you can get reap the benefits like Windows.
 
@@ -206,6 +206,14 @@ If you followed the guide and enabled QuickSync (hardware rendering) you can get
 * [ScreenFlow](https://www.telestream.net/screenflow/) by Telestream - Recording only. It's not as option laden like Wirecast. However, this software is ideal for those who like to record gaming sessions to edit and post them later. If you have no intent on streaming, this is the software to get. When you are doing recording you will be shown an uncompresseed raw version where you can use some limited editing tools to render out. It's quality is excellent.
 * [Filmora9](https://filmora.wondershare.com/) by Wondershare - Full editing software with the ability to record. I could not get this program to use hardware accleration. It appears to be unsupported. It does work, the quality is acceptable and it can consume too much CPU.
 * If you want to use OBS, [here is a great video](https://www.youtube.com/watch?v=F2OzfwFHjhE). I could not get this program to use hardware accleration. It appears to be unsupported. It does work, but the quality is not acceptable and it can consume too much CPU.
+
+Scale is 1 to 5 with 1 being poor and 5 being excellent.
+
+| Details | Streaming | Recording | Record Quality | Stream Quality | System Audio | Webcam Audio | Webcam Video |
+| --- | --- |
+| Wirecast | ✓ | ✓ | 3 | 5 | ✓ | ✓ | ✓ |
+| ScreenFlow | ✘ | ✓ | 5 | ✘ | ✓ | ✓ | ✓ |
+| OBS | ✓ | ✓ | 1 | 1 | ✓ | ✓ | ✓ |
 
 # Brightness Control
 
