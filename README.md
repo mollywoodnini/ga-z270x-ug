@@ -209,11 +209,13 @@ If you followed the guide and enabled QuickSync (hardware rendering) you can get
 
 Scale is 1 to 5 with 1 being poor and 5 being excellent.
 
+
 | Details | Streaming | Recording | Record Quality | Stream Quality | System Audio | Webcam Audio | Webcam Video |
-| --- | --- |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | Wirecast | ✓ | ✓ | 3 | 5 | ✓ | ✓ | ✓ |
 | ScreenFlow | ✘ | ✓ | 5 | ✘ | ✓ | ✓ | ✓ |
 | OBS | ✓ | ✓ | 1 | 1 | ✓ | ✓ | ✓ |
+
 
 # Brightness Control
 
