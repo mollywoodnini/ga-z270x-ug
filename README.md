@@ -172,7 +172,7 @@ What can you do? Try different unsupported injectors. I didn't need any of these
 * XHCI-unsupported.kext
 * XHCI-x99-injector.kext
 
-I scoured the web to find them all in the latest versions. I keep a copy in [this repo](tree/master/Post_Install) and hosted with [MEGA](https://mega.nz/#F!wXZWRYYS!KpQzrSNbeVWmsxIWMft5ag).
+I scoured the web to find them all in the latest versions. I keep a copy in [this repo](Post_Install) and hosted with [MEGA](https://mega.nz/#F!wXZWRYYS!KpQzrSNbeVWmsxIWMft5ag).
 
 # Cooling & Temperatures
 
