@@ -167,12 +167,12 @@ As for the 3.1 and C, these are either a Thunderbolt or ASMedia controller. In t
 
 What can you do? Try different unsupported injectors. I didn't need any of these but it seems others do. 
 
-* XHCI-200-series-injector.kext
-* XHCI-300-series-injector.kext
-* XHCI-unsupported.kext
-* XHCI-x99-injector.kext
+* [XHCI-200-series-injector.kext](https://github.com/icedterminal/ga-z270x-ug/raw/master/Post_Install/XHCI-200-series-injector.kext.zip)
+* [XHCI-300-series-injector.kext](https://github.com/icedterminal/ga-z270x-ug/raw/master/Post_Install/XHCI-300-series-injector.kext.zip)
+* [XHCI-unsupported.kext](https://github.com/icedterminal/ga-z270x-ug/raw/master/Post_Install/XHCI-unsupported.kext.zip)
+* [XHCI-x99-injector.kext](https://github.com/icedterminal/ga-z270x-ug/raw/master/Post_Install/XHCI-x99-injector.kext.zip)
 
-I scoured the web to find them all in the latest versions. I keep a copy in [this repo](Post_Install) and hosted with [MEGA](https://mega.nz/#F!wXZWRYYS!KpQzrSNbeVWmsxIWMft5ag).
+You can click the links above to download them. I scoured the web to find them all in the latest versions. I keep a copy in this repo and hosted with [MEGA](https://mega.nz/#F!wXZWRYYS!KpQzrSNbeVWmsxIWMft5ag).
 
 **Note:** Inject kexts must be set to Detect and not Yes. If the kext will work, Clover will inject it. If it won't, Clover will ignore it. This ensures you don't have hangups during boot using a kext that will break things. Clover is a smart boot loader.
 
