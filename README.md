@@ -172,9 +172,9 @@ What can you do? Try different unsupported injectors. I didn't need any of these
 * [XHCI-unsupported.kext](https://github.com/icedterminal/ga-z270x-ug/raw/master/Post_Install/XHCI-unsupported.kext.zip)
 * [XHCI-x99-injector.kext](https://github.com/icedterminal/ga-z270x-ug/raw/master/Post_Install/XHCI-x99-injector.kext.zip)
 
-You can click the links above to download them. I scoured the web to find them all in the latest versions. I keep a copy in this repo and hosted with [MEGA](https://mega.nz/#F!wXZWRYYS!KpQzrSNbeVWmsxIWMft5ag).
+You can click the links above to download them. I scoured the web to find them all in the latest versions. I keep a copy in this repo and hosted with [MEGA](https://mega.nz/#F!wXZWRYYS!KpQzrSNbeVWmsxIWMft5ag). Technically, *unsupported* superceded all other versions. However, reading some forums people report it doesn't work while a specific one does. So the best thing you can do is try one by one.
 
-**Note:** Inject kexts must be set to Detect and not Yes. If the kext will work, Clover will inject it. If it won't, Clover will ignore it. This ensures you don't have hangups during boot using a kext that will break things. Clover is a smart boot loader.
+**Note:** Inject kexts must be set to Detect and not Yes. If the kext will work, Clover will inject it. If it won't, Clover will ignore it. This ensures you don't have hangups during boot using a kext that will break things. Clover is a smart boot loader. After you have rebooted, open Terminal and type in `kextstat | grep -v com.apple`. This will list all third party kexts. If you don't see it, that means it was either not required or not compatible.
 
 # Cooling & Temperatures
 
