@@ -161,6 +161,19 @@ For browsers, hardware acceleration is preffered. Not only does this take a load
 
 Following this [guide by RehabMan](https://www.tonymacx86.com/threads/guide-creating-a-custom-ssdt-for-usbinjectall-kext.211311/) I created an SSDT to fix the USB port layout. The device ID for this board is `0xa2af`. You can try the one here, or make your own. Do keep in mind your port count may vary if you do not have the same hardware. Once created you can remove or disable the USB port limit patch from the config. Using Mojave? You need to use a [different patch](https://hackintosher.com/forums/thread/list-of-hackintosh-usb-port-limit-patches-10-14-updated.467/).
 
+You use `USBinjectall.kext` to make all ports visible and then use a kext patch to remove the limit macOS places on USB ports. You can then use IOReg to create a USB SSDT and  place in Clover. Disable or remove the kext patch, but leave the injector kext alone. You can reboot and Clover will load the correct USB layout.
+
+As for the 3.1 and C, these are either a Thunderbolt or ASMedia controller. In the case of mine, it is ASMedia. 
+
+What can you do? Try different unsupported injectors. I didn't need any of these but it seems others do. 
+
+* XHCI-200-series-injector.kext
+* XHCI-300-series-injector.kext
+* XHCI-unsupported.kext
+* XHCI-x99-injector.kext
+
+I scoured the web to find them all in the latest versions. I keep a copy in [this repo](tree/master/Post_Install) and hosted with [MEGA](https://mega.nz/#F!wXZWRYYS!KpQzrSNbeVWmsxIWMft5ag).
+
 # Cooling & Temperatures
 
 Previously I used an NZXT X62. It is tedious to control the pump speed with any OS other than Windows. I no longer use Windows as my daily OS. As a result it ran in silent mode all the time and led to high temps. Unfortunately, the water cooler was not as reliable as I had hoped. Just under two years old the pcb board on the pump failed. Submitted a warranty claim and have since purchased an H7 Plus. It's ideal for multiple OS use and especially so since I have an overclock. If you wish to remain with water cooling you have a few options. You can boot Windows first to setup the cooler and reboot into macOS. However, once you power down the pump forgets the curve and defaults. Or you can use any one of these open source command line based tools: [liquidctl](https://github.com/jonasmalacofilho/liquidctl), [krakenx](https://github.com/KsenijaS/krakenx), [leviathan](https://github.com/brkalmar/leviathan), [OpenCorsairLink](https://github.com/audiohacked/OpenCorsairLink). They appear to rely on `libusb` which does cause bugs in macOS. Your best bet is to use `hidapi`, as the former will cause mice and keyboards to stop working. These were made as alternatives to CAM or Link for Linux users. 
