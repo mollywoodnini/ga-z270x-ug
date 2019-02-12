@@ -174,7 +174,7 @@ What can you do? Try different unsupported injectors. I didn't need any of these
 
 I scoured the web to find them all in the latest versions. I keep a copy in [this repo](Post_Install) and hosted with [MEGA](https://mega.nz/#F!wXZWRYYS!KpQzrSNbeVWmsxIWMft5ag).
 
-**Note:** Inject kexts must be set to Detect and not Yes. If the kext will work, Clover will inject it. If it won't, clover will ignore it. This ensure you don't have hangups during boot using a kext that will break things. Clover is a smart boot loader.
+**Note:** Inject kexts must be set to Detect and not Yes. If the kext will work, Clover will inject it. If it won't, Clover will ignore it. This ensures you don't have hangups during boot using a kext that will break things. Clover is a smart boot loader.
 
 # Cooling & Temperatures
 
