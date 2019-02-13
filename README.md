@@ -15,12 +15,9 @@
 7. [Gaming](#gaming)
 8. [Brightness Control](#brightness-control)
 9. [Audio Input/Output](#audio-inputoutput)
-10. [Back it up!](#back-it-up)
-11. [Final Notes](#final-notes)
-
-## Other Help
-* [Clean Up Boot Menu](BootMenu.md)
-* [Helpful Terminal Commands](https://gist.github.com/icedterminal/e864cdde5e596f709219dd43be5cc943)
+10. [Other Help](#other-help)
+11. [Back it up!](#back-it-up)
+12. [Final Notes](#final-notes)
 
 # Hardware
 
@@ -213,7 +210,7 @@ TIP: HWMonitor doesn't label fans. You can easily change that. Open `/Applicatio
 
 # Gaming
 
-### » [Playing games with Wine](Wine.md).
+### » [Playing games with Wine](Wine.md#installing-wine).
 
 What little games that can run on Mac natively from Steam run very well. HITMAN, DiRT Rally, WoW, Smite, LoL, Euro Truck Sim 2, and a few more run at 60fps with settings maxed out. I can stream and not suffer from from performance loss. I did the first time around because my install was degraded due to constant fiddling. Using [Wine](https://formulae.brew.sh/formula/wine) through [Homebrew](https://brew.sh/), I can run Platinum, Gold and Silver rated games with mostly no issues. I don't like vysnc turned on in game so I limit my frames to 75 or 60 depending on what the game settings allow. Considering my monitor is FreeSync and AMD is better supported in macOS, I need to get an RX580 or Vega. Don't forget to install winetricks!
 
@@ -256,6 +253,11 @@ If you do not like the sound of your audio (sounds flat) you can use [eqMac](htt
 I *think* I have found a solution for the audio hardware issue in Adobe programs. Both my headset and webcam/mic are USB devices and that's the cause of the hardware bugging out. If I use a mic that uses the dedicated jack on the computer I do not have this problem. For whatever reason I thought I would try using a different audio layout. I changed from `11` to `1`, rebuilt kextcache and rebooted. No dice. I did noticed that with a `1` the volume was muted every reboot. I changed it back `11`, rebuilt kextcache and rebooted. To my surprise it appears to have worked. I don't get the warning audio hardware is not responding.
 
 ![boom2](https://i.imgur.com/zGeVWTn.png)
+
+# Other Help
+
+* [Clean Up Boot Menu](BootMenu.md#clean-up-boot-menu)
+* [Helpful Terminal Commands](https://gist.github.com/icedterminal/e864cdde5e596f709219dd43be5cc943#gist-pjax-container)
 
 # Back it up!
 
