@@ -213,7 +213,7 @@ TIP: HWMonitor doesn't label fans. You can easily change that. Open `/Applicatio
 
 # Gaming
 
-### [Playing games with Wine](Wine.md).
+### » [Playing games with Wine](Wine.md).
 
 What little games that can run on Mac natively from Steam run very well. HITMAN, DiRT Rally, WoW, Smite, LoL, Euro Truck Sim 2, and a few more run at 60fps with settings maxed out. I can stream and not suffer from from performance loss. I did the first time around because my install was degraded due to constant fiddling. Using [Wine](https://formulae.brew.sh/formula/wine) through [Homebrew](https://brew.sh/), I can run Platinum, Gold and Silver rated games with mostly no issues. I don't like vysnc turned on in game so I limit my frames to 75 or 60 depending on what the game settings allow. Considering my monitor is FreeSync and AMD is better supported in macOS, I need to get an RX580 or Vega. Don't forget to install winetricks!
 
