@@ -212,7 +212,7 @@ TIP: HWMonitor doesn't label fans. You can easily change that. Open `/Applicatio
 
 ### » [Playing games with Wine](Wine.md#installing-wine).
 
-What little games that can run on Mac natively from Steam run very well. HITMAN, DiRT Rally, WoW, Smite, LoL, Euro Truck Sim 2, and a few more run at 60fps with settings maxed out. I can stream and not suffer from from performance loss. I did the first time around because my install was degraded due to constant fiddling. Using [Wine](https://formulae.brew.sh/formula/wine) through [Homebrew](https://brew.sh/), I can run Platinum, Gold and Silver rated games with mostly no issues. I don't like vysnc turned on in game so I limit my frames to 75 or 60 depending on what the game settings allow. Considering my monitor is FreeSync and AMD is better supported in macOS, I need to get an RX580 or Vega. Don't forget to install winetricks!
+What little games that can run on Mac natively from Steam run very well. HITMAN, DiRT Rally, WoW, Smite, LoL, Euro Truck Sim 2, and a few more run at 60fps with settings maxed out. I can stream and not suffer from from performance loss. I did the first time around because my install was degraded due to constant fiddling. Using [Wine](https://formulae.brew.sh/formula/wine) through [Homebrew](https://brew.sh/), I can run Platinum, Gold and Silver rated games with mostly no issues. I don't like vysnc turned on in game so I limit my frames to 75 or 60 depending on what the game settings allow. Considering my monitor is FreeSync and AMD is better supported in macOS, I need to get an RX580 or Vega.
 
 If you followed the guide and enabled QuickSync (hardware rendering) you can reap the benefits like Windows.
 
@@ -256,8 +256,8 @@ I *think* I have found a solution for the audio hardware issue in Adobe programs
 
 # Other Help
 
-* [Clean Up Boot Menu](BootMenu.md#clean-up-boot-menu)
-* [Helpful Terminal Commands](https://gist.github.com/icedterminal/e864cdde5e596f709219dd43be5cc943#gist-pjax-container)
+» [Clean Up Boot Menu](BootMenu.md#clean-up-boot-menu)
+» [Helpful Terminal Commands](https://gist.github.com/icedterminal/e864cdde5e596f709219dd43be5cc943#gist-pjax-container)
 
 # Back it up!
 
