@@ -257,6 +257,7 @@ I *think* I have found a solution for the audio hardware issue in Adobe programs
 # Other Help
 
 » [Clean Up Boot Menu](BootMenu.md#clean-up-boot-menu)
+
 » [Helpful Terminal Commands](https://gist.github.com/icedterminal/e864cdde5e596f709219dd43be5cc943#gist-pjax-container)
 
 # Back it up!
