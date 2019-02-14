@@ -77,7 +77,7 @@ Keep them updated!
 
 Please read all of the instructions before you start installing! For the sake of avoiding confusion for myself and others, I made two EFI folders.
 
-The PCI wifi card I have is supported out of the box without any additional software, kexts, or modifications. It uses the BCM4360 chipset which has drivers already available in macOS. However, macOS PCI wifi is `ARPT`. You will might need to rename the device from `PXSX` with Clover – [Renaming Guide](wifi.md)
+The PCI wifi card I have is supported out of the box without any additional software, kexts, or modifications. It uses the BCM4360 chipset which has drivers already available in macOS. However, macOS PCI wifi is `ARPT`. You might need to rename the device from `PXSX` with Clover – [Renaming Guide](wifi.md)
 
 It's important to pick FakeSMC or VirtualSMC and not change it once installed. I have noticed negative effects from changing to one or the other. In particular with Adobe apps. An unexplained freeze happens not longer after opening one. I noticed this after going from FakeSMC to VirtualSMC. I switched back to FakeSMC but the damage had been done. I simply reinstalled and the problem has since went away.
 
