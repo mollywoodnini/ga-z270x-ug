@@ -4,7 +4,7 @@
 
 The image above is the final result. You can see the other ACPI devices are PXSX while only the WiFi card is ARPT.
 
-1. Open your config file and navigate to ACPI > DSDT > Fixes. Add a new *Boolean* item named `AddDTGP`. Set value to YES. This is important! The enables the renaming facility.
+1. Open your config file and navigate to ACPI > DSDT > Fixes. Add a new *Boolean* item named `AddDTGP`. Set value to YES. This is important! This enables the renaming facility.
 2. Navigate to ACPI > RenameDevices. If you do not already have this, simply add a new *Dictionary* item, then add a new *String* item.
     * The name of this string will be pulled from IOReg. You will be looking for *acpi-path* in the *Property* column. It will look something like this: `IOACPIPlane:/_SB/PCI0@0/RP03@1c0002/PXSX@0`
     * You can click the *Value* to copy the text.
