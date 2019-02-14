@@ -1,6 +1,6 @@
 # Renaming ACPI WiFi
 
-[!ioreg screenshot](https://i.imgur.com/9kMxG2A.png)
+![ioreg screenshot](https://i.imgur.com/9kMxG2A.png)
 
 The image above is the final result. You can see the other ACPI devices are PXSX while only the WiFi card is ARPT.
 
