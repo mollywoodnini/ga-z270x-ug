@@ -10,31 +10,15 @@
 		<dict>
 			<key>Fixes</key>
 			<dict>
-				<key>FixDarwin_0002</key>
+				<key>FixShutdown</key>
 				<true/>
-				<key>FixHDA_8000</key>
+				<key>AddDTGP</key>
 				<true/>
-				<key>FixShutdown_0004</key>
-				<true/>
-				<key>FixHPET_0010</key>
-				<true/>
-				<key>FixIPIC_0040</key>
-				<true/>
-				<key>FIX_RTC_20000</key>
+				<key>FixHDA</key>
 				<true/>
 			</dict>
 			<key>Patches</key>
 			<array>
-				<dict>
-					<key>Comment</key>
-					<string>Rename PXSX to ARPT</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>UFhTWA==</data>
-					<key>Replace</key>
-					<data>QVJQVA==</data>
-				</dict>
 				<dict>
 					<key>Comment</key>
 					<string>Rename HDAS to HDEF</string>
@@ -156,14 +140,15 @@
 				<string>Cpu0Ist</string>
 			</dict>
 		</array>
+		<key>RenameDevices</key>
+		<dict>
+			<key>_SB.PCI0.RP03.PXSX</key>
+			<string>ARPT</string>
+		</dict>
 		<key>HaltEnabler</key>
 		<true/>
-		<key>FixHeaders</key>
+		<key>#FixHeaders</key>
 		<true/>
-		<key>ResetAddress</key>
-		<string>0x64</string>
-		<key>ResetValue</key>
-		<string>0xFE</string>
 	</dict>
 	<key>Boot</key>
 	<dict>
@@ -175,8 +160,8 @@
 		<string>boot.efi</string>
 		<key>DefaultVolume</key>
 		<string>MacSSD</string>
-		<key>#Legacy</key>
-		<string></string>
+		<key>Legacy</key>
+		<string>PBR</string>
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
@@ -197,7 +182,7 @@
 				<key>Device</key>
 				<string>IntelGFX</string>
 				<key>Disabled</key>
-				<true/>
+				<false/>
 				<key>Key</key>
 				<string>AAPL,GfxYTile</string>
 				<key>Value</key>
@@ -265,6 +250,20 @@
 	<dict>
 		<key>KextsToPatch</key>
 		<array>
+			<dict>
+				<key>Comment</key>
+				<string>Disable nvdarequiredos</string>
+				<key>Name</key>
+				<string>NVDAStartupWeb</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>TlZEQVJlcXVpcmVkT1MA</data>
+				<key>Replace</key>
+				<data>AAAAAAAAAAAAAAAAAAAA</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+			</dict>
 			<dict>
 				<key>Comment</key>
 				<string>Enable TRIM for SSD</string>
@@ -344,52 +343,20 @@
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
-		<key>BiosReleaseDate</key>
-		<string>09/25/2018</string>
-		<key>BiosVendor</key>
-		<string>Apple Inc.</string>
-		<key>BiosVersion</key>
-		<string>IM171.88Z.F000.B00.1809251200</string>
-		<key>Board-ID</key>
-		<string></string>
-		<key>BoardManufacturer</key>
-		<string>Apple Inc.</string>
-		<key>BoardType</key>
-		<integer>10</integer>
-		<key>BoardVersion</key>
-		<string>1.0</string>
-		<key>Manufacturer</key>
-		<string>Apple Inc.</string>
-		<key>ChassisManufacturer</key>
-		<string>Apple Inc.</string>
-		<key>ChassisAssetTag</key>
-		<string>iMac-Aluminum</string>
-		<key>EfiVersion</key>
-		<string>161.0.0.0.0</string>
-		<key>FirmwareFeatures</key>
-		<string>0xFC0FE137</string>
-		<key>FirmwareFeaturesMask</key>
-		<string>0xFF1FFF3F</string>
 		<key>Family</key>
 		<string>iMac17,1</string>
 		<key>ProductName</key>
 		<string>iMac17,1</string>
 		<key>BoardSerialNumber</key>
-		<string></string>
+		<string>C02QFHACGG7LPF7JC</string>
 		<key>SerialNumber</key>
-		<string></string>
+		<string>C02QFHACGG7L</string>
 		<key>SmUUID</key>
-		<string></string>
-		<key>LocationInChassis</key>
-		<string>Part Component</string>
-		<key>PlatformFeature</key>
-		<string>0x00</string>
+		<string>72839C47-17FA-4B69-A360-A68B7914D8A7</string>
 		<key>Mobile</key>
 		<false/>
 		<key>Trust</key>
 		<true/>
-		<key>Version</key>
-		<string>1.0</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
