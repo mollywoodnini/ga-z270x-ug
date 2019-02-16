@@ -147,7 +147,7 @@
 		</dict>
 		<key>HaltEnabler</key>
 		<true/>
-		<key>#FixHeaders</key>
+		<key>FixHeaders</key>
 		<true/>
 	</dict>
 	<key>Boot</key>
