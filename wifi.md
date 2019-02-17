@@ -45,3 +45,5 @@ On the morning of 15th of Feb, I made a lot of changes. I had already added a re
 * Rebuilt kextcache
 
 So far it appears to have worked. I have not had a crash yet. The stutter is still present.
+
+17th of Feb: *Sigh* – And it crashed. I traced it back to FakeSMC sensors. So they had to go. We'll see it how that goes. There are no issues on Windows at the moment.
