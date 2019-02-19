@@ -176,7 +176,7 @@ You can click the links above to download them. I scoured the web to find them a
 # Cooling & Temperatures
 
 <details>
-<summary>Using Water Cooling</summary>
+<summary>**Using Water Cooling**</summary>
 
 If you wish to remain with water cooling there are few options:
 
@@ -194,7 +194,7 @@ Test your cooling with terminal `yes > /dev/null &` - You need one instance per 
 </details>
 
 <details>
-<summary>Using Air Cooling</summary>
+<summary>**Using Air Cooling**</summary>
 
 *I no longer use air cooling. I have since worked out liquid cooling. This section is left for historical reference*
 
