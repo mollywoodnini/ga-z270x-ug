@@ -189,7 +189,7 @@ Most of these rely on `libusb`. There are issues with this. Apple revamped USB i
 
 Full documentation on how to control pumps and fans here: https://github.com/jonasmalacofilho/liquidctl/blob/macos-extra/docs/nzxt-kraken-x-3rd-generation.md#nzxt-kraken-x-3rd-generation 
 
-Should you need to power cycle for any reason, you can use `launchd` to automaticlly set a pump configuration upon login. This is cleaner and more appropriate than dropping a `script.sh` file in your startup items. I have already created a sample of that. See here. Copy the folder `com.jonasmalacofilho.liquidctl` and place it in `~/Library/Application Scripts/`. Copy the plist file and place it in `~/Library/LaunchAgents/`. Power down down so the pump forgets and defaults. Once you login, the script should run and the the lights should change.
+Should you need to power cycle for any reason, you can use `launchd` to automaticlly set a pump configuration upon login. This is cleaner and more appropriate than dropping a `script.sh` file in your startup items. I have already created a sample of that. [See here](https://github.com/icedterminal/ga-z270x-ug/tree/master/Post_Install/pump_control). Copy the folder `com.jonasmalacofilho.liquidctl` and place it in `~/Library/Application Scripts/`. Copy the plist file and place it in `~/Library/LaunchAgents/`. Power down down so the pump forgets and defaults. Once you login, the script should run and the the lights should change.
 
 Test your cooling with terminal `yes > /dev/null &` - You need one instance per core. So if you have four cores, you enter that four times. To stop, `killall yes`.
 
