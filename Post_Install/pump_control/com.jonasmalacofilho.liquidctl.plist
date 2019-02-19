@@ -9,6 +9,6 @@
 		<string>~/liquidctlBoot.sh</string>
 	</array>
 	<key>RunAtLoad</key>
-	<string>Yes</string>
+	<true/>
 </dict>
 </plist>
