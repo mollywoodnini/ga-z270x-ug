@@ -187,7 +187,9 @@ If you wish to remain with water cooling there are few options:
 
 Most of these rely on `libusb`. There are issues with this. Apple revamped USB in 10.11 so they have a heavy reliance on ACPI. They also use kernel HID to communicate with devices in exclusive mode. Unlike Linux and Windows which can operate in shared mode. As such, you need to use `hidapi` to control water loops. The best repo to use is [liquidctl/macos-extra](https://github.com/jonasmalacofilho/liquidctl/tree/macos-extra). An issue pointed out on the master branch `libusb` requires unloading the kernel HID driver, which then renders all keyboards, mice, etc from working. You can reload the kext if you use a script. *Unload kext > run liquidctl > reload kext*. But this came with issues. Sometimes I got a kernel panic, other times ports stopped working.
 
-Full documentation on how to control pumps and fans here: https://github.com/jonasmalacofilho/liquidctl/blob/macos-extra/docs/nzxt-kraken-x-3rd-generation.md#nzxt-kraken-x-3rd-generation
+Full documentation on how to control pumps and fans here: https://github.com/jonasmalacofilho/liquidctl/blob/macos-extra/docs/nzxt-kraken-x-3rd-generation.md#nzxt-kraken-x-3rd-generation 
+
+Should you need to power cycle for any reason, you can use `launchd` to automaticlly set a pump configuration upon login. This is cleaner and more appropriate than dropping a `script.sh` file in your startup items. I have already created a sample of that. See here. Copy the folder `com.jonasmalacofilho.liquidctl` and place it in `~/Library/Application Scripts/`. Copy the plist file and place it in `~/Library/LaunchAgents/`. Power down down so the pump forgets and defaults. Once you login, the script should run and the the lights should change.
 
 Test your cooling with terminal `yes > /dev/null &` - You need one instance per core. So if you have four cores, you enter that four times. To stop, `killall yes`.
 
