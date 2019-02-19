@@ -175,11 +175,28 @@ You can click the links above to download them. I scoured the web to find them a
 
 # Cooling & Temperatures
 
-*Update: I am currently running trials with the X62 using [liquidctl/macos-extra](https://github.com/jonasmalacofilho/liquidctl/tree/macos-extra). So far so good.*
+<details>
+<summary>Using Water Cooling</summary>
 
-Previously I used an NZXT X62. It is tedious to control the pump speed with any OS other than Windows. I no longer use Windows as my daily OS. As a result it ran in silent mode all the time and led to high temps. I purchased an H7 Plus. It's ideal for multiple OS use and especially so since I have an overclock. If you wish to remain with water cooling you have a few options. You can boot Windows first to setup the cooler and reboot into macOS. However, once you power down the pump forgets the curve and defaults. Or you can use any one of these open source command line based tools: [liquidctl](https://github.com/jonasmalacofilho/liquidctl), [krakenx](https://github.com/KsenijaS/krakenx), [leviathan](https://github.com/brkalmar/leviathan), [OpenCorsairLink](https://github.com/audiohacked/OpenCorsairLink). liquidctl and krakenx appear to rely on `libusb` which does cause bugs in macOS. Your best bet is to use leviathan which uses `hidapi`, as the former will cause mice and keyboards to stop working (basically all USB ports will cease). These were made as alternatives to CAM or Link for Linux users. 
+If you wish to remain with water cooling there are few options:
 
-Idle for a few hours temps drop to 22c. Light use is around ~30c. Gaming ranges from 40c to 60c. I ran a terminal test with `yes > /dev/null &`. After one hour average temp was ~58c. Highest was ~62c. This was about the same for water cooling when it worked. Fan setup below.
+* You can boot Windows first to setup the cooler and reboot into macOS.
+    * NZXT devices forget curves when a computer powers down.
+    * Corsair and EVGA devices retain curves on-board until reset with the software.
+* You can use any one of these open source command line based tools - [liquidctl](https://github.com/jonasmalacofilho/liquidctl), [krakenx](https://github.com/KsenijaS/krakenx), [leviathan](https://github.com/brkalmar/leviathan), and [OpenCorsairLink](https://github.com/audiohacked/OpenCorsairLink).
+
+Most of these rely on `libusb`. There are issues with this. Apple revamped USB in 10.11 so they have a heavy reliance on ACPI. They also use kernel HID to communicate with devices in exclusive mode. Unlike Linux and Windows which can operate in shared mode. As such, you need to use `hidapi` to control water loops. The best repo to use is [liquidctl/macos-extra](https://github.com/jonasmalacofilho/liquidctl/tree/macos-extra). An issue pointed out on the master branch `libusb` requires unloading the kernel HID driver, which then renders all keyboards, mice, etc from working. You can reload the kext if you use a script. *Unload kext > run liquidctl > reload kext*. But this came with issues. Sometimes I got a kernel panic, other times ports stopped working.
+
+Full documentation on how to control pumps and fans here: https://github.com/jonasmalacofilho/liquidctl/blob/macos-extra/docs/nzxt-kraken-x-3rd-generation.md#nzxt-kraken-x-3rd-generation
+
+Test your cooling with terminal `yes > /dev/null &` - You need one instance per core. So if you have four cores, you enter that four times. To stop, `killall yes`.
+
+</details>
+
+<details>
+<summary>Using Air Cooling</summary>
+
+*I no longer use air cooling. I have since worked out liquid cooling. This section is left for historical reference*
 
 * Exahust
     * Roof & Rear: [Corsair AF140](https://www.corsair.com/us/en/Categories/Products/Fans/Air-Series™-AF140-Quiet-Edition-High-Airflow-140mm-Fan/p/CO-9050009-WW) x3
@@ -200,6 +217,11 @@ The fan curves are set so the front intake and rear exhaust line up nicely with 
 4. Synced speeds means lower overall fan RPM to keep cool. AKA Quiet.
 
 Heat from the GPU and the ambient heat from the board rise and are sucked out roof. These fans do increase as the ambient temp rises. They remain quiet and rarely exceed 50% of max RPM. Using Temp interval 2 and 3 functions like a hysteresis feature found in cooling software. When you open your browser, your CPU spikes 30c > 40c > 30c in a matter of a second. Using interval 1 means the fans act aggresive in response to rising temps. It fluctuates the fan speed in real time. This can get annoying hearing the fans go *hmmm* > *WHIRRRR* > *hmmm* over and over. Setting it to 2 creates a gap or delay in response. If sustained at a certain temp for a time, the fans will pick up speed. Setting it to 3 further increases that gap or delay. This setting is mostly preference. But we all like a quiet computer!
+
+Test your cooling with terminal `yes > /dev/null &` - You need one instance per core. So if you have four cores, you enter that four times. To stop, `killall yes`.
+
+</details>
+
 
 TIP: HWMonitor doesn't label fans. You can easily change that. Open `/Applications/HWMonitor.app/Contents/Resources/en.lproj/Localizable.strings` in xcode editor. Change the names accordingly. Here's mine:
 
