@@ -2,13 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Label</key>
-	<string>com.jonasmalacofilho.liquidctl</string>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>PATH</key>
+		<string>/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+	</dict>
 	<key>ProgramArguments</key>
 	<array>
 		<string>~/liquidctlBoot.sh</string>
 	</array>
+	<key>Label</key>
+	<string>com.jonasmalacofilho.liquidctl</string>
 	<key>RunAtLoad</key>
 	<true/>
+	<key>KeepAlive</key>
+	<false/>
 </dict>
 </plist>
