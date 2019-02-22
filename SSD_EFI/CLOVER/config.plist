@@ -153,7 +153,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 -disablegfxfirmware</string>
+		<string>dart=0 -wegbeta ngfxcompat=1 agdpmod=vit9696</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultLoader</key>
