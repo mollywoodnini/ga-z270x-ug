@@ -12,8 +12,8 @@
 			<dict>
 				<key>FixShutdown</key>
 				<true/>
-				<key>AddDTGP</key>
-				<true/>
+				<key>#AddDTGP</key>
+				<false/>
 				<key>FixHDA</key>
 				<true/>
 			</dict>
@@ -140,9 +140,9 @@
 				<string>Cpu0Ist</string>
 			</dict>
 		</array>
-		<key>RenameDevices</key>
+		<key>#RenameDevices</key>
 		<dict>
-			<key>_SB.PCI0.RP03.PXSX</key>
+			<key>#_SB.PCI0.RP03.PXSX</key>
 			<string>ARPT</string>
 		</dict>
 		<key>HaltEnabler</key>
@@ -153,14 +153,14 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0</string>
+		<string>dart=0 -disablegfxfirmware</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultLoader</key>
 		<string>boot.efi</string>
 		<key>DefaultVolume</key>
-		<string>MacSSD</string>
-		<key>Legacy</key>
+		<string>LastBootedVolume</string>
+		<key>#Legacy</key>
 		<string>PBR</string>
 		<key>Secure</key>
 		<false/>
@@ -322,7 +322,7 @@
 		<key>AppleIntelCPUPM</key>
 		<false/>
 		<key>AppleRTC</key>
-		<false/>
+		<true/>
 		<key>Debug</key>
 		<false/>
 		<key>KernelCpu</key>
