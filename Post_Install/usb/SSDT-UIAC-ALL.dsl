@@ -43,22 +43,22 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
                     },
                     "HS09", Package()
                     {
-                        "UsbConnector", 2,
+                        "UsbConnector", 3,
                         "port", Buffer() { 9, 0, 0, 0 },
                     },
                     "HS10", Package()
                     {
-                        "UsbConnector", 2,
+                        "UsbConnector", 3,
                         "port", Buffer() { 10, 0, 0, 0 },
                     },
                     "HS11", Package()
                     {
-                        "UsbConnector", 2,
+                        "UsbConnector", 3,
                         "port", Buffer() { 11, 0, 0, 0 },
                     },
                     "HS12", Package()
                     {
-                        "UsbConnector", 2,
+                        "UsbConnector", 3,
                         "port", Buffer() { 12, 0, 0, 0 },
                     },
                     "HS14", Package()
