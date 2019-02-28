@@ -5,7 +5,7 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
         Name(_HID, "UIA00000")
 
         Name(RMCF, Package()
-        {
+        {  
             "8086_a2af", Package()
             {
                 "port-count", Buffer() { 26, 0, 0, 0 },
@@ -43,27 +43,32 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
                     },
                     "HS09", Package()
                     {
-                        "UsbConnector", 3,
+                        "UsbConnector", 0,
                         "port", Buffer() { 9, 0, 0, 0 },
                     },
                     "HS10", Package()
                     {
-                        "UsbConnector", 3,
+                        "UsbConnector", 0,
                         "port", Buffer() { 10, 0, 0, 0 },
                     },
                     "HS11", Package()
                     {
-                        "UsbConnector", 3,
+                        "UsbConnector", 0,
                         "port", Buffer() { 11, 0, 0, 0 },
                     },
                     "HS12", Package()
                     {
-                        "UsbConnector", 3,
+                        "UsbConnector", 0,
                         "port", Buffer() { 12, 0, 0, 0 },
+                    },
+                    "HS13", Package()
+                    {
+                        "UsbConnector", 255,
+                        "port", Buffer() { 13, 0, 0, 0 },
                     },
                     "HS14", Package()
                     {
-                        "UsbConnector", 3,
+                        "UsbConnector", 255,
                         "port", Buffer() { 14, 0, 0, 0 },
                     },
                     "SS01", Package()
@@ -101,4 +106,3 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
         })
     }
 }
-//EOF
