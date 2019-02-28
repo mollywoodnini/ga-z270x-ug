@@ -51,22 +51,22 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
                         "UsbConnector", 0,
                         "port", Buffer() { 10, 0, 0, 0 },
                     },
-                    "HS11", Package()
-                    {
-                        "UsbConnector", 0,
-                        "port", Buffer() { 11, 0, 0, 0 },
-                    },
-                    "HS12", Package()
-                    {
-                        "UsbConnector", 0,
-                        "port", Buffer() { 12, 0, 0, 0 },
-                    },
-                    "HS13", Package()
-                    {
-                        "UsbConnector", 255,
-                        "port", Buffer() { 13, 0, 0, 0 },
-                    },
-                    "HS14", Package()
+                    //"HS11", Package() //usb2 top
+                    //{
+                    //    "UsbConnector", 0,
+                    //    "port", Buffer() { 11, 0, 0, 0 },
+                    //},
+                    //"HS12", Package() //usb2 top
+                    //{
+                    //    "UsbConnector", 0,
+                    //    "port", Buffer() { 12, 0, 0, 0 },
+                    //},
+                    //"HS13", Package() //Internal bottom unused
+                    //{
+                    //    "UsbConnector", 255,
+                    //    "port", Buffer() { 13, 0, 0, 0 },
+                    //},
+                    "HS14", Package() //Internal bottom for NZXT pump
                     {
                         "UsbConnector", 255,
                         "port", Buffer() { 14, 0, 0, 0 },
