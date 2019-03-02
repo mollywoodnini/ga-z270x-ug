@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Gigabyte Z270X Ultra Gaming USB Config</string>
+	<string>Gigabyte Z270X Ultra Gaming Installed Config for High Sierra using Nvidia</string>
 	<key>ACPI</key>
 	<dict>
 		<key>DSDT</key>
@@ -12,9 +12,11 @@
 			<dict>
 				<key>FixShutdown</key>
 				<true/>
-				<key>#AddDTGP</key>
-				<false/>
+				<key>AddDTGP</key>
+				<true/>
 				<key>FixHDA</key>
+				<true/>
+				<key>FixRTC</key>
 				<true/>
 			</dict>
 			<key>Patches</key>
@@ -89,10 +91,49 @@
 					<key>Replace</key>
 					<data>R0ZYMA==</data>
 				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change SAT0 to SATA</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>U0FUMA==</data>
+					<key>Replace</key>
+					<data>U0FUQQ==</data>
+				</dict>
 			</array>
+			<key>DropOEM_DSM</key>
+			<dict>
+				<key>ATI</key>
+				<false/>
+				<key>Firewire</key>
+				<false/>
+				<key>HDA</key>
+				<false/>
+				<key>HDMI</key>
+				<false/>
+				<key>IDE</key>
+				<false/>
+				<key>IntelGFX</key>
+				<false/>
+				<key>LAN</key>
+				<false/>
+				<key>LPC</key>
+				<false/>
+				<key>NVidia</key>
+				<false/>
+				<key>SATA</key>
+				<false/>
+				<key>SmBUS</key>
+				<false/>
+				<key>USB</key>
+				<false/>
+				<key>WIFI</key>
+				<true/>
+			</dict>
 			<key>Debug</key>
 			<false/>
-			<key>DropOEM_DSM</key>
+			<key>#DropOEM_DSM</key>
 			<false/>
 			<key>Name</key>
 			<string>DSDT.aml</string>
@@ -140,9 +181,11 @@
 				<string>Cpu0Ist</string>
 			</dict>
 		</array>
-		<key>#RenameDevices</key>
+		<key>RenameDevices</key>
 		<dict>
-			<key>#_SB.PCI0.RP03.PXSX</key>
+			<key>#_SB.PCI0.RP08.PXSX</key>
+			<string>ARPT</string>
+			<key>_SB.PCI0.RP03.PXSX</key>
 			<string>ARPT</string>
 		</dict>
 		<key>HaltEnabler</key>
@@ -153,7 +196,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 -disablegfxfirmware</string>
+		<string>dart=0 -wegbeta ngfxcompat=1 agdpmod=vit9696 shikigva=12</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultLoader</key>
@@ -165,7 +208,7 @@
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
-		<integer>8</integer>
+		<integer>3</integer>
 		<key>XMPDetection</key>
 		<string>Yes</string>
 	</dict>
@@ -182,7 +225,7 @@
 				<key>Device</key>
 				<string>IntelGFX</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Key</key>
 				<string>AAPL,GfxYTile</string>
 				<key>Value</key>
@@ -192,7 +235,7 @@
 		<key>Audio</key>
 		<dict>
 			<key>Inject</key>
-			<integer>1</integer>
+			<integer>11</integer>
 			<key>ResetHDA</key>
 			<true/>
 		</dict>
@@ -212,6 +255,81 @@
 	</dict>
 	<key>GUI</key>
 	<dict>
+		<key>Scan</key>
+		<dict>
+			<key>Entries</key>
+			<true/>
+			<key>Legacy</key>
+			<false/>
+		</dict>
+		<key>Custom</key>
+		<dict>
+			<key>Entries</key>
+			<array>
+				<dict>
+					<key>Disabled</key>
+					<true/>
+					<key>Hidden</key>
+					<true/>
+					<key>Ignore</key>
+					<true/>
+					<key>Title</key>
+					<string>Windows 10</string>
+					<key>Type</key>
+					<string>Windows</string>
+					<key>Volume</key>
+					<string>680CD720-A79A-3767-A3C6-EE7B82774118</string>
+				</dict>
+				<dict>
+					<key>Disabled</key>
+					<true/>
+					<key>Hidden</key>
+					<true/>
+					<key>Ignore</key>
+					<true/>
+					<key>NoCaches</key>
+					<false/>
+					<key>Title</key>
+					<string>MacData</string>
+					<key>Type</key>
+					<string>Other</string>
+					<key>Volume</key>
+					<string>E28FFCEC-A54B-4D43-848B-28680AE29144</string>
+				</dict>
+				<dict>
+					<key>Disabled</key>
+					<true/>
+					<key>Hidden</key>
+					<true/>
+					<key>Ignore</key>
+					<true/>
+					<key>NoCaches</key>
+					<false/>
+					<key>Title</key>
+					<string>TimeMachine</string>
+					<key>Type</key>
+					<string>Other</string>
+					<key>Volume</key>
+					<string>DD28F58B-317A-41BE-A183-9C8DB05FDE73</string>
+				</dict>
+				<dict>
+					<key>Disabled</key>
+					<true/>
+					<key>Hidden</key>
+					<true/>
+					<key>Ignore</key>
+					<true/>
+					<key>NoCaches</key>
+					<false/>
+					<key>Title</key>
+					<string>Storage</string>
+					<key>Type</key>
+					<string>Other</string>
+					<key>Volume</key>
+					<string>327D76A0-3F8D-49EF-BA20-C80E7CB7D47B</string>
+				</dict>
+			</array>
+		</dict>
 		<key>Mouse</key>
 		<dict>
 			<key>DoubleClick</key>
@@ -252,6 +370,54 @@
 		<array>
 			<dict>
 				<key>Comment</key>
+				<string>Black Screen Patch (board-id) (c) Pike R. Alpha</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>Ym9hcmQtaWQ=</data>
+				<key>Name</key>
+				<string>AppleGraphicsDevicePolicy</string>
+				<key>Replace</key>
+				<data>Ym9hcmQtaXg=</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Black Screen Patch Vega 56/64, RX580 etc. (c)Pike R. Alpha</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>X0RTTQ==</data>
+				<key>Name</key>
+				<string>AppleGraphicsDevicePolicy</string>
+				<key>Replace</key>
+				<data>WERTTQ==</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Disable nvdarequiredos</string>
+				<key>Name</key>
+				<string>NVDAStartupWeb</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>TlZEQVJlcXVpcmVkT1MA</data>
+				<key>Replace</key>
+				<data>AAAAAAAAAAAAAAAAAAAA</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Enable TRIM for SSD</string>
+				<key>Name</key>
+				<string>com.apple.iokit.IOAHCIBlockStorage</string>
+				<key>Find</key>
+				<data>AEFQUExFIFNTRAA=</data>
+				<key>Replace</key>
+				<data>AAAAAAAAAAAAAAA=</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>External Drives as Internal to fix Orange Icons</string>
 				<key>Disabled</key>
 				<false/>
@@ -266,23 +432,9 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>(c)Pike R. Alpha</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>Ym9hcmQtaWQ=</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>Name</key>
-				<string>AppleGraphicsDevicePolicy</string>
-				<key>Replace</key>
-				<data>Ym9hcmQtaXg=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>USB 10.13.6+ by PMHeart</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>g32IDw+DpwQAAA==</data>
 				<key>InfoPlistPatch</key>
@@ -323,21 +475,19 @@
 		<string>iMac17,1</string>
 		<key>ProductName</key>
 		<string>iMac17,1</string>
-		<key>BoardSerialNumber</key>
-		<string></string>
-		<key>SerialNumber</key>
-		<string></string>
-		<key>SmUUID</key>
-		<string></string>
-		<key>Mobile</key>
-		<false/>
-		<key>Trust</key>
-		<true/>
+		<key>Use Clover Config</key>
+		<string>Generate an SMBIOS</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
 		<key>InjectKexts</key>
 		<string>Detect</string>
+		<key>InjectSystemID</key>
+		<true/>
+		<key>NvidiaWeb</key>
+		<true/>
+		<key>CustomUUID</key>
+		<string>Fill this out</string>
 	</dict>
 </dict>
 </plist>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Gigabyte Z270X Ultra Gaming Installed Config</string>
+	<string>Gigabyte Z270X Ultra Gaming USB Config for High Sierra</string>
 	<key>ACPI</key>
 	<dict>
 		<key>DSDT</key>
@@ -153,7 +153,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 -wegbeta ngfxcompat=1 agdpmod=vit9696 shikigva=12</string>
+		<string>dart=0 -disablegfxfirmware</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultLoader</key>
@@ -165,7 +165,7 @@
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
-		<integer>3</integer>
+		<integer>8</integer>
 		<key>XMPDetection</key>
 		<string>Yes</string>
 	</dict>
@@ -252,30 +252,6 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>Disable nvdarequiredos</string>
-				<key>Name</key>
-				<string>NVDAStartupWeb</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>TlZEQVJlcXVpcmVkT1MA</data>
-				<key>Replace</key>
-				<data>AAAAAAAAAAAAAAAAAAAA</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Enable TRIM for SSD</string>
-				<key>Name</key>
-				<string>com.apple.iokit.IOAHCIBlockStorage</string>
-				<key>Find</key>
-				<data>AEFQUExFIFNTRAA=</data>
-				<key>Replace</key>
-				<data>AAAAAAAAAAAAAAA=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>External Drives as Internal to fix Orange Icons</string>
 				<key>Disabled</key>
 				<false/>
@@ -306,7 +282,7 @@
 				<key>Comment</key>
 				<string>USB 10.13.6+ by PMHeart</string>
 				<key>Disabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>g32IDw+DpwQAAA==</data>
 				<key>InfoPlistPatch</key>
@@ -347,23 +323,13 @@
 		<string>iMac17,1</string>
 		<key>ProductName</key>
 		<string>iMac17,1</string>
-		<key>BoardSerialNumber</key>
-		<string></string>
-		<key>SerialNumber</key>
-		<string></string>
-		<key>SmUUID</key>
-		<string></string>
-		<key>Mobile</key>
-		<false/>
-		<key>Trust</key>
-		<true/>
+		<key>Use Clover Config</key>
+		<string>Generate an SMBIOS</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
 		<key>InjectKexts</key>
 		<string>Detect</string>
-		<key>NvidiaWeb</key>
-		<true/>
 	</dict>
 </dict>
 </plist>
