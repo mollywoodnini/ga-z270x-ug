@@ -3,20 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Gigabyte Z270X Ultra Gaming Installed Config for High Sierra using Nvidia</string>
+	<string>Gigabyte Z270X Ultra Gaming Installed Config for High Sierra using INTEL GPU</string>
 	<key>ACPI</key>
 	<dict>
 		<key>DSDT</key>
 		<dict>
 			<key>Fixes</key>
 			<dict>
-				<key>FixShutdown</key>
-				<true/>
 				<key>AddDTGP</key>
+				<false/>
+				<key>DeleteUnused</key>
+				<true/>
+				<key>FixShutdown</key>
 				<true/>
 				<key>FixHDA</key>
 				<true/>
-				<key>FixRTC</key>
+				<key>FixIPIC</key>
 				<true/>
 			</dict>
 			<key>Patches</key>
@@ -121,7 +123,7 @@
 				<key>LPC</key>
 				<false/>
 				<key>NVidia</key>
-				<false/>
+				<true/>
 				<key>SATA</key>
 				<false/>
 				<key>SmBUS</key>
@@ -132,8 +134,6 @@
 				<true/>
 			</dict>
 			<key>Debug</key>
-			<false/>
-			<key>#DropOEM_DSM</key>
 			<false/>
 			<key>Name</key>
 			<string>DSDT.aml</string>
@@ -196,7 +196,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 -wegbeta ngfxcompat=1 agdpmod=vit9696 shikigva=12</string>
+		<string>dart=0 -wegbeta ngfxcompat=1 agdpmod=vit9696 shikigva=1</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultLoader</key>
@@ -355,14 +355,12 @@
 			<key>ATI</key>
 			<false/>
 			<key>Intel</key>
-			<true/>
+			<false/>
 			<key>NVidia</key>
 			<false/>
 		</dict>
-		<key>NvidiaSingle</key>
-		<false/>
 		<key>ig-platform-id</key>
-		<string>0x19120001</string>
+		<string>SEE WIKI</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
@@ -372,7 +370,7 @@
 				<key>Comment</key>
 				<string>Black Screen Patch (board-id) (c) Pike R. Alpha</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>Ym9hcmQtaWQ=</data>
 				<key>Name</key>
@@ -391,20 +389,6 @@
 				<string>AppleGraphicsDevicePolicy</string>
 				<key>Replace</key>
 				<data>WERTTQ==</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Disable nvdarequiredos</string>
-				<key>Name</key>
-				<string>NVDAStartupWeb</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>TlZEQVJlcXVpcmVkT1MA</data>
-				<key>Replace</key>
-				<data>AAAAAAAAAAAAAAAAAAAA</data>
-				<key>InfoPlistPatch</key>
-				<false/>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -450,7 +434,7 @@
 		<key>AppleIntelCPUPM</key>
 		<false/>
 		<key>AppleRTC</key>
-		<true/>
+		<false/>
 		<key>Debug</key>
 		<false/>
 		<key>KernelCpu</key>
@@ -475,8 +459,6 @@
 		<string>iMac17,1</string>
 		<key>ProductName</key>
 		<string>iMac17,1</string>
-		<key>Use Clover Config</key>
-		<string>Generate an SMBIOS</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
@@ -484,10 +466,8 @@
 		<string>Detect</string>
 		<key>InjectSystemID</key>
 		<true/>
-		<key>NvidiaWeb</key>
-		<true/>
 		<key>CustomUUID</key>
-		<string>Fill this out</string>
+		<string></string>
 	</dict>
 </dict>
 </plist>
