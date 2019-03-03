@@ -6,8 +6,8 @@ liquidctl set logo color pulse ffffff --speed fastest
 liquidctl set ring color moving-alternating 0000ff ff0000 --speed normal
 
 # PALE PURPLE AND FROST
-liquidctl set logo color fading ae27ff ffffff 54ffc6 ffffff --speed normal
-liquidctl set ring color tai-chi ae27ff 54ffc6 --speed slower
+liquidctl set logo color breathing ffffff --speed slower
+liquidctl set ring color tai-chi ae27ff 54ffff --speed slower
 
 # GULF RACING
 liquidctl set ring color covering-marquee 34f4ff ff700a --speed normal
@@ -16,3 +16,7 @@ liquidctl set logo color fixed 0000ff
 # PEACH
 liquidctl set logo color fixed ff3535
 liquidctl set ring color marquee-4 ff3535 --speed slower
+
+# 1984
+liquidctl set logo color breathing ffffff --speed slower
+liquidctl set ring color fading ae27ff 54ff54 54ffff --speed slower
