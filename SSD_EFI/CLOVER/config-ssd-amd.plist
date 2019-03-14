@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Gigabyte Z270X Ultra Gaming Installed Config for High Sierra using AMD</string>
+	<string>Gigabyte Z270X Ultra Gaming Mojave Installed Config</string>
 	<key>ACPI</key>
 	<dict>
 		<key>DSDT</key>
@@ -11,14 +11,22 @@
 			<key>Fixes</key>
 			<dict>
 				<key>AddDTGP</key>
-				<false/>
+				<true/>
 				<key>DeleteUnused</key>
 				<true/>
 				<key>FixShutdown</key>
 				<true/>
+				<key>FixRegions</key>
+				<true/>
+				<key>FixHeaders</key>
+				<true/>
 				<key>FixHDA</key>
 				<true/>
 				<key>FixIPIC</key>
+				<true/>
+				<key>FixRTC</key>
+				<true/>
+				<key>FixTMR</key>
 				<true/>
 			</dict>
 			<key>Patches</key>
@@ -107,7 +115,7 @@
 			<key>DropOEM_DSM</key>
 			<dict>
 				<key>ATI</key>
-				<false/>
+				<true/>
 				<key>Firewire</key>
 				<false/>
 				<key>HDA</key>
@@ -144,25 +152,30 @@
 		<dict>
 			<key>Generate</key>
 			<dict>
-				<key>APLF</key>
-				<false/>
-				<key>APSN</key>
-				<false/>
-				<key>CStates</key>
-				<false/>
-				<key>PStates</key>
-				<false/>
 				<key>PluginType</key>
 				<true/>
 			</dict>
 			<key>DropOem</key>
 			<false/>
 		</dict>
+		<key>RenameDevices</key>
+		<dict>
+			<key>#_SB.PCI0.RP08.PXSX</key>
+			<string>ARPT</string>
+		</dict>
 		<key>DropTables</key>
 		<array>
 			<dict>
 				<key>Signature</key>
-				<string>MATS</string>
+				<string>DBG2</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>DBGP</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>WSMT</string>
 			</dict>
 			<dict>
 				<key>Signature</key>
@@ -170,33 +183,22 @@
 			</dict>
 			<dict>
 				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>CpuPm</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>Cpu0Ist</string>
+				<string>MATS</string>
 			</dict>
 		</array>
-		<key>RenameDevices</key>
-		<dict>
-			<key>#_SB.PCI0.RP08.PXSX</key>
-			<string>ARPT</string>
-			<key>_SB.PCI0.RP03.PXSX</key>
-			<string>ARPT</string>
-		</dict>
+		<key>AutoMerge</key>
+		<true/>
 		<key>HaltEnabler</key>
 		<true/>
-		<key>FixHeaders</key>
+		<key>FixMCFG</key>
 		<true/>
 	</dict>
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 -wegbeta ngfxcompat=1 agdpmod=vit9696 shikigva=4 -rad4200</string>
+		<string>dart=0 -wegbeta igfxrst=1 -rad24</string>
+		<key>#CustomLogo</key>
+		<string>Apple</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultLoader</key>
@@ -328,6 +330,22 @@
 					<key>Volume</key>
 					<string>327D76A0-3F8D-49EF-BA20-C80E7CB7D47B</string>
 				</dict>
+				<dict>
+					<key>Disabled</key>
+					<true/>
+					<key>Hidden</key>
+					<true/>
+					<key>Ignore</key>
+					<true/>
+					<key>NoCaches</key>
+					<false/>
+					<key>Title</key>
+					<string>Microsoft EFI</string>
+					<key>Type</key>
+					<string>Other</string>
+					<key>Volume</key>
+					<string>9E898420-09BD-4D25-B7DE-C94984E5B174</string>
+				</dict>
 			</array>
 		</dict>
 		<key>Mouse</key>
@@ -360,7 +378,7 @@
 			<false/>
 		</dict>
 		<key>ig-platform-id</key>
-		<string>SEE WIKI</string>
+		<string>0x19120001</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
@@ -370,7 +388,7 @@
 				<key>Comment</key>
 				<string>Black Screen Patch (board-id) (c) Pike R. Alpha</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>Ym9hcmQtaWQ=</data>
 				<key>Name</key>
@@ -414,37 +432,15 @@
 				<key>Replace</key>
 				<data>SW50ZXJuYWw=</data>
 			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>USB 10.13.6+ by PMHeart</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Find</key>
-				<data>g32IDw+DpwQAAA==</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>MatchOS</key>
-				<string>10.13.x</string>
-				<key>Name</key>
-				<string>com.apple.driver.usb.AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>g32ID5CQkJCQkA==</data>
-			</dict>
 		</array>
-		<key>AppleIntelCPUPM</key>
-		<false/>
+		<key>ForceKextsToLoad</key>
+		<array>
+			<string>\System\Library\Extensions\IO80211Family.kext</string>
+		</array>
 		<key>AppleRTC</key>
-		<false/>
-		<key>Debug</key>
-		<false/>
-		<key>KernelCpu</key>
-		<false/>
-		<key>KernelLapic</key>
 		<false/>
 		<key>KernelPm</key>
 		<true/>
-		<key>KernelXCPM</key>
-		<false/>
 	</dict>
 	<key>RtVariables</key>
 	<dict>

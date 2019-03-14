@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Gigabyte Z270X Ultra Gaming USB Config for High Sierra</string>
+	<string>Gigabyte Z270X Ultra Gaming USB Config for Mojave</string>
 	<key>ACPI</key>
 	<dict>
 		<key>DSDT</key>
