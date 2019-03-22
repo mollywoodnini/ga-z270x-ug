@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Gigabyte Z270X Ultra Gaming Installed Config for High Sierra using Nvidia</string>
+	<string>Gigabyte Z270X Ultra Gaming Installed Config using NVIDIA GPU</string>
 	<key>ACPI</key>
 	<dict>
 		<key>DSDT</key>
@@ -11,14 +11,22 @@
 			<key>Fixes</key>
 			<dict>
 				<key>AddDTGP</key>
-				<false/>
+				<true/>
 				<key>DeleteUnused</key>
 				<true/>
 				<key>FixShutdown</key>
 				<true/>
+				<key>FixRegions</key>
+				<true/>
+				<key>FixHeaders</key>
+				<true/>
 				<key>FixHDA</key>
 				<true/>
 				<key>FixIPIC</key>
+				<true/>
+				<key>FixRTC</key>
+				<true/>
+				<key>FixTMR</key>
 				<true/>
 			</dict>
 			<key>Patches</key>
@@ -107,7 +115,7 @@
 			<key>DropOEM_DSM</key>
 			<dict>
 				<key>ATI</key>
-				<false/>
+				<true/>
 				<key>Firewire</key>
 				<false/>
 				<key>HDA</key>
@@ -144,14 +152,6 @@
 		<dict>
 			<key>Generate</key>
 			<dict>
-				<key>APLF</key>
-				<false/>
-				<key>APSN</key>
-				<false/>
-				<key>CStates</key>
-				<false/>
-				<key>PStates</key>
-				<false/>
 				<key>PluginType</key>
 				<true/>
 			</dict>
@@ -162,7 +162,15 @@
 		<array>
 			<dict>
 				<key>Signature</key>
-				<string>MATS</string>
+				<string>DBG2</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>DBGP</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>WSMT</string>
 			</dict>
 			<dict>
 				<key>Signature</key>
@@ -170,27 +178,14 @@
 			</dict>
 			<dict>
 				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>CpuPm</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>Cpu0Ist</string>
+				<string>MATS</string>
 			</dict>
 		</array>
-		<key>RenameDevices</key>
-		<dict>
-			<key>#_SB.PCI0.RP08.PXSX</key>
-			<string>ARPT</string>
-			<key>_SB.PCI0.RP03.PXSX</key>
-			<string>ARPT</string>
-		</dict>
+		<key>AutoMerge</key>
+		<true/>
 		<key>HaltEnabler</key>
 		<true/>
-		<key>FixHeaders</key>
+		<key>FixMCFG</key>
 		<true/>
 	</dict>
 	<key>Boot</key>
@@ -372,7 +367,7 @@
 				<key>Comment</key>
 				<string>Black Screen Patch (board-id) (c) Pike R. Alpha</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>Ym9hcmQtaWQ=</data>
 				<key>Name</key>

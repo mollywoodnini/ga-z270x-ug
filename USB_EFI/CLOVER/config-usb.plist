@@ -3,18 +3,30 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Gigabyte Z270X Ultra Gaming USB Config for Mojave</string>
+	<string>Gigabyte Z270X Ultra Gaming USB Config</string>
 	<key>ACPI</key>
 	<dict>
 		<key>DSDT</key>
 		<dict>
 			<key>Fixes</key>
 			<dict>
+				<key>AddDTGP</key>
+				<true/>
+				<key>DeleteUnused</key>
+				<true/>
 				<key>FixShutdown</key>
 				<true/>
-				<key>#AddDTGP</key>
-				<false/>
+				<key>FixRegions</key>
+				<true/>
+				<key>FixHeaders</key>
+				<true/>
 				<key>FixHDA</key>
+				<true/>
+				<key>FixIPIC</key>
+				<true/>
+				<key>FixRTC</key>
+				<true/>
+				<key>FixTMR</key>
 				<true/>
 			</dict>
 			<key>Patches</key>
@@ -89,10 +101,47 @@
 					<key>Replace</key>
 					<data>R0ZYMA==</data>
 				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change SAT0 to SATA</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>U0FUMA==</data>
+					<key>Replace</key>
+					<data>U0FUQQ==</data>
+				</dict>
 			</array>
-			<key>Debug</key>
-			<false/>
 			<key>DropOEM_DSM</key>
+			<dict>
+				<key>ATI</key>
+				<true/>
+				<key>Firewire</key>
+				<false/>
+				<key>HDA</key>
+				<false/>
+				<key>HDMI</key>
+				<false/>
+				<key>IDE</key>
+				<false/>
+				<key>IntelGFX</key>
+				<false/>
+				<key>LAN</key>
+				<false/>
+				<key>LPC</key>
+				<false/>
+				<key>NVidia</key>
+				<true/>
+				<key>SATA</key>
+				<false/>
+				<key>SmBUS</key>
+				<false/>
+				<key>USB</key>
+				<false/>
+				<key>WIFI</key>
+				<true/>
+			</dict>
+			<key>Debug</key>
 			<false/>
 			<key>Name</key>
 			<string>DSDT.aml</string>
@@ -103,14 +152,6 @@
 		<dict>
 			<key>Generate</key>
 			<dict>
-				<key>APLF</key>
-				<false/>
-				<key>APSN</key>
-				<false/>
-				<key>CStates</key>
-				<false/>
-				<key>PStates</key>
-				<false/>
 				<key>PluginType</key>
 				<true/>
 			</dict>
@@ -121,7 +162,15 @@
 		<array>
 			<dict>
 				<key>Signature</key>
-				<string>MATS</string>
+				<string>DBG2</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>DBGP</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>WSMT</string>
 			</dict>
 			<dict>
 				<key>Signature</key>
@@ -129,25 +178,14 @@
 			</dict>
 			<dict>
 				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>CpuPm</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>Cpu0Ist</string>
+				<string>MATS</string>
 			</dict>
 		</array>
-		<key>#RenameDevices</key>
-		<dict>
-			<key>#_SB.PCI0.RP03.PXSX</key>
-			<string>ARPT</string>
-		</dict>
+		<key>AutoMerge</key>
+		<true/>
 		<key>HaltEnabler</key>
 		<true/>
-		<key>FixHeaders</key>
+		<key>FixMCFG</key>
 		<true/>
 	</dict>
 	<key>Boot</key>
@@ -244,7 +282,7 @@
 		<key>NvidiaSingle</key>
 		<false/>
 		<key>ig-platform-id</key>
-		<string>0x19120001</string>
+		<string>0x00000000</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
