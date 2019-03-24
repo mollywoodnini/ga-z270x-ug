@@ -45,4 +45,4 @@ liquidctl set logo color pulse ffffff --speed faster
 
 # EASY EYES AMBER
 liquidctl set ring color fading ff5500 662200 --speed slower
-liquidctl set logo color off
+liquidctl set logo color fixed 442200
