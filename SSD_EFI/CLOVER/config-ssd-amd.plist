@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Gigabyte Z270X Ultra Gaming Installed Config using AMG GPU</string>
+	<string>Installed Config using AMD GPU</string>
 	<key>ACPI</key>
 	<dict>
 		<key>DSDT</key>
@@ -267,86 +267,7 @@
 		<key>Custom</key>
 		<dict>
 			<key>Entries</key>
-			<array>
-				<dict>
-					<key>Disabled</key>
-					<true/>
-					<key>Hidden</key>
-					<true/>
-					<key>Ignore</key>
-					<true/>
-					<key>Title</key>
-					<string>Windows 10</string>
-					<key>Type</key>
-					<string>Windows</string>
-					<key>Volume</key>
-					<string>680CD720-A79A-3767-A3C6-EE7B82774118</string>
-				</dict>
-				<dict>
-					<key>Disabled</key>
-					<true/>
-					<key>Hidden</key>
-					<true/>
-					<key>Ignore</key>
-					<true/>
-					<key>NoCaches</key>
-					<false/>
-					<key>Title</key>
-					<string>MacData</string>
-					<key>Type</key>
-					<string>Other</string>
-					<key>Volume</key>
-					<string>E28FFCEC-A54B-4D43-848B-28680AE29144</string>
-				</dict>
-				<dict>
-					<key>Disabled</key>
-					<true/>
-					<key>Hidden</key>
-					<true/>
-					<key>Ignore</key>
-					<true/>
-					<key>NoCaches</key>
-					<false/>
-					<key>Title</key>
-					<string>TimeMachine</string>
-					<key>Type</key>
-					<string>Other</string>
-					<key>Volume</key>
-					<string>DD28F58B-317A-41BE-A183-9C8DB05FDE73</string>
-				</dict>
-				<dict>
-					<key>Disabled</key>
-					<true/>
-					<key>Hidden</key>
-					<true/>
-					<key>Ignore</key>
-					<true/>
-					<key>NoCaches</key>
-					<false/>
-					<key>Title</key>
-					<string>Storage</string>
-					<key>Type</key>
-					<string>Other</string>
-					<key>Volume</key>
-					<string>327D76A0-3F8D-49EF-BA20-C80E7CB7D47B</string>
-				</dict>
-				<dict>
-					<key>Disabled</key>
-					<true/>
-					<key>Hidden</key>
-					<true/>
-					<key>Ignore</key>
-					<true/>
-					<key>NoCaches</key>
-					<false/>
-					<key>Title</key>
-					<string>Microsoft EFI</string>
-					<key>Type</key>
-					<string>Other</string>
-					<key>Volume</key>
-					<string>9E898420-09BD-4D25-B7DE-C94984E5B174</string>
-				</dict>
-			</array>
+			<array/>
 		</dict>
 		<key>Mouse</key>
 		<dict>
@@ -378,7 +299,7 @@
 			<false/>
 		</dict>
 		<key>ig-platform-id</key>
-		<string>0x19120001</string>
+		<string></string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
