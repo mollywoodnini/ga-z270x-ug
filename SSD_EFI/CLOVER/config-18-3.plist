@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Mojave Installed Config</string>
+	<string>18,3 Mojave Installed Config</string>
 	<key>ACPI</key>
 	<dict>
 		<key>DSDT</key>
@@ -22,9 +22,11 @@
 				<true/>
 				<key>FixHDA</key>
 				<true/>
+				<key>#FixHPET</key>
+				<true/>
 				<key>FixIPIC</key>
 				<true/>
-				<key>FixRTC</key>
+				<key>#FixRTC</key>
 				<true/>
 				<key>FixTMR</key>
 				<true/>
@@ -117,27 +119,27 @@
 				<key>ATI</key>
 				<true/>
 				<key>Firewire</key>
-				<false/>
+				<true/>
 				<key>HDA</key>
-				<false/>
+				<true/>
 				<key>HDMI</key>
-				<false/>
+				<true/>
 				<key>IDE</key>
-				<false/>
+				<true/>
 				<key>IntelGFX</key>
-				<false/>
+				<true/>
 				<key>LAN</key>
-				<false/>
+				<true/>
 				<key>LPC</key>
-				<false/>
+				<true/>
 				<key>NVidia</key>
 				<true/>
 				<key>SATA</key>
-				<false/>
+				<true/>
 				<key>SmBUS</key>
-				<false/>
+				<true/>
 				<key>USB</key>
-				<false/>
+				<true/>
 				<key>WIFI</key>
 				<true/>
 			</dict>
@@ -160,11 +162,15 @@
 		</dict>
 		<key>RenameDevices</key>
 		<dict>
-			<key>#_SB.PCI0.RP08.PXSX</key>
+			<key>_SB.PCI0.RP08.PXSX</key>
 			<string>ARPT</string>
 		</dict>
 		<key>DropTables</key>
 		<array>
+			<dict>
+				<key>Signature</key>
+				<string>BGRT</string>
+			</dict>
 			<dict>
 				<key>Signature</key>
 				<string>DBG2</string>
@@ -185,7 +191,85 @@
 				<key>Signature</key>
 				<string>MATS</string>
 			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>FACP</string>
+			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>FACS</string>
+			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>FIDT</string>
+			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>FPDT</string>
+			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>MCFG</string>
+			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>LPIT</string>
+			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>HPET</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>Cpu0Ist</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>ApIst</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>Cpu0Cst</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>ApCst</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>Cpu0Hwp</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>ApHwp</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>CpuSsdt</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>CpuPm</string>
+			</dict>
 		</array>
+		<key>DisableASPM</key>
+		<false/>
 		<key>AutoMerge</key>
 		<true/>
 		<key>HaltEnabler</key>
@@ -196,7 +280,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0</string>
+		<string>dart=0 -wegbeta igfxrst=1 -rad24 -v</string>
 		<key>#CustomLogo</key>
 		<string>Apple</string>
 		<key>Debug</key>
@@ -257,17 +341,96 @@
 	</dict>
 	<key>GUI</key>
 	<dict>
+		<key>Custom</key>
+		<dict>
+			<key>Entries</key>
+			<array>
+				<dict>
+					<key>Disabled</key>
+					<false/>
+					<key>Hidden</key>
+					<true/>
+					<key>Ignore</key>
+					<false/>
+					<key>NoCaches</key>
+					<false/>
+					<key>Title</key>
+					<string>MacData</string>
+					<key>Type</key>
+					<string>Other</string>
+					<key>Volume</key>
+					<string>44E9EF58-2BBD-4FB4-A625-5D2825B9CEA1</string>
+					<key>VolumeType</key>
+					<string>Internal</string>
+				</dict>
+				<dict>
+					<key>Disabled</key>
+					<false/>
+					<key>Hidden</key>
+					<true/>
+					<key>Ignore</key>
+					<false/>
+					<key>NoCaches</key>
+					<false/>
+					<key>Title</key>
+					<string>Storage</string>
+					<key>Type</key>
+					<string>Other</string>
+					<key>Volume</key>
+					<string>E108CD18-A54F-471F-B985-D6F0306AF6F3</string>
+					<key>VolumeType</key>
+					<string>Internal</string>
+				</dict>
+				<dict>
+					<key>Disabled</key>
+					<false/>
+					<key>Hidden</key>
+					<true/>
+					<key>Ignore</key>
+					<false/>
+					<key>NoCaches</key>
+					<false/>
+					<key>Title</key>
+					<string>TimeMachine</string>
+					<key>Type</key>
+					<string>Other</string>
+					<key>Volume</key>
+					<string>2AA13262-A311-48FC-8DF3-33B381F57AB0</string>
+					<key>VolumeType</key>
+					<string>Internal</string>
+				</dict>
+				<dict>
+					<key>Disabled</key>
+					<false/>
+					<key>Hidden</key>
+					<true/>
+					<key>Ignore</key>
+					<false/>
+					<key>Title</key>
+					<string>Windows</string>
+					<key>Type</key>
+					<string>Windows</string>
+					<key>Volume</key>
+					<string>9E898420-09BD-4D25-B7DE-C94984E5B174</string>
+					<key>VolumeType</key>
+					<string>Internal</string>
+				</dict>
+			</array>
+		</dict>
+		<key>Hide</key>
+		<array>
+			<string>Microsoft EFI Boot</string>
+		</array>
 		<key>Scan</key>
 		<dict>
 			<key>Entries</key>
 			<true/>
 			<key>Legacy</key>
 			<false/>
-		</dict>
-		<key>Custom</key>
-		<dict>
-			<key>Entries</key>
-			<array/>
+			<key>Linux</key>
+			<false/>
+			<key>Tool</key>
+			<true/>
 		</dict>
 		<key>Mouse</key>
 		<dict>
@@ -294,12 +457,12 @@
 			<key>ATI</key>
 			<false/>
 			<key>Intel</key>
-			<false/>
+			<true/>
 			<key>NVidia</key>
 			<false/>
 		</dict>
 		<key>ig-platform-id</key>
-		<string></string>
+		<string>0x19120001</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
@@ -356,10 +519,10 @@
 		</array>
 		<key>ForceKextsToLoad</key>
 		<array>
-			<string>\System\Library\Extensions\IO80211Family.kext</string>
+			<string>\System\Library\Extensions\IONetworkingFamily.kext</string>
 		</array>
 		<key>AppleRTC</key>
-		<false/>
+		<true/>
 		<key>KernelPm</key>
 		<true/>
 	</dict>
@@ -368,7 +531,7 @@
 		<key>BooterConfig</key>
 		<string>0x28</string>
 		<key>CsrActiveConfig</key>
-		<string>0x67</string>
+		<string>0x3e7</string>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
