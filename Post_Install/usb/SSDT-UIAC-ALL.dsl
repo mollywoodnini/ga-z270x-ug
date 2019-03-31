@@ -31,6 +31,16 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
                         "UsbConnector", 3,
                         "port", Buffer() { 4, 0, 0, 0 },
                     },
+                    //"HS05", Package() //nothing found
+                    //{
+                    //    "UsbConnector", 3,
+                    //    "port", Buffer() { 5, 0, 0, 0 },
+                    //},
+                    //"HS06", Package() //nothing found
+                    //{
+                    //    "UsbConnector", 3,
+                    //    "port", Buffer() { 6, 0, 0, 0 },
+                    //},
                     "HS07", Package() //Board rear middle left 2.0
                     {
                         "UsbConnector", 3,
@@ -91,6 +101,16 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
                         "UsbConnector", 3,
                         "port", Buffer() { 20, 0, 0, 0 },
                     },
+                    //"SS05", Package() //nothing found
+                    //{
+                    //    "UsbConnector", 3,
+                    //    "port", Buffer() { 21, 0, 0, 0 },
+                    //},
+                    //"SS06", Package() //nothing found
+                    //{
+                    //    "UsbConnector", 3,
+                    //    "port", Buffer() { 22, 0, 0, 0 },
+                    //},
                     "SS07", Package() //Board rear middle left 3.0
                     {
                         "UsbConnector", 3,
