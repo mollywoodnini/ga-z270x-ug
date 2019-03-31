@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>Gigabyte Z270X Ultra Gaming USB Config</string>
+	<string>USB Config</string>
 	<key>ACPI</key>
 	<dict>
 		<key>DSDT</key>
@@ -22,9 +22,11 @@
 				<true/>
 				<key>FixHDA</key>
 				<true/>
+				<key>FixHPET</key>
+				<true/>
 				<key>FixIPIC</key>
 				<true/>
-				<key>FixRTC</key>
+				<key>#FixRTC</key>
 				<true/>
 				<key>FixTMR</key>
 				<true/>
@@ -117,27 +119,27 @@
 				<key>ATI</key>
 				<true/>
 				<key>Firewire</key>
-				<false/>
+				<true/>
 				<key>HDA</key>
-				<false/>
+				<true/>
 				<key>HDMI</key>
-				<false/>
+				<true/>
 				<key>IDE</key>
-				<false/>
+				<true/>
 				<key>IntelGFX</key>
-				<false/>
+				<true/>
 				<key>LAN</key>
-				<false/>
+				<true/>
 				<key>LPC</key>
-				<false/>
+				<true/>
 				<key>NVidia</key>
 				<true/>
 				<key>SATA</key>
-				<false/>
+				<true/>
 				<key>SmBUS</key>
-				<false/>
+				<true/>
 				<key>USB</key>
-				<false/>
+				<true/>
 				<key>WIFI</key>
 				<true/>
 			</dict>
@@ -158,8 +160,14 @@
 			<key>DropOem</key>
 			<false/>
 		</dict>
+		<key>RenameDevices</key>
+		<dict/>
 		<key>DropTables</key>
 		<array>
+			<dict>
+				<key>Signature</key>
+				<string>BGRT</string>
+			</dict>
 			<dict>
 				<key>Signature</key>
 				<string>DBG2</string>
@@ -180,7 +188,85 @@
 				<key>Signature</key>
 				<string>MATS</string>
 			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>FACP</string>
+			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>FACS</string>
+			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>FIDT</string>
+			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>FPDT</string>
+			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>MCFG</string>
+			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>LPIT</string>
+			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>HPET</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>Cpu0Ist</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>ApIst</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>Cpu0Cst</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>ApCst</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>Cpu0Hwp</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>ApHwp</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>CpuSsdt</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>CpuPm</string>
+			</dict>
 		</array>
+		<key>DisableASPM</key>
+		<true/>
 		<key>AutoMerge</key>
 		<true/>
 		<key>HaltEnabler</key>
@@ -215,24 +301,11 @@
 	<key>Devices</key>
 	<dict>
 		<key>AddProperties</key>
-		<array>
-			<dict>
-				<key>Device</key>
-				<string>IntelGFX</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Key</key>
-				<string>AAPL,GfxYTile</string>
-				<key>Value</key>
-				<data>CqqqAA==</data>
-			</dict>
-		</array>
+		<array/>
 		<key>Audio</key>
 		<dict>
 			<key>Inject</key>
 			<integer>1</integer>
-			<key>ResetHDA</key>
-			<true/>
 		</dict>
 		<key>FakeID</key>
 		<dict/>
@@ -275,7 +348,7 @@
 			<key>ATI</key>
 			<false/>
 			<key>Intel</key>
-			<true/>
+			<false/>
 			<key>NVidia</key>
 			<false/>
 		</dict>
@@ -290,31 +363,49 @@
 		<array>
 			<dict>
 				<key>Comment</key>
+				<string>Black Screen Patch (board-id) (c) Pike R. Alpha</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>Ym9hcmQtaWQ=</data>
+				<key>Name</key>
+				<string>AppleGraphicsDevicePolicy</string>
+				<key>Replace</key>
+				<data>Ym9hcmQtaXg=</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Black Screen Patch Vega 56/64, RX580 etc. (c)Pike R. Alpha</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>X0RTTQ==</data>
+				<key>Name</key>
+				<string>AppleGraphicsDevicePolicy</string>
+				<key>Replace</key>
+				<data>WERTTQ==</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Enable TRIM for SSD</string>
+				<key>Name</key>
+				<string>com.apple.iokit.IOAHCIBlockStorage</string>
+				<key>Find</key>
+				<data>AEFQUExFIFNTRAA=</data>
+				<key>Replace</key>
+				<data>AAAAAAAAAAAAAAA=</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>External Drives as Internal to fix Orange Icons</string>
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
 				<data>RXh0ZXJuYWw=</data>
-				<key>InfoPlistPatch</key>
-				<false/>
 				<key>Name</key>
 				<string>AppleAHCIPort</string>
 				<key>Replace</key>
 				<data>SW50ZXJuYWw=</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>(c)Pike R. Alpha</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>Ym9hcmQtaWQ=</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>Name</key>
-				<string>AppleGraphicsDevicePolicy</string>
-				<key>Replace</key>
-				<data>Ym9hcmQtaXg=</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -332,21 +423,25 @@
 				<key>Replace</key>
 				<data>g32ID5CQkJCQkA==</data>
 			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Prevent AppleRTC CMOS Reset (Mojave 14.4 ONLY)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>dTMPtw==</data>
+				<key>MatchOS</key>
+				<string>10.14.4</string>
+				<key>Name</key>
+				<string>com.apple.driver.AppleRTC</string>
+				<key>Replace</key>
+				<data>6zMPtw==</data>
+			</dict>
 		</array>
-		<key>AppleIntelCPUPM</key>
-		<false/>
 		<key>AppleRTC</key>
 		<true/>
-		<key>Debug</key>
-		<false/>
-		<key>KernelCpu</key>
-		<false/>
-		<key>KernelLapic</key>
-		<false/>
 		<key>KernelPm</key>
 		<true/>
-		<key>KernelXCPM</key>
-		<false/>
 	</dict>
 	<key>RtVariables</key>
 	<dict>
@@ -357,12 +452,8 @@
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
-		<key>Family</key>
-		<string>iMac17,1</string>
 		<key>ProductName</key>
 		<string>iMac17,1</string>
-		<key>Use Clover Config</key>
-		<string>Generate an SMBIOS</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>

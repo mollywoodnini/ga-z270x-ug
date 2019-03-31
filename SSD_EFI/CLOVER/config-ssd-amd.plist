@@ -442,7 +442,7 @@
 				<key>Comment</key>
 				<string>Prevent AppleRTC CMOS Reset (Mojave 14.4 ONLY)</string>
 				<key>Disabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>dTMPtw==</data>
 				<key>MatchOS</key>
