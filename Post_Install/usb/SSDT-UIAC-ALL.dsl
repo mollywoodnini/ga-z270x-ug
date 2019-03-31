@@ -41,12 +41,12 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
                     //    "UsbConnector", 3,
                     //    "port", Buffer() { 4, 0, 0, 0 },
                     //},
-                    //"HS05", Package() //nothing found
+                    //"HS05", Package() //DO NOT KNOW
                     //{
                     //    "UsbConnector", 3,
                     //    "port", Buffer() { 5, 0, 0, 0 },
                     //},
-                    //"HS06", Package() //nothing found
+                    //"HS06", Package() //DO NOT KNOW
                     //{
                     //    "UsbConnector", 3,
                     //    "port", Buffer() { 6, 0, 0, 0 },
@@ -71,17 +71,17 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
                         "UsbConnector", 0,
                         "port", Buffer() { 10, 0, 0, 0 },
                     },
-                    //"HS11", Package() //case top 2.0 removed
-                    //{
-                    //    "UsbConnector", 0,
-                    //    "port", Buffer() { 11, 0, 0, 0 },
-                    //},
-                    //"HS12", Package() //case top 2.0 removed
+                    "HS11", Package() //Internal bottom for NZXT Hue
+                    {
+                        "UsbConnector", 0,
+                        "port", Buffer() { 11, 0, 0, 0 },
+                    },
+                    //"HS12", Package() //DO NOT KNOW
                     //{
                     //    "UsbConnector", 0,
                     //    "port", Buffer() { 12, 0, 0, 0 },
                     //},
-                    //"HS13", Package() //idk what this one is
+                    //"HS13", Package() //DO NOT KNOW
                     //{
                     //   "UsbConnector", 255,
                     //    "port", Buffer() { 13, 0, 0, 0 },
