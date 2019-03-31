@@ -1,3 +1,11 @@
+// This board contains two (2) USB DAC ports that function as 2.0 and 3.0 ports.
+// The USB DAC converts digital audio signals from the computer to analog signals
+// for the amplifiers and speakers. Although an analog connection can be made via
+// the outputs on the computer's sound card (the colored 3.5mm audio jacks), external
+// USB DAC does provide superior conversion and better sound quality. Most noticable
+// is the reduction of interference and static noise. These ports also have custom
+// voltage control. You can disable one of these if you do not use it as a standard.
+
 DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
 {
     Device(UIAC)
