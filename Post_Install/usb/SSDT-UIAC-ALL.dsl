@@ -5,6 +5,8 @@
 // USB DAC does provide superior conversion and better sound quality. Most noticable
 // is the reduction of interference and static noise. These ports also have custom
 // voltage control. You can disable one of these if you do not use it as a standard.
+// One of them, HS04/SS04, is disabled already by commenting out.
+
 
 DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
 {
@@ -19,26 +21,26 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
                 "port-count", Buffer() { 26, 0, 0, 0 },
                 "ports", Package()
                 {
-                    "HS01", Package() //case top left 2.0 - DAC
+                    "HS01", Package() //case top left 2.0
                     {
                         "UsbConnector", 3,
                         "port", Buffer() { 1, 0, 0, 0 },
                     },
-                    //"HS02", Package() //case top right 2.0 - DAC
-                    //{
-                    //    "UsbConnector", 3,
-                    //    "port", Buffer() { 2, 0, 0, 0 },
-                    //},
-                    "HS03", Package() //Board rear top left 2.0
+                    "HS02", Package() //case top right 2.0
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 2, 0, 0, 0 },
+                    },
+                    "HS03", Package() //Board rear top left 2.0 - DAC Audio
                     {
                         "UsbConnector", 3,
                         "port", Buffer() { 3, 0, 0, 0 },
                     },
-                    "HS04", Package() //Board rear top right 2.0
-                    {
-                        "UsbConnector", 3,
-                        "port", Buffer() { 4, 0, 0, 0 },
-                    },
+                    //"HS04", Package() //Board rear top right 2.0 - DAC Audio
+                    //{
+                    //    "UsbConnector", 3,
+                    //    "port", Buffer() { 4, 0, 0, 0 },
+                    //},
                     //"HS05", Package() //nothing found
                     //{
                     //    "UsbConnector", 3,
@@ -79,36 +81,36 @@ DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
                     //    "UsbConnector", 0,
                     //    "port", Buffer() { 12, 0, 0, 0 },
                     //},
-                    "HS13", Package() //Internal bottom for NXZT Hue
-                    {
-                        "UsbConnector", 255,
-                        "port", Buffer() { 13, 0, 0, 0 },
-                    },
+                    //"HS13", Package() //idk what this one is
+                    //{
+                    //   "UsbConnector", 255,
+                    //    "port", Buffer() { 13, 0, 0, 0 },
+                    //},
                     "HS14", Package() //Internal bottom for NZXT Kraken
                     {
                         "UsbConnector", 255,
                         "port", Buffer() { 14, 0, 0, 0 },
                     },
-                    "SS01", Package() //case top left 3.0 - DAC
+                    "SS01", Package() //case top left 3.0
                     {
                         "UsbConnector", 3,
                         "port", Buffer() { 17, 0, 0, 0 },
                     },
-                    //"SS02", Package() //case top right 3.0 - DAC
-                    //{
-                    //    "UsbConnector", 3,
-                    //    "port", Buffer() { 18, 0, 0, 0 },
-                    //},
-                    "SS03", Package() //Board rear top left 3.0
+                    "SS02", Package() //case top right 3.0
+                    {
+                        "UsbConnector", 3,
+                        "port", Buffer() { 18, 0, 0, 0 },
+                    },
+                    "SS03", Package() //Board rear top left 3.0 - DAC Audio
                     {
                         "UsbConnector", 3,
                         "port", Buffer() { 19, 0, 0, 0 },
                     },
-                    "SS04", Package() //Board rear top right 3.0
-                    {
-                        "UsbConnector", 3,
-                        "port", Buffer() { 20, 0, 0, 0 },
-                    },
+                    //"SS04", Package() //Board rear top right 3.0 - DAC Audio
+                    //{
+                    //    "UsbConnector", 3,
+                    //    "port", Buffer() { 20, 0, 0, 0 },
+                    //},
                     //"SS05", Package() //nothing found
                     //{
                     //    "UsbConnector", 3,
