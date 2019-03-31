@@ -22,9 +22,11 @@
 				<true/>
 				<key>FixHDA</key>
 				<true/>
+				<key>FixHPET</key>
+				<true/>
 				<key>FixIPIC</key>
 				<true/>
-				<key>FixRTC</key>
+				<key>#FixRTC</key>
 				<true/>
 				<key>FixTMR</key>
 				<true/>
@@ -117,27 +119,27 @@
 				<key>ATI</key>
 				<true/>
 				<key>Firewire</key>
-				<false/>
+				<true/>
 				<key>HDA</key>
-				<false/>
+				<true/>
 				<key>HDMI</key>
-				<false/>
+				<true/>
 				<key>IDE</key>
-				<false/>
+				<true/>
 				<key>IntelGFX</key>
-				<false/>
+				<true/>
 				<key>LAN</key>
-				<false/>
+				<true/>
 				<key>LPC</key>
-				<false/>
+				<true/>
 				<key>NVidia</key>
 				<true/>
 				<key>SATA</key>
-				<false/>
+				<true/>
 				<key>SmBUS</key>
-				<false/>
+				<true/>
 				<key>USB</key>
-				<false/>
+				<true/>
 				<key>WIFI</key>
 				<true/>
 			</dict>
@@ -158,8 +160,14 @@
 			<key>DropOem</key>
 			<false/>
 		</dict>
+		<key>RenameDevices</key>
+		<dict/>
 		<key>DropTables</key>
 		<array>
+			<dict>
+				<key>Signature</key>
+				<string>BGRT</string>
+			</dict>
 			<dict>
 				<key>Signature</key>
 				<string>DBG2</string>
@@ -180,7 +188,85 @@
 				<key>Signature</key>
 				<string>MATS</string>
 			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>FACP</string>
+			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>FACS</string>
+			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>FIDT</string>
+			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>FPDT</string>
+			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>MCFG</string>
+			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>LPIT</string>
+			</dict>
+			<dict>
+				<key>#Signature</key>
+				<string>HPET</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>Cpu0Ist</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>ApIst</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>Cpu0Cst</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>ApCst</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>Cpu0Hwp</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>ApHwp</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>CpuSsdt</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>CpuPm</string>
+			</dict>
 		</array>
+		<key>DisableASPM</key>
+		<true/>
 		<key>AutoMerge</key>
 		<true/>
 		<key>HaltEnabler</key>
@@ -220,7 +306,7 @@
 				<key>Device</key>
 				<string>IntelGFX</string>
 				<key>Disabled</key>
-				<true/>
+				<false/>
 				<key>Key</key>
 				<string>AAPL,GfxYTile</string>
 				<key>Value</key>
@@ -250,18 +336,6 @@
 	</dict>
 	<key>GUI</key>
 	<dict>
-		<key>Scan</key>
-		<dict>
-			<key>Entries</key>
-			<true/>
-			<key>Legacy</key>
-			<false/>
-		</dict>
-		<key>Custom</key>
-		<dict>
-			<key>Entries</key>
-			<array/>
-		</dict>
 		<key>Mouse</key>
 		<dict>
 			<key>DoubleClick</key>
@@ -294,7 +368,7 @@
 		<key>NvidiaSingle</key>
 		<false/>
 		<key>ig-platform-id</key>
-		<string></string>
+		<string>0x00000000</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
@@ -323,20 +397,6 @@
 				<string>AppleGraphicsDevicePolicy</string>
 				<key>Replace</key>
 				<data>WERTTQ==</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Disable nvdarequiredos</string>
-				<key>Name</key>
-				<string>NVDAStartupWeb</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>TlZEQVJlcXVpcmVkT1MA</data>
-				<key>Replace</key>
-				<data>AAAAAAAAAAAAAAAAAAAA</data>
-				<key>InfoPlistPatch</key>
-				<false/>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -378,33 +438,39 @@
 				<key>Replace</key>
 				<data>g32ID5CQkJCQkA==</data>
 			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Prevent AppleRTC CMOS Reset (Mojave 14.4 ONLY)</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>dTMPtw==</data>
+				<key>MatchOS</key>
+				<string>10.14.4</string>
+				<key>Name</key>
+				<string>com.apple.driver.AppleRTC</string>
+				<key>Replace</key>
+				<data>6zMPtw==</data>
+			</dict>
 		</array>
-		<key>AppleIntelCPUPM</key>
-		<false/>
+		<key>ForceKextsToLoad</key>
+		<array>
+			<string>\System\Library\Extensions\IO80211Family.kext</string>
+		</array>
 		<key>AppleRTC</key>
-		<false/>
-		<key>Debug</key>
-		<false/>
-		<key>KernelCpu</key>
-		<false/>
-		<key>KernelLapic</key>
-		<false/>
+		<true/>
 		<key>KernelPm</key>
 		<true/>
-		<key>KernelXCPM</key>
-		<false/>
 	</dict>
 	<key>RtVariables</key>
 	<dict>
 		<key>BooterConfig</key>
 		<string>0x28</string>
 		<key>CsrActiveConfig</key>
-		<string>0x67</string>
+		<string>0x3e7</string>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
-		<key>Family</key>
-		<string>iMac17,1</string>
 		<key>ProductName</key>
 		<string>iMac17,1</string>
 	</dict>

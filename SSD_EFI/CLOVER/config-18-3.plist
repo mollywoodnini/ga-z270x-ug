@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Comment</key>
-	<string>18,3 Mojave Installed Config</string>
+	<string>18,3 Mojave Installed Config (this is the current config I use)</string>
 	<key>ACPI</key>
 	<dict>
 		<key>DSDT</key>
@@ -22,7 +22,7 @@
 				<true/>
 				<key>FixHDA</key>
 				<true/>
-				<key>#FixHPET</key>
+				<key>FixHPET</key>
 				<true/>
 				<key>FixIPIC</key>
 				<true/>
@@ -269,7 +269,7 @@
 			</dict>
 		</array>
 		<key>DisableASPM</key>
-		<false/>
+		<true/>
 		<key>AutoMerge</key>
 		<true/>
 		<key>HaltEnabler</key>
@@ -280,7 +280,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 -wegbeta igfxrst=1 -rad24 -v</string>
+		<string>dart=0 -wegbeta -radbeta igfxrst=1 -rad24 shikigva=4</string>
 		<key>#CustomLogo</key>
 		<string>Apple</string>
 		<key>Debug</key>
@@ -288,13 +288,13 @@
 		<key>DefaultLoader</key>
 		<string>boot.efi</string>
 		<key>DefaultVolume</key>
-		<string>LastBootedVolume</string>
+		<string>MacSSD</string>
 		<key>#Legacy</key>
 		<string>PBR</string>
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
-		<integer>3</integer>
+		<integer>0</integer>
 		<key>XMPDetection</key>
 		<string>Yes</string>
 	</dict>
@@ -311,7 +311,7 @@
 				<key>Device</key>
 				<string>IntelGFX</string>
 				<key>Disabled</key>
-				<true/>
+				<false/>
 				<key>Key</key>
 				<string>AAPL,GfxYTile</string>
 				<key>Value</key>
@@ -356,8 +356,6 @@
 					<false/>
 					<key>Title</key>
 					<string>MacData</string>
-					<key>Type</key>
-					<string>Other</string>
 					<key>Volume</key>
 					<string>44E9EF58-2BBD-4FB4-A625-5D2825B9CEA1</string>
 					<key>VolumeType</key>
@@ -374,8 +372,6 @@
 					<false/>
 					<key>Title</key>
 					<string>Storage</string>
-					<key>Type</key>
-					<string>Other</string>
 					<key>Volume</key>
 					<string>E108CD18-A54F-471F-B985-D6F0306AF6F3</string>
 					<key>VolumeType</key>
@@ -392,8 +388,6 @@
 					<false/>
 					<key>Title</key>
 					<string>TimeMachine</string>
-					<key>Type</key>
-					<string>Other</string>
 					<key>Volume</key>
 					<string>2AA13262-A311-48FC-8DF3-33B381F57AB0</string>
 					<key>VolumeType</key>
@@ -484,7 +478,7 @@
 				<key>Comment</key>
 				<string>Black Screen Patch Vega 56/64, RX580 etc. (c)Pike R. Alpha</string>
 				<key>Disabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>X0RTTQ==</data>
 				<key>Name</key>
@@ -509,12 +503,24 @@
 				<false/>
 				<key>Find</key>
 				<data>RXh0ZXJuYWw=</data>
-				<key>InfoPlistPatch</key>
-				<false/>
 				<key>Name</key>
 				<string>AppleAHCIPort</string>
 				<key>Replace</key>
 				<data>SW50ZXJuYWw=</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Prevent AppleRTC CMOS Reset (Mojave 14.4 ONLY)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>dTMPtw==</data>
+				<key>MatchOS</key>
+				<string>10.14.4</string>
+				<key>Name</key>
+				<string>com.apple.driver.AppleRTC</string>
+				<key>Replace</key>
+				<data>6zMPtw==</data>
 			</dict>
 		</array>
 		<key>ForceKextsToLoad</key>
@@ -535,12 +541,8 @@
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
-		<key>Family</key>
-		<string>iMac</string>
 		<key>ProductName</key>
 		<string>iMac18,3</string>
-		<key>Trust</key>
-		<true/>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
