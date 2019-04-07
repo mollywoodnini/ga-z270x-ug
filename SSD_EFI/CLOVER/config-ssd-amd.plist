@@ -277,7 +277,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 -wegbeta -radbeta igfxrst=1 -rad24 shikigva=4</string>
+		<string>dart=0 -wegbeta -radbeta igfxrst=1 -rad24 shikigva=4 -hbfx-dump-nvram</string>
 		<key>#CustomLogo</key>
 		<string>Apple</string>
 		<key>Debug</key>
