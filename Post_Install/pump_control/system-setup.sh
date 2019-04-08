@@ -1,15 +1,24 @@
 #!/bin/bash
-# We need super user (root) access to write to /Library. If not or can't be given, setup can't complete.
+# This script will setup the automation process of python program liquidctl on macOS.
+# You should have already installed both Python 3 and Liquidctl before using this file.
+# Startup is on a system basis before any user logs in. Specifically, it runs when you
+# see the login / users screen.
+# Liquidctl works on El Capitan .11.x, Sierra .12.x, High Sierra .13.x, and Mojave .14.x
+# Though all of these users are running a hackintosh setup.
+# Make this initial file executable by opening terminal and typing: chmod +x /path/to/system-setup.sh
+# Now you can run this script to configure startup.
+
+
+# We need super user (root) access to write to /Library.
+# If not or can't be given, setup can't complete.
 (( EUID != 0 )) && exec sudo -- "$0" "$@"
 
-# Check for the existance of Python 3.
+# Check for the existance of Python 3
 if [ -d /Library/Frameworks/Python.framework/Versions/3.7 ]; then
 [ "$(ls -A /Library/Frameworks/Python.framework/Versions/3.7)" ] && echo "Python 3 is installed"
 else
  echo "Error: Python 3 is not installed. Setup cannot complete!" && exit
 fi
-
-# Hackintosh users have so far reported liquidctl works on El Capitan .11.x, Sierra .12.x, High Sierra .13.x, and Mojave .14.x
 
 echo "Create settings file at /usr/local/share/LiquidCfg.sh."
 
@@ -17,9 +26,10 @@ echo "Create settings file at /usr/local/share/LiquidCfg.sh."
 cat > /usr/local/share/LiquidCfg.sh << EOF
 #!/bin/bash
 # Location: /usr/local/share/LiquidCfg.sh
-# You can use this file to modify how the liquidctl will configre devices upon startup.
+# You can use this file to modify how liquidctl will configure devices upon startup.
 # Kraken defaults to liquid temperature. These settings reflect those based off defaults from CAM.
-# The lines below are examples of controlling the Kraken X series. If you have more devices see the README files from GitHub
+# If you have more than one device, you need to specify which device each command is targeting.
+# The lines below are examples of controlling the Kraken X series.
 
 liquidctl set fan speed 25 35  30 45  35 60  40 70  45 80  50 90  60 100 -d 0
 liquidctl set pump speed 20 60  35 100 -d 0
@@ -65,11 +75,14 @@ EOF
 
 echo "Add to system startup."
 
-# add to startup
+# Add to startup
 launchctl load /Library/LaunchDaemons/liquidctl.plist
 
-# run script to indicate success
-/usr/local/share/LiquidCfg.sh
+# Run script to indicate success
+# /usr/local/share/LiquidCfg.sh
+
+# Create a quick alias link in documents
+ln -s /usr/local/share/LiquidCfg.sh ~/Documents/Edit\ liquidctl
 
 echo "Setup complete!"
 
