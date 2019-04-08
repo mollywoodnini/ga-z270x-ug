@@ -9,12 +9,14 @@ else
  echo "Error: Python 3 is not installed. Setup cannot complete!" && exit
 fi
 
-echo "Create settings file at /usr/share/LiquidCfg.sh."
+# Hackintosh users have so far reported liquidctl works on El Capitan .11.x, Sierra .12.x, High Sierra .13.x, and Mojave .14.x
+
+echo "Create settings file at /usr/local/share/LiquidCfg.sh."
 
 # Create settings file in an open directory available to everyone and system.
-cat > /usr/share/LiquidCfg.sh << EOF
+cat > /usr/local/share/LiquidCfg.sh << EOF
 #!/bin/bash
-# Location: /usr/share/LiquidCfg.sh
+# Location: /usr/local/share/LiquidCfg.sh
 # You can use this file to modify how the liquidctl will configre devices upon startup.
 # Kraken defaults to liquid temperature. These settings reflect those based off defaults from CAM.
 # The lines below are examples of controlling the Kraken X series. If you have more devices see the README files from GitHub
@@ -29,7 +31,7 @@ EOF
 echo "Make Settings file executable and editable."
 
 # Make executable and editable otherwise it is locked due to elevated terminal creating it.
-chmod 777 /usr/share/LiquidCfg.sh
+chmod 777 /usr/local/share/LiquidCfg.sh
 
 echo "Create startup file at /Library/LaunchDaemons."
 
@@ -49,7 +51,7 @@ cat > /Library/LaunchDaemons/liquidctl.plist << EOF
 	</dict>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/usr/share/LiquidCfg.sh</string>
+		<string>/usr/local/share/LiquidCfg.sh</string>
 	</array>
 	<key>Label</key>
 	<string>liquidctl</string>
@@ -72,4 +74,4 @@ launchctl load /Library/LaunchDaemons/liquidctl.plist
 echo "Setup complete!"
 
 # Open settings file for user to edit
-open -a "TextEdit" /usr/share/LiquidCfg.sh
+open -a "TextEdit" /usr/local/share/LiquidCfg.sh
