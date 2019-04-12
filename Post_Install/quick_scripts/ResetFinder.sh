@@ -3,4 +3,4 @@
 # Reset Finder
 killall Finder
 rm -rf /Users/chase/Library/Caches/com.apple.finder/*
-rm /Users/chase/Library/Preferences/com.apple.finder.plist
+rm /Users/chase/Library/Preferences/com.apple.finder.*
