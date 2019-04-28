@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>KernelAndKextPatches</key>
+	<dict>
+		<key>KextsToPatch</key>
+		<array>
+			<dict>
+				<key>Comment</key>
+				<string>USB 10.13.6 by PMHeart</string>
+				<key>Name</key>
+				<string>com.apple.driver.usb.AppleUSBXHCI</string>
+				<key>Find</key>
+				<data>g32IDw+DpwQAAA==</data>
+				<key>Replace</key>
+				<data>g32ID5CQkJCQkA==</data>
+				<key>MatchOS</key>
+				<string>10.13.6</string>
+				<key>Disabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>USB 10.14.0 by PMHeart</string>
+				<key>Name</key>
+				<string>com.apple.driver.usb.AppleUSBXHCI</string>
+				<key>Find</key>
+				<data>g/sPD4MDBQAA</data>
+				<key>Replace</key>
+				<data>g/sPkJCQkJCQ</data>
+				<key>MatchOS</key>
+				<string>10.14.0</string>
+				<key>Disabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>USB 10.14.1 by PMHeart</string>
+				<key>Name</key>
+				<string>com.apple.driver.usb.AppleUSBXHCI</string>
+				<key>Find</key>
+				<data>g/sPD4OPBAAA</data>
+				<key>Replace</key>
+				<data>g/sPkJCQkJCQ</data>
+				<key>MatchOS</key>
+				<string>10.14.1</string>
+				<key>Disabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>USB 10.14.2 by PMHeart</string>
+				<key>Name</key>
+				<string>com.apple.driver.usb.AppleUSBXHCI</string>
+				<key>Find</key>
+				<data>g/sPD4OPBAAA</data>
+				<key>Replace</key>
+				<data>g/sPkJCQkJCQ</data>
+				<key>MatchOS</key>
+				<string>10.14.2</string>
+				<key>Disabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>USB 10.14.3 by PMHeart</string>
+				<key>Name</key>
+				<string>com.apple.driver.usb.AppleUSBXHCI</string>
+				<key>Find</key>
+				<data>g/sPD4MDBAAA</data>
+				<key>Replace</key>
+				<data>g/sPkJCQkJCQ</data>
+				<key>MatchOS</key>
+				<string>10.14.3</string>
+				<key>Disabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>1of3 USB 10.14.4 by PMHeart</string>
+				<key>Name</key>
+				<string>com.apple.driver.usb.AppleUSBXHCI</string>
+				<key>Find</key>
+				<data>QYP/Dw+DlAQAAA==</data>
+				<key>Replace</key>
+				<data>QYP/Pw+DlAQAAA==</data>
+				<key>MatchOS</key>
+				<string>10.14.4</string>
+				<key>Disabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>2of3 USB 10.14.4 by PMHeart</string>
+				<key>Name</key>
+				<string>com.apple.iokit.IOUSBHostFamily</string>
+				<key>Find</key>
+				<data>g/sPD4cLBAAA</data>
+				<key>Replace</key>
+				<data>g/s/D4cLBAAA</data>
+				<key>MatchOS</key>
+				<string>10.14.4</string>
+				<key>Disabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>3of3 USB 10.14.4 by PMHeart</string>
+				<key>Name</key>
+				<string>com.apple.iokit.IOUSBHostFamily</string>
+				<key>Find</key>
+				<data>g+MP0+NBCd8=</data>
+				<key>Replace</key>
+				<data>g+M/0+NBCd8=</data>
+				<key>MatchOS</key>
+				<string>10.14.4</string>
+				<key>Disabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Prevent AppleRTC CMOS Reset (Mojave 14.4 ONLY)</string>
+				<key>Name</key>
+				<string>com.apple.driver.AppleRTC</string>
+				<key>Find</key>
+				<data>dTMPtw==</data>
+				<key>Replace</key>
+				<data>6zMPtw==</data>
+				<key>MatchOS</key>
+				<string>10.14.4</string>
+				<key>Disabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Black Screen Patch (board-id) (c) Pike R. Alpha</string>
+				<key>Name</key>
+				<string>AppleGraphicsDevicePolicy</string>
+				<key>Find</key>
+				<data>Ym9hcmQtaWQ=</data>
+				<key>Replace</key>
+				<data>Ym9hcmQtaXg=</data>
+				<key>Disabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Black Screen Patch Vega 56/64, RX580 etc. (c)Pike R. Alpha</string>
+				<key>Name</key>
+				<string>AppleGraphicsDevicePolicy</string>
+				<key>Find</key>
+				<data>X0RTTQ==</data>
+				<key>Replace</key>
+				<data>WERTTQ==</data>
+				<key>Disabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Disable nvdarequiredos</string>
+				<key>Name</key>
+				<string>NVDAStartupWeb</string>
+				<key>Find</key>
+				<data>TlZEQVJlcXVpcmVkT1MA</data>
+				<key>Replace</key>
+				<data>AAAAAAAAAAAAAAAAAAAA</data>
+				<key>Disabled</key>
+				<false/>
+				<key>InfoPlistPatch</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+</dict>
+</plist>
