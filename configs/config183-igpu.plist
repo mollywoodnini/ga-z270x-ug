@@ -131,7 +131,7 @@
 			<key>DropOem</key>
 			<false/>
 		</dict>
-		<key>RenameDevices</key>
+		<key>#RenameDevices</key>
 		<dict>
 			<key>_SB.PCI0.RP03.PXSX</key>
 			<string>ARPT</string>
@@ -315,77 +315,10 @@
 		<key>Custom</key>
 		<dict>
 			<key>Entries</key>
-			<array>
-				<dict>
-					<key>Disabled</key>
-					<false/>
-					<key>Hidden</key>
-					<true/>
-					<key>Ignore</key>
-					<false/>
-					<key>NoCaches</key>
-					<false/>
-					<key>Title</key>
-					<string>MacData</string>
-					<key>Volume</key>
-					<string>44E9EF58-2BBD-4FB4-A625-5D2825B9CEA1</string>
-					<key>VolumeType</key>
-					<string>Internal</string>
-				</dict>
-				<dict>
-					<key>Disabled</key>
-					<false/>
-					<key>Hidden</key>
-					<true/>
-					<key>Ignore</key>
-					<false/>
-					<key>NoCaches</key>
-					<false/>
-					<key>Title</key>
-					<string>Storage</string>
-					<key>Volume</key>
-					<string>E108CD18-A54F-471F-B985-D6F0306AF6F3</string>
-					<key>VolumeType</key>
-					<string>Internal</string>
-				</dict>
-				<dict>
-					<key>Disabled</key>
-					<false/>
-					<key>Hidden</key>
-					<true/>
-					<key>Ignore</key>
-					<false/>
-					<key>NoCaches</key>
-					<false/>
-					<key>Title</key>
-					<string>TimeMachine</string>
-					<key>Volume</key>
-					<string>2AA13262-A311-48FC-8DF3-33B381F57AB0</string>
-					<key>VolumeType</key>
-					<string>Internal</string>
-				</dict>
-				<dict>
-					<key>Disabled</key>
-					<false/>
-					<key>Hidden</key>
-					<true/>
-					<key>Ignore</key>
-					<false/>
-					<key>Title</key>
-					<string>Windows</string>
-					<key>Type</key>
-					<string>Windows</string>
-					<key>Volume</key>
-					<string>9E898420-09BD-4D25-B7DE-C94984E5B174</string>
-					<key>VolumeType</key>
-					<string>Internal</string>
-				</dict>
-			</array>
+			<array/>
 		</dict>
 		<key>Hide</key>
-		<array>
-			<string>Microsoft EFI Boot</string>
-		</array>
+		<array/>
 		<key>Scan</key>
 		<dict>
 			<key>Entries</key>
