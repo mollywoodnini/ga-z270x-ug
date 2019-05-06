@@ -22,12 +22,12 @@
 				<true/>
 				<key>FixHDA</key>
 				<true/>
-				<key>FixHPET</key>
-				<true/>
+				<key>#FixHPET</key>
+				<false/>
 				<key>FixIPIC</key>
 				<true/>
-				<key>FixRTC</key>
-				<true/>
+				<key>#FixRTC</key>
+				<false/>
 				<key>FixTMR</key>
 				<true/>
 			</dict>
@@ -187,7 +187,7 @@
 				<string>LPIT</string>
 			</dict>
 			<dict>
-				<key>#Signature</key>
+				<key>Signature</key>
 				<string>HPET</string>
 			</dict>
 			<dict>
@@ -394,7 +394,7 @@
 			<string>\System\Library\Extensions\IONetworkingFamily.kext</string>
 		</array>
 		<key>AppleRTC</key>
-		<true/>
+		<false/>
 		<key>KernelPm</key>
 		<true/>
 	</dict>
