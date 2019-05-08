@@ -1,11 +1,12 @@
 #!/bin/bash
 # This script will setup the automation process of python program liquidctl on macOS.
-# You should have already installed both Python 3 and Liquidctl before using this file.
+# You should have already installed Python 3, homebrew and the formulae libusb, and
+# of course liquidctl before using this file.
 # Startup is on a system basis before any user logs in. Specifically, it runs when you
 # see the login / users screen.
 # Liquidctl works on El Capitan .11.x, Sierra .12.x, High Sierra .13.x, and Mojave .14.x
 # Though all of these users are running a hackintosh setup.
-# Make this initial file executable by opening terminal and typing: chmod +x /path/to/system-setup.sh
+# Make this file executable by opening terminal and typing: chmod +x /path/to/system-setup.sh
 # Now you can run this script to configure startup.
 
 
@@ -14,13 +15,22 @@
 (( EUID != 0 )) && exec sudo -- "$0" "$@"
 
 # Check for the existance of Python 3
-if [ -d /Library/Frameworks/Python.framework/Versions/3.7 ]; then
-[ "$(ls -A /Library/Frameworks/Python.framework/Versions/3.7)" ] && echo "Python 3 is installed"
+# Looking for the latest file link. python3 will always target the latest one.
+# Even if you have multiple versions of 3.x installed.
+if [ -f /usr/local/bin/python3 ]; then
+[ "$(ls -A /usr/local/bin/python3)" ] && echo "Python 3 is installed"
 else
  echo "Error: Python 3 is not installed. Setup cannot complete!" && exit
 fi
 
-echo "Create settings file at /usr/local/share/LiquidCfg.sh."
+# Check for the existance of libusb. This is a dependency but so far has not been used.
+if [ -d /usr/local/Cellar/libusb ]; then
+[ "$(ls -A /usr/local/Cellar/libusb)" ] && echo "libusb is installed"
+else
+echo "Error: libusb is not installed. Setup cannot complete!" && exit
+fi
+
+echo "1. Create settings file at /usr/local/share/LiquidCfg.sh."
 
 # Create settings file in an open directory available to everyone and system.
 cat > /usr/local/share/LiquidCfg.sh << EOF
@@ -38,12 +48,12 @@ liquidctl set ring color fixed 0000ff -d 0
 
 EOF
 
-echo "Make Settings file executable and editable."
+echo "2. Make Settings file executable and editable."
 
 # Make executable and editable otherwise it is locked due to elevated terminal creating it.
 chmod 777 /usr/local/share/LiquidCfg.sh
 
-echo "Create startup file at /Library/LaunchDaemons."
+echo "3. Create startup file at /Library/LaunchDaemons."
 
 # Create automated file.
 # Defined to run at load of system through the use of LaunchDaemon.
@@ -54,26 +64,26 @@ cat > /Library/LaunchDaemons/liquidctl.plist << EOF
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>EnvironmentVariables</key>
-	<dict>
-		<key>PATH</key>
-		<string>/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
-	</dict>
+    <key>EnvironmentVariables</key>
+        <dict>
+            <key>PATH</key>
+            <string>/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+        </dict>
 	<key>ProgramArguments</key>
-	<array>
+	    <array>
 		<string>/usr/local/share/LiquidCfg.sh</string>
-	</array>
+	    </array>
 	<key>Label</key>
-	<string>liquidctl</string>
+	    <string>liquidctl</string>
 	<key>RunAtLoad</key>
-	<true/>
+	    <true/>
 	<key>KeepAlive</key>
-	<false/>
+	    <false/>
 </dict>
 </plist>
 EOF
 
-echo "Add to system startup."
+echo "4. Add to system startup."
 
 # Add to startup
 launchctl load /Library/LaunchDaemons/liquidctl.plist
@@ -84,7 +94,7 @@ launchctl load /Library/LaunchDaemons/liquidctl.plist
 # Create a quick alias link in documents
 ln -s /usr/local/share/LiquidCfg.sh ~/Documents/Edit\ liquidctl
 
-echo "Setup complete!"
+echo "5. Setup complete!"
 
 # Open settings file for user to edit
 open -a "TextEdit" /usr/local/share/LiquidCfg.sh

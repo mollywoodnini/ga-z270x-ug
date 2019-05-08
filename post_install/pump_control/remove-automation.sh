@@ -1,7 +1,7 @@
 
 #!/bin/bash
 # This script will remove the automation process of python program liquidctl on macOS.
-# Make this initial file executable by opening terminal and typing: chmod +x /path/to/remove-automation.sh
+# Make this file executable by opening terminal and typing: chmod +x /path/to/remove-automation.sh
 # Now you can run this script to remove automation.
 # If you recieve the message: "Could not find specified service" that means it was already unloaded.
 # No need to worry.
