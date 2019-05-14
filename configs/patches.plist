@@ -120,6 +120,62 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>1of4 USB 10.14.5 by PMHeart</string>
+				<key>Name</key>
+				<string>com.apple.iokit.IOUSBHostFamily</string>
+				<key>Find</key>
+				<data>g/sPDw==</data>
+				<key>Replace</key>
+				<data>g/s/Dw==</data>
+				<key>MatchOS</key>
+				<string>10.14.5</string>
+				<key>Disabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>2of4 USB 10.14.5 by PMHeart</string>
+				<key>Name</key>
+				<string>com.apple.iokit.IOUSBHostFamily</string>
+				<key>Find</key>
+				<data>g+MP0w==</data>
+				<key>Replace</key>
+				<data>g+M/0w==</data>
+				<key>MatchOS</key>
+				<string>10.14.5</string>
+				<key>Disabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>3of4 USB 10.14.5 by PMHeart</string>
+				<key>Name</key>
+				<string>com.apple.driver.usb.AppleUSBXHCI</string>
+				<key>Find</key>
+				<data>g/sPDw==</data>
+				<key>Replace</key>
+				<data>g/s/Dw==</data>
+				<key>MatchOS</key>
+				<string>10.14.5</string>
+				<key>Disabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>4of4 USB 10.14.5 by PMHeart</string>
+				<key>Name</key>
+				<string>com.apple.driver.usb.AppleUSBXHCI</string>
+				<key>Find</key>
+				<data>g/8PDw==</data>
+				<key>Replace</key>
+				<data>g/8/Dw==</data>
+				<key>MatchOS</key>
+				<string>10.14.5</string>
+				<key>Disabled</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>Prevent AppleRTC CMOS Reset (Mojave 14.4 ONLY)</string>
 				<key>Name</key>
 				<string>com.apple.driver.AppleRTC</string>
