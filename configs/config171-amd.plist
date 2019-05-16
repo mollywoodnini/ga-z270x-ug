@@ -18,16 +18,14 @@
 				<true/>
 				<key>FixRegions</key>
 				<true/>
-				<key>FixHeaders</key>
-				<true/>
 				<key>FixHDA</key>
 				<true/>
-				<key>#FixHPET</key>
-				<false/>
+				<key>FixHPET</key>
+				<true/>
 				<key>FixIPIC</key>
 				<true/>
-				<key>#FixRTC</key>
-				<false/>
+				<key>FixRTC</key>
+				<true/>
 				<key>FixTMR</key>
 				<true/>
 			</dict>
@@ -187,7 +185,7 @@
 				<string>LPIT</string>
 			</dict>
 			<dict>
-				<key>Signature</key>
+				<key>#Signature</key>
 				<string>HPET</string>
 			</dict>
 			<dict>
@@ -230,6 +228,12 @@
 				<key>Signature</key>
 				<string>SSDT</string>
 				<key>TableId</key>
+				<string>HwpLvt</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
 				<string>CpuSsdt</string>
 			</dict>
 			<dict>
@@ -245,29 +249,27 @@
 		<true/>
 		<key>HaltEnabler</key>
 		<true/>
+		<key>FixHeaders</key>
+		<true/>
 		<key>FixMCFG</key>
 		<true/>
 	</dict>
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 igfxrst=1 -wegbeta -rad24 shikigva=4 -hbfx-dump-nvram</string>
-		<key>#CustomLogo</key>
-		<string>Apple</string>
+		<string>dart=0 -wegbeta shikigva=4 -hbfx-dump-nvram -hbfxbeta -brcmfxbeta</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultLoader</key>
 		<string>boot.efi</string>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
-		<key>#Legacy</key>
-		<string>PBR</string>
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
 		<integer>8</integer>
 		<key>XMPDetection</key>
-		<string>Yes</string>
+		<string>1</string>
 	</dict>
 	<key>CPU</key>
 	<dict>
