@@ -20,6 +20,8 @@
 				<true/>
 				<key>FixHDA</key>
 				<true/>
+				<key>FixHeaders</key>
+				<true/>
 				<key>FixHPET</key>
 				<true/>
 				<key>FixIPIC</key>
@@ -131,7 +133,7 @@
 		</dict>
 		<key>#RenameDevices</key>
 		<dict>
-			<key>_SB.PCI0.RP03.PXSX</key>
+			<key>#_SB.PCI0.RP03.PXSX</key>
 			<string>ARPT</string>
 		</dict>
 		<key>DropTables</key>
@@ -249,8 +251,6 @@
 		<true/>
 		<key>HaltEnabler</key>
 		<true/>
-		<key>FixHeaders</key>
-		<true/>
 		<key>FixMCFG</key>
 		<true/>
 	</dict>
@@ -278,19 +278,14 @@
 	</dict>
 	<key>Devices</key>
 	<dict>
-		<key>#AddProperties</key>
-		<array>
+		<key>Properties</key>
+		<dict>
+			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
-				<key>Device</key>
-				<string>IntelGFX</string>
-				<key>Disabled</key>
-				<true/>
-				<key>Key</key>
-				<string>AAPL,GfxYTile</string>
-				<key>Value</key>
-				<data>CqqqAA==</data>
+				<key>AAPL,ig-platform-id</key>
+				<data></data>
 			</dict>
-		</array>
+		</dict>
 		<key>Audio</key>
 		<dict>
 			<key>Inject</key>
@@ -357,12 +352,10 @@
 			<key>ATI</key>
 			<false/>
 			<key>Intel</key>
-			<true/>
+			<false/>
 			<key>NVidia</key>
 			<false/>
 		</dict>
-		<key>ig-platform-id</key>
-		<string>0x12345678</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
