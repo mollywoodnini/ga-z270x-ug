@@ -285,11 +285,14 @@
 				<key>AAPL,ig-platform-id</key>
 				<data></data>
 			</dict>
+			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
+			<dict>
+				<key>layout-id</key>
+				<integer>1</integer>
+			</dict>
 		</dict>
 		<key>Audio</key>
 		<dict>
-			<key>Inject</key>
-			<integer>1</integer>
 			<key>ResetHDA</key>
 			<true/>
 		</dict>
