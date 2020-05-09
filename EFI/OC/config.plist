@@ -719,17 +719,17 @@
 			<key>AdviseWindows</key>
 			<false/>
 			<key>MLB</key>
-			<string>C02453207GUGPF71M</string>
+			<string></string>
 			<key>ROM</key>
-			<data>UD6qiR+2</data>
+			<data></data>
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemProductName</key>
 			<string>iMac17,1</string>
 			<key>SystemSerialNumber</key>
-			<string>C02P16ZBGG7L</string>
+			<string></string>
 			<key>SystemUUID</key>
-			<string>D85C1B90-054F-4F48-BF04-7B2A25FB4E53</string>
+			<string></string>
 		</dict>
 		<key>Automatic</key>
 		<true/>
