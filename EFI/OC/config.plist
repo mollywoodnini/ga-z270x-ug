@@ -26,7 +26,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>USB Port Layout</string>
+				<string>USB Port Layout (Always generate your own)</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
@@ -34,7 +34,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>HPET _CRS (Needs _CRS to XCRS Rename)</string>
+				<string>HPET _CRS (Requires patch rename. Luckly this board doesn&apos;t have many conflicts)</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
@@ -178,7 +178,7 @@
 				<key>All</key>
 				<false/>
 				<key>Comment</key>
-				<string>Drop Cpu0Hwp (cont perf control)</string>
+				<string>Drop Cpu0Hwp (Continious perf control)</string>
 				<key>Enabled</key>
 				<true/>
 				<key>OemTableId</key>
@@ -192,9 +192,9 @@
 				<key>All</key>
 				<false/>
 				<key>Comment</key>
-				<string>Drop ApHwp (cont perf control)</string>
+				<string>Drop ApHwp (Continious perf control 2)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>OemTableId</key>
 				<data>QXBId3A=</data>
 				<key>TableLength</key>
@@ -206,7 +206,7 @@
 				<key>All</key>
 				<false/>
 				<key>Comment</key>
-				<string>Drop ApCst (c states perf)</string>
+				<string>Drop ApCst (C states perf)</string>
 				<key>Enabled</key>
 				<false/>
 				<key>OemTableId</key>
@@ -220,9 +220,9 @@
 				<key>All</key>
 				<false/>
 				<key>Comment</key>
-				<string>Drop ApIst (states perf control)</string>
+				<string>Drop ApIst (Power states perf control)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>OemTableId</key>
 				<data>QXBJc3Q=</data>
 				<key>TableLength</key>
@@ -234,9 +234,9 @@
 				<key>All</key>
 				<false/>
 				<key>Comment</key>
-				<string>Drop CpuSsdt (base cpu perf. must be enabled to drop the rest)</string>
+				<string>Drop CpuSsdt (Base cpu perf. Calls other tables. Dropping this table can cause failed boot)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>OemTableId</key>
 				<data>Q3B1U3NkdA==</data>
 				<key>TableLength</key>
@@ -248,9 +248,9 @@
 				<key>All</key>
 				<false/>
 				<key>Comment</key>
-				<string>Drop HwpLvt (unknown perf)</string>
+				<string>Drop HwpLvt (unknown perf. called from cpu ssdt)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>OemTableId</key>
 				<data>SHdwTHZ0</data>
 				<key>TableLength</key>
@@ -262,7 +262,7 @@
 				<key>All</key>
 				<false/>
 				<key>Comment</key>
-				<string>Drop DMAR (remap table)</string>
+				<string>Drop DMAR (remap table. keeping this in for now)</string>
 				<key>Enabled</key>
 				<false/>
 				<key>OemTableId</key>
@@ -276,7 +276,7 @@
 				<key>All</key>
 				<false/>
 				<key>Comment</key>
-				<string>Drop WSMT (windows security. useless in macos)</string>
+				<string>Drop WSMT (Windows security. Useless here)</string>
 				<key>Enabled</key>
 				<true/>
 				<key>OemTableId</key>
@@ -290,7 +290,7 @@
 				<key>All</key>
 				<false/>
 				<key>Comment</key>
-				<string>Drop DBGP (debug for windows)</string>
+				<string>Drop DBGP (Windows only debug)</string>
 				<key>Enabled</key>
 				<true/>
 				<key>OemTableId</key>
@@ -304,7 +304,7 @@
 				<key>All</key>
 				<false/>
 				<key>Comment</key>
-				<string>Drop DBG2 (debug 2 for windows)</string>
+				<string>Drop DBG2 (Windows only debug)</string>
 				<key>Enabled</key>
 				<true/>
 				<key>OemTableId</key>
@@ -772,7 +772,7 @@
 			<key>ScanPolicy</key>
 			<integer>0</integer>
 			<key>BootProtect</key>
-			<string>Bootsrap</string>
+			<string>Bootstrap</string>
 			<key>BlacklistAppleUpdate</key>
 			<false/>
 		</dict>
@@ -824,7 +824,7 @@
 				<key>boot-args</key>
 				<string>keepsyms=1</string>
 				<key>csr-active-config</key>
-				<data>5wMAAA==</data>
+				<data>AAAAAA==</data>
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 			</dict>
