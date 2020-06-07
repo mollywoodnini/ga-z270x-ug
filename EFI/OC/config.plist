@@ -22,7 +22,7 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-USBX.aml</string>
+				<string>SSDT-EC-USBX.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
@@ -34,19 +34,11 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>HPET _CRS (Requires patch rename. Luckly this board doesn&apos;t have many conflicts)</string>
+				<string>HPET _CRS (Requires patch rename. Luckly this board does not have many conflicts)</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
 				<string>SSDT-HPET.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>EC</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-EC.aml</string>
 			</dict>
 		</array>
 		<key>Patch</key>
@@ -136,7 +128,7 @@
 				<key>All</key>
 				<false/>
 				<key>Comment</key>
-				<string>Drop CpuPm (Default generic)</string>
+				<string>Drop CpuPm (Default generic. This board does not have this table. At least I do not see it.)</string>
 				<key>Enabled</key>
 				<true/>
 				<key>OemTableId</key>
@@ -178,7 +170,7 @@
 				<key>All</key>
 				<false/>
 				<key>Comment</key>
-				<string>Drop Cpu0Hwp (Continious perf control)</string>
+				<string>Drop Cpu0Hwp (Continious perf control. required to stop idle spiking)</string>
 				<key>Enabled</key>
 				<true/>
 				<key>OemTableId</key>
@@ -208,7 +200,7 @@
 				<key>Comment</key>
 				<string>Drop ApCst (C states perf)</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>OemTableId</key>
 				<data>QXBDc3Q=</data>
 				<key>TableLength</key>
