@@ -186,7 +186,7 @@
 				<key>Comment</key>
 				<string>Drop ApHwp (Continious perf control 2)</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>OemTableId</key>
 				<data>QXBId3A=</data>
 				<key>TableLength</key>
@@ -214,7 +214,7 @@
 				<key>Comment</key>
 				<string>Drop ApIst (Power states perf control)</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>OemTableId</key>
 				<data>QXBJc3Q=</data>
 				<key>TableLength</key>
@@ -228,7 +228,7 @@
 				<key>Comment</key>
 				<string>Drop CpuSsdt (Base cpu perf. Calls other tables. Dropping this table can cause failed boot)</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>OemTableId</key>
 				<data>Q3B1U3NkdA==</data>
 				<key>TableLength</key>
@@ -242,7 +242,7 @@
 				<key>Comment</key>
 				<string>Drop HwpLvt (unknown perf. called from cpu ssdt)</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>OemTableId</key>
 				<data>SHdwTHZ0</data>
 				<key>TableLength</key>
@@ -385,7 +385,7 @@
 			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
 			<dict>
 				<key>layout-id</key>
-				<data>AQAAAA==</data>
+				<data>AcAAAA==</data>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
