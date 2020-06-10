@@ -50,7 +50,7 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>GPU Disable spoof (disables nvda 980 in pci slot2)</string>
+				<string>GPU Disable spoof</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
@@ -144,9 +144,23 @@
 				<key>All</key>
 				<false/>
 				<key>Comment</key>
+				<string>Drop CpuSsdt (Base cpu perf. Calls other tables. Dropping this table can cause failed boot)</string>
+				<key>Enabled</key>
+				<false/>
+				<key>OemTableId</key>
+				<data>Q3B1U3NkdAA=</data>
+				<key>TableLength</key>
+				<integer>0</integer>
+				<key>TableSignature</key>
+				<data>U1NEVA==</data>
+			</dict>
+			<dict>
+				<key>All</key>
+				<false/>
+				<key>Comment</key>
 				<string>Drop CpuPm (Default generic. This board does not have this table. At least I do not see it.)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>OemTableId</key>
 				<data>Q3B1UG0AAAA=</data>
 				<key>TableLength</key>
@@ -176,7 +190,7 @@
 				<key>Enabled</key>
 				<true/>
 				<key>OemTableId</key>
-				<data>Q3B1MENzdA==</data>
+				<data>Q3B1MENzdAA=</data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
@@ -204,7 +218,7 @@
 				<key>Enabled</key>
 				<true/>
 				<key>OemTableId</key>
-				<data>QXBId3A=</data>
+				<data>QXBId3AAAAA=</data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
@@ -218,7 +232,7 @@
 				<key>Enabled</key>
 				<true/>
 				<key>OemTableId</key>
-				<data>QXBDc3Q=</data>
+				<data>QXBDc3QAAAA=</data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
@@ -232,21 +246,7 @@
 				<key>Enabled</key>
 				<true/>
 				<key>OemTableId</key>
-				<data>QXBJc3Q=</data>
-				<key>TableLength</key>
-				<integer>0</integer>
-				<key>TableSignature</key>
-				<data>U1NEVA==</data>
-			</dict>
-			<dict>
-				<key>All</key>
-				<false/>
-				<key>Comment</key>
-				<string>Drop CpuSsdt (Base cpu perf. Calls other tables. Dropping this table can cause failed boot)</string>
-				<key>Enabled</key>
-				<true/>
-				<key>OemTableId</key>
-				<data>Q3B1U3NkdA==</data>
+				<data>QXBJc3QAAAA=</data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
@@ -260,7 +260,7 @@
 				<key>Enabled</key>
 				<true/>
 				<key>OemTableId</key>
-				<data>SHdwTHZ0</data>
+				<data>SHdwTHZ0AAA=</data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
@@ -274,11 +274,11 @@
 				<key>Enabled</key>
 				<false/>
 				<key>OemTableId</key>
-				<data>RE1BUg==</data>
+				<data></data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
-				<data>U1NEVA==</data>
+				<data></data>
 			</dict>
 			<dict>
 				<key>All</key>
@@ -288,11 +288,11 @@
 				<key>Enabled</key>
 				<true/>
 				<key>OemTableId</key>
-				<data>V1NNVA==</data>
+				<data>U0tMAAAAAAA=</data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
-				<data>U1NEVA==</data>
+				<data>V1NNVA==</data>
 			</dict>
 			<dict>
 				<key>All</key>
@@ -302,11 +302,11 @@
 				<key>Enabled</key>
 				<true/>
 				<key>OemTableId</key>
-				<data>REJHUA==</data>
+				<data>AAAAAAAAAAA=</data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
-				<data>U1NEVA==</data>
+				<data>REJHUA==</data>
 			</dict>
 			<dict>
 				<key>All</key>
@@ -316,11 +316,11 @@
 				<key>Enabled</key>
 				<true/>
 				<key>OemTableId</key>
-				<data>REJHMg==</data>
+				<data>AAAAAAAAAAA=</data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
-				<data>U1NEVA==</data>
+				<data>REJHMg==</data>
 			</dict>
 		</array>
 		<key>Quirks</key>
@@ -383,7 +383,7 @@
 			<key>ProtectUefiServices</key>
 			<true/>
 			<key>ProvideCustomSlide</key>
-			<true/>
+			<false/>
 			<key>RebuildAppleMemoryMap</key>
 			<true/>
 			<key>SetupVirtualMap</key>
@@ -732,7 +732,7 @@
 		<key>Debug</key>
 		<dict>
 			<key>AppleDebug</key>
-			<false/>
+			<true/>
 			<key>ApplePanic</key>
 			<true/>
 			<key>DisableWatchDog</key>
@@ -744,7 +744,7 @@
 			<key>SysReport</key>
 			<false/>
 			<key>Target</key>
-			<integer>0</integer>
+			<integer>83</integer>
 		</dict>
 		<key>Entries</key>
 		<array>
@@ -830,7 +830,7 @@
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>boot-args</key>
-				<string>keepsyms=1 alcid=7</string>
+				<string>keepsyms=1 alcid=7 -v</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>SystemAudioVolume</key>
