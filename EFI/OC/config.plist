@@ -10,6 +10,14 @@
 		<array>
 			<dict>
 				<key>Comment</key>
+				<string>CPU SSDT Gen</string>
+				<key>Enabled</key>
+				<false/>
+				<key>Path</key>
+				<string>SSDT.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>CPU Power plugin-type=1</string>
 				<key>Enabled</key>
 				<true/>
@@ -34,11 +42,19 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>HPET _CRS (Requires patch rename. Luckly this board does not have many conflicts)</string>
+				<string>HPET _CRS (Requires patch rename. Luckily this board does not have many conflicts)</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
 				<string>SSDT-HPET.aml</string>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>GPU Disable spoof (disables nvda 980 in pci slot2)</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Path</key>
+				<string>SSDT-SPOOF.aml</string>
 			</dict>
 		</array>
 		<key>Patch</key>
@@ -310,13 +326,13 @@
 		<key>Quirks</key>
 		<dict>
 			<key>FadtEnableReset</key>
-			<false/>
+			<true/>
 			<key>NormalizeHeaders</key>
 			<false/>
 			<key>RebaseRegions</key>
 			<false/>
 			<key>ResetHwSig</key>
-			<false/>
+			<true/>
 			<key>ResetLogoStatus</key>
 			<false/>
 		</dict>
@@ -361,11 +377,11 @@
 			<key>ForceExitBootServices</key>
 			<false/>
 			<key>ProtectMemoryRegions</key>
-			<false/>
+			<true/>
 			<key>ProtectSecureBoot</key>
 			<false/>
 			<key>ProtectUefiServices</key>
-			<false/>
+			<true/>
 			<key>ProvideCustomSlide</key>
 			<true/>
 			<key>RebuildAppleMemoryMap</key>
@@ -382,10 +398,10 @@
 	<dict>
 		<key>Add</key>
 		<dict>
-			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
+			<key>#PciRoot(0x0)/Pci(0x1f,0x3)</key>
 			<dict>
-				<key>layout-id</key>
-				<data>AcAAAA==</data>
+				<key>#layout-id</key>
+				<data></data>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
@@ -814,7 +830,7 @@
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>boot-args</key>
-				<string>keepsyms=1</string>
+				<string>keepsyms=1 alcid=7</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>SystemAudioVolume</key>
@@ -1017,7 +1033,7 @@
 			<key>ReleaseUsbOwnership</key>
 			<false/>
 			<key>RequestBootVarRouting</key>
-			<true/>
+			<false/>
 			<key>TscSyncTimeout</key>
 			<integer>0</integer>
 			<key>UnblockFsConnect</key>
