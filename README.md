@@ -11,7 +11,7 @@ Currently two issues are present.
 
 ## Debug Branch
 
-This branch has all loggin turned on. It is slower to boot. This branch is where I will be keeping all testing done so as to not interfere with the master branch in case I screw up. 
+This branch has all logging turned on. It is slower to boot. This branch is where I will be keeping all testing done so as to not interfere with the master branch in case I screw up. 
 
 ---
 
