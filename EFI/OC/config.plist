@@ -10,14 +10,6 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>CPU SSDT Gen</string>
-				<key>Enabled</key>
-				<false/>
-				<key>Path</key>
-				<string>SSDT.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>CPU Power plugin-type=1</string>
 				<key>Enabled</key>
 				<true/>
@@ -44,7 +36,7 @@
 				<key>Comment</key>
 				<string>HPET _CRS (Requires patch rename. Luckily this board does not have many conflicts)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Path</key>
 				<string>SSDT-HPET.aml</string>
 			</dict>
@@ -65,7 +57,7 @@
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>X0NSUwigGQ==</data>
 				<key>Limit</key>
@@ -91,7 +83,7 @@
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>IgABeQA=</data>
 				<key>Limit</key>
@@ -117,7 +109,7 @@
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>IgEAeQA=</data>
 				<key>Limit</key>
@@ -158,15 +150,15 @@
 				<key>All</key>
 				<false/>
 				<key>Comment</key>
-				<string>Drop CpuPm (Default generic. This board does not have this table. At least I do not see it.)</string>
+				<string>Lower Power Idle Table</string>
 				<key>Enabled</key>
 				<false/>
 				<key>OemTableId</key>
-				<data>Q3B1UG0AAAA=</data>
+				<data>U0tMAAAAAAA=</data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
-				<data>U1NEVA==</data>
+				<data>TFBJVA==</data>
 			</dict>
 			<dict>
 				<key>All</key>
@@ -174,7 +166,7 @@
 				<key>Comment</key>
 				<string>Drop Cpu0Ist (Base perf control)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>OemTableId</key>
 				<data>Q3B1MElzdAA=</data>
 				<key>TableLength</key>
@@ -188,7 +180,7 @@
 				<key>Comment</key>
 				<string>Drop Cpu0Cst (Base perf control 2)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>OemTableId</key>
 				<data>Q3B1MENzdAA=</data>
 				<key>TableLength</key>
@@ -202,7 +194,7 @@
 				<key>Comment</key>
 				<string>Drop Cpu0Hwp (Continious perf control. required to stop idle spiking)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>OemTableId</key>
 				<data>Q3B1MEh3cA==</data>
 				<key>TableLength</key>
@@ -216,7 +208,7 @@
 				<key>Comment</key>
 				<string>Drop ApHwp (Continious perf control 2)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>OemTableId</key>
 				<data>QXBId3AAAAA=</data>
 				<key>TableLength</key>
@@ -230,7 +222,7 @@
 				<key>Comment</key>
 				<string>Drop ApCst (C states perf)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>OemTableId</key>
 				<data>QXBDc3QAAAA=</data>
 				<key>TableLength</key>
@@ -244,7 +236,7 @@
 				<key>Comment</key>
 				<string>Drop ApIst (Power states perf control)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>OemTableId</key>
 				<data>QXBJc3QAAAA=</data>
 				<key>TableLength</key>
@@ -258,7 +250,7 @@
 				<key>Comment</key>
 				<string>Drop HwpLvt (unknown perf. called from cpu ssdt)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>OemTableId</key>
 				<data>SHdwTHZ0AAA=</data>
 				<key>TableLength</key>
@@ -274,11 +266,11 @@
 				<key>Enabled</key>
 				<false/>
 				<key>OemTableId</key>
-				<data></data>
+				<data>U0tMIAAAAAA=</data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
-				<data></data>
+				<data>RE1BUg==</data>
 			</dict>
 			<dict>
 				<key>All</key>
@@ -326,7 +318,7 @@
 		<key>Quirks</key>
 		<dict>
 			<key>FadtEnableReset</key>
-			<true/>
+			<false/>
 			<key>NormalizeHeaders</key>
 			<false/>
 			<key>RebaseRegions</key>
@@ -367,7 +359,7 @@
 			<key>DisableSingleUser</key>
 			<false/>
 			<key>DisableVariableWrite</key>
-			<false/>
+			<true/>
 			<key>DiscardHibernateMap</key>
 			<false/>
 			<key>EnableSafeModeSlide</key>
@@ -772,7 +764,7 @@
 			<key>AuthRestart</key>
 			<false/>
 			<key>ExposeSensitiveData</key>
-			<integer>6</integer>
+			<integer>3</integer>
 			<key>HaltLevel</key>
 			<integer>2147483648</integer>
 			<key>Vault</key>
@@ -876,11 +868,11 @@
 			</array>
 		</dict>
 		<key>LegacyEnable</key>
-		<false/>
-		<key>LegacyOverwrite</key>
-		<false/>
-		<key>WriteFlash</key>
 		<true/>
+		<key>LegacyOverwrite</key>
+		<true/>
+		<key>WriteFlash</key>
+		<false/>
 	</dict>
 	<key>PlatformInfo</key>
 	<dict>
@@ -1033,7 +1025,7 @@
 			<key>ReleaseUsbOwnership</key>
 			<false/>
 			<key>RequestBootVarRouting</key>
-			<false/>
+			<true/>
 			<key>TscSyncTimeout</key>
 			<integer>0</integer>
 			<key>UnblockFsConnect</key>
