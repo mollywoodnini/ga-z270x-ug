@@ -9,6 +9,10 @@ Currently two issues are present.
 1. CPU idles down to 1.8GHz. Will not drop to 800MHz. As it does with Clover as the bootloader and Windows.
 2. PowerNap, Sleep and Hibernate do not function. System goes for this power state and hangs. Powered on but in a frozen state. Does not respond to input. Screen is black.
 
+## Debug Branch
+
+This branch has all loggin turned on. It is slower to boot. This branch is where I will be keeping all testing done so as to not interfere with the master branch in case I screw up. 
+
 ---
 
 See WIKI for additional information.

@@ -10,14 +10,6 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>CPU SSDT Gen</string>
-				<key>Enabled</key>
-				<false/>
-				<key>Path</key>
-				<string>SSDT.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>CPU Power plugin-type=1</string>
 				<key>Enabled</key>
 				<true/>
@@ -44,15 +36,15 @@
 				<key>Comment</key>
 				<string>HPET _CRS (Requires patch rename. Luckily this board does not have many conflicts)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Path</key>
 				<string>SSDT-HPET.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>GPU Disable spoof (disables nvda 980 in pci slot2)</string>
+				<string>GPU Disable spoof</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Path</key>
 				<string>SSDT-SPOOF.aml</string>
 			</dict>
@@ -65,7 +57,7 @@
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>X0NSUwigGQ==</data>
 				<key>Limit</key>
@@ -91,7 +83,7 @@
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>IgABeQA=</data>
 				<key>Limit</key>
@@ -117,7 +109,7 @@
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Find</key>
 				<data>IgEAeQA=</data>
 				<key>Limit</key>
@@ -144,11 +136,11 @@
 				<key>All</key>
 				<false/>
 				<key>Comment</key>
-				<string>Drop CpuPm (Default generic. This board does not have this table. At least I do not see it.)</string>
+				<string>Drop CpuSsdt (Base cpu perf. Calls other tables. Dropping this table can cause failed boot)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>OemTableId</key>
-				<data>Q3B1UG0AAAA=</data>
+				<data>Q3B1U3NkdAA=</data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
@@ -158,9 +150,23 @@
 				<key>All</key>
 				<false/>
 				<key>Comment</key>
+				<string>Lower Power Idle Table</string>
+				<key>Enabled</key>
+				<false/>
+				<key>OemTableId</key>
+				<data>U0tMAAAAAAA=</data>
+				<key>TableLength</key>
+				<integer>0</integer>
+				<key>TableSignature</key>
+				<data>TFBJVA==</data>
+			</dict>
+			<dict>
+				<key>All</key>
+				<false/>
+				<key>Comment</key>
 				<string>Drop Cpu0Ist (Base perf control)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>OemTableId</key>
 				<data>Q3B1MElzdAA=</data>
 				<key>TableLength</key>
@@ -174,9 +180,9 @@
 				<key>Comment</key>
 				<string>Drop Cpu0Cst (Base perf control 2)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>OemTableId</key>
-				<data>Q3B1MENzdA==</data>
+				<data>Q3B1MENzdAA=</data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
@@ -188,7 +194,7 @@
 				<key>Comment</key>
 				<string>Drop Cpu0Hwp (Continious perf control. required to stop idle spiking)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>OemTableId</key>
 				<data>Q3B1MEh3cA==</data>
 				<key>TableLength</key>
@@ -202,9 +208,9 @@
 				<key>Comment</key>
 				<string>Drop ApHwp (Continious perf control 2)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>OemTableId</key>
-				<data>QXBId3A=</data>
+				<data>QXBId3AAAAA=</data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
@@ -216,9 +222,9 @@
 				<key>Comment</key>
 				<string>Drop ApCst (C states perf)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>OemTableId</key>
-				<data>QXBDc3Q=</data>
+				<data>QXBDc3QAAAA=</data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
@@ -230,23 +236,9 @@
 				<key>Comment</key>
 				<string>Drop ApIst (Power states perf control)</string>
 				<key>Enabled</key>
-				<true/>
-				<key>OemTableId</key>
-				<data>QXBJc3Q=</data>
-				<key>TableLength</key>
-				<integer>0</integer>
-				<key>TableSignature</key>
-				<data>U1NEVA==</data>
-			</dict>
-			<dict>
-				<key>All</key>
 				<false/>
-				<key>Comment</key>
-				<string>Drop CpuSsdt (Base cpu perf. Calls other tables. Dropping this table can cause failed boot)</string>
-				<key>Enabled</key>
-				<true/>
 				<key>OemTableId</key>
-				<data>Q3B1U3NkdA==</data>
+				<data>QXBJc3QAAAA=</data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
@@ -258,9 +250,9 @@
 				<key>Comment</key>
 				<string>Drop HwpLvt (unknown perf. called from cpu ssdt)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>OemTableId</key>
-				<data>SHdwTHZ0</data>
+				<data>SHdwTHZ0AAA=</data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
@@ -274,11 +266,11 @@
 				<key>Enabled</key>
 				<false/>
 				<key>OemTableId</key>
-				<data>RE1BUg==</data>
+				<data>U0tMIAAAAAA=</data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
-				<data>U1NEVA==</data>
+				<data>RE1BUg==</data>
 			</dict>
 			<dict>
 				<key>All</key>
@@ -288,11 +280,11 @@
 				<key>Enabled</key>
 				<true/>
 				<key>OemTableId</key>
-				<data>V1NNVA==</data>
+				<data>U0tMAAAAAAA=</data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
-				<data>U1NEVA==</data>
+				<data>V1NNVA==</data>
 			</dict>
 			<dict>
 				<key>All</key>
@@ -302,11 +294,11 @@
 				<key>Enabled</key>
 				<true/>
 				<key>OemTableId</key>
-				<data>REJHUA==</data>
+				<data>AAAAAAAAAAA=</data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
-				<data>U1NEVA==</data>
+				<data>REJHUA==</data>
 			</dict>
 			<dict>
 				<key>All</key>
@@ -316,17 +308,17 @@
 				<key>Enabled</key>
 				<true/>
 				<key>OemTableId</key>
-				<data>REJHMg==</data>
+				<data>AAAAAAAAAAA=</data>
 				<key>TableLength</key>
 				<integer>0</integer>
 				<key>TableSignature</key>
-				<data>U1NEVA==</data>
+				<data>REJHMg==</data>
 			</dict>
 		</array>
 		<key>Quirks</key>
 		<dict>
 			<key>FadtEnableReset</key>
-			<true/>
+			<false/>
 			<key>NormalizeHeaders</key>
 			<false/>
 			<key>RebaseRegions</key>
@@ -367,7 +359,7 @@
 			<key>DisableSingleUser</key>
 			<false/>
 			<key>DisableVariableWrite</key>
-			<false/>
+			<true/>
 			<key>DiscardHibernateMap</key>
 			<false/>
 			<key>EnableSafeModeSlide</key>
@@ -383,7 +375,7 @@
 			<key>ProtectUefiServices</key>
 			<true/>
 			<key>ProvideCustomSlide</key>
-			<true/>
+			<false/>
 			<key>RebuildAppleMemoryMap</key>
 			<true/>
 			<key>SetupVirtualMap</key>
@@ -398,10 +390,10 @@
 	<dict>
 		<key>Add</key>
 		<dict>
-			<key>#PciRoot(0x0)/Pci(0x1f,0x3)</key>
+			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
 			<dict>
-				<key>#layout-id</key>
-				<data></data>
+				<key>layout-id</key>
+				<data>Bw==</data>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
@@ -732,7 +724,7 @@
 		<key>Debug</key>
 		<dict>
 			<key>AppleDebug</key>
-			<false/>
+			<true/>
 			<key>ApplePanic</key>
 			<true/>
 			<key>DisableWatchDog</key>
@@ -772,7 +764,7 @@
 			<key>AuthRestart</key>
 			<false/>
 			<key>ExposeSensitiveData</key>
-			<integer>6</integer>
+			<integer>3</integer>
 			<key>HaltLevel</key>
 			<integer>2147483648</integer>
 			<key>Vault</key>
@@ -830,7 +822,7 @@
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>boot-args</key>
-				<string>keepsyms=1 alcid=7</string>
+				<string>keepsyms=1</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>SystemAudioVolume</key>
@@ -876,11 +868,11 @@
 			</array>
 		</dict>
 		<key>LegacyEnable</key>
-		<false/>
-		<key>LegacyOverwrite</key>
-		<false/>
-		<key>WriteFlash</key>
 		<true/>
+		<key>LegacyOverwrite</key>
+		<true/>
+		<key>WriteFlash</key>
+		<false/>
 	</dict>
 	<key>PlatformInfo</key>
 	<dict>
@@ -1033,7 +1025,7 @@
 			<key>ReleaseUsbOwnership</key>
 			<false/>
 			<key>RequestBootVarRouting</key>
-			<false/>
+			<true/>
 			<key>TscSyncTimeout</key>
 			<integer>0</integer>
 			<key>UnblockFsConnect</key>
