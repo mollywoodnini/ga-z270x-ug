@@ -98,6 +98,17 @@ Reference table
 54434656 <> 56464354 = VFCT
 52414D44 <> 444D4152 = DMAR | 00000000204C4B53 <> 534B4C2000000000  = DMAR
 ```
+
+# NVRAM
+
+While this board does have native NVRAM, I have determined it is not stable. Using native NVRAM you may experience the following:
+
+- Logout hangs
+- Rebooting results in no input response for F12 or DEL.
+- Phantom boot entries.
+
+Your best option is to emulate NVRAM.
+
 ---
 
 See WIKI for additional information.
