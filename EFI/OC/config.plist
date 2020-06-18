@@ -705,11 +705,11 @@
 			<key>HibernateMode</key>
 			<string>Auto</string>
 			<key>PickerMode</key>
-			<string>Builtin</string>
+			<string>External</string>
 			<key>HideAuxiliary</key>
 			<false/>
-			<key>ConsoleAttributes</key>
-			<integer>0</integer>
+			<key>PickerAttributes</key>
+			<integer>1</integer>
 			<key>PickerAudioAssist</key>
 			<false/>
 			<key>PollAppleHotKeys</key>
@@ -925,6 +925,7 @@
 		<array>
 			<string>HfsPlus.efi</string>
 			<string>OpenRuntime.efi</string>
+			<string>OpenCanopy.efi</string>
 		</array>
 		<key>Audio</key>
 		<dict>
