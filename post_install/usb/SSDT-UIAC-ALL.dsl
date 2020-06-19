@@ -5,8 +5,9 @@
 // USB DAC does provide superior conversion and better sound quality. Most noticable
 // is the reduction of interference and static noise. These ports also have custom
 // voltage control. You can disable one of these if you do not use it as a standard.
-// One of them, HS04/SS04, is disabled already by commenting out.
 // An image is in this directory that contains the layout of my ports.
+// THIS METHOD IS LEGACY! You should instead use a layout kext for OpenCore.
+// I am leaving this here for Clover users.
 
 
 DefinitionBlock ("", "SSDT", 2, "hack", "_UIAC", 0)
