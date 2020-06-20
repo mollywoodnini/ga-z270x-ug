@@ -27,7 +27,7 @@ I/O Chipset | ITE | ITE | ITE | ITE | ITE | ITE | ITE | ITE | ITE | ITE
 - [Z270X Gaming K5](https://www.gigabyte.com/us/Motherboard/GA-Z270X-Gaming-K5-rev-10/sp#sp)
 - [Z270X Gaming K7](https://www.gigabyte.com/us/Motherboard/GA-Z270X-Gaming-K7-rev-10/sp#sp)
 
-Using this EFI as a reference will work for most of the boards in this lineup. Gigabyte tends to design their boards the same way so the firmwares are really similar. However, some of these are not the best choice and will leave you with devices that do not work. Boards with Creative Audio and Killer WiFi should be avoided. Killer LAN is supported.
+Using this EFI as a reference will work for most of the boards in this lineup. You cannot use it as reference for Gaming 7, 8 and 9. Gigabyte tends to design their boards the same way so the firmwares are really similar. However, some of these are not the best choice and will leave you with devices that do not work. Boards with Creative Audio and Killer WiFi should be avoided. Killer LAN is supported. 
 
 ## Debug Branch
 
