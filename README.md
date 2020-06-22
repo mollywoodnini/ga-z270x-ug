@@ -1,13 +1,17 @@
-The guide for OpenCore can be [found here](https://dortania.github.io/OpenCore-Desktop-Guide/).
+[OpenCore Guide](https://dortania.github.io/OpenCore-Desktop-Guide/) | [Version 0.5.9](https://github.com/acidanthera/OpenCorePkg/releases)
 
-Currently two issues are present. 
+Currently two issues are present:
 
-1. CPU idles down to 1.8GHz. Will not drop to 800MHz.
+1. CPU idles down to ~1.8GHz. Will not drop to 800MHz.
+  - While SSDT plugin works to a degree, I have tried to debug this issue and am unable to. PRgen does not work at all. Literally generates one state. Dropping CPU SSDT can cause boot failures and introduces a different issue.
 2. PowerNap, Sleep and Hibernate do not function. System goes for this power state and hangs. Powered on but in a frozen state. Does not respond to input. Screen is black.
+  - Since CPU can't idle correctly, these are never expected to work.
 
 This EFI was created using firmware version `F9d`. If you use an older verison, consider upgrading. While in theory it should be fine to use an older version, you never know.
 
 6th gen Skylake CPUs will use iMac 17,x. 7th gen Kabylake CPUs will use iMac 18,x.
+
+I consider it complete at this point. All else has been worked out. I will keep it updated as needed. With each OC version I will attempt to debug CPU power states.
 
 ## Z270 Series
 
