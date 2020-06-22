@@ -7,6 +7,8 @@ Currently two issues are present.
 
 This EFI was created using firmware version `F9d`. If you use an older verison, consider upgrading. While in theory it should be fine to use an older version, you never know.
 
+6th gen Skylake CPUs will use iMac 17,x. 7th gen Kabylake CPUs will use iMac 18,x.
+
 ## Z270 Series
 
 Device | UD3 | UD5 | G5 | G7 | G8 | G9 | GK3 | GK5 | GK7 | UG 
