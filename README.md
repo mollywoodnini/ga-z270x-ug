@@ -5,7 +5,7 @@ Currently two issues are present.
 1. CPU idles down to 1.8GHz. Will not drop to 800MHz.
 2. PowerNap, Sleep and Hibernate do not function. System goes for this power state and hangs. Powered on but in a frozen state. Does not respond to input. Screen is black.
 
-This EFI was created using firmware version `F9d`. If you use an older verison, consider upgrading.
+This EFI was created using firmware version `F9d`. If you use an older verison, consider upgrading. While in theory it should be fine to use an older version, you never know.
 
 ## Z270 Series
 
