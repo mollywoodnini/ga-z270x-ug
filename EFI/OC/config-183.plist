@@ -5,7 +5,7 @@
 	<key>#ABOUT</key>
 	<string>icedterminal - ga-z270x-ug - 10.15</string>
 	<key>#NOTICE</key>
-	<string>6th gen is iMac 17 and 7th gen is iMac 18</string>
+	<string>7th gen iMac18,3</string>
 	<key>ACPI</key>
 	<dict>
 		<key>Add</key>
@@ -318,7 +318,7 @@
 			<key>RebaseRegions</key>
 			<false/>
 			<key>ResetHwSig</key>
-			<true/>
+			<false/>
 			<key>ResetLogoStatus</key>
 			<false/>
 		</dict>
@@ -392,7 +392,7 @@
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
 				<key>AAPL,ig-platform-id</key>
-				<data>AQASGQ==</data>
+				<data>AwASWQ==</data>
 			</dict>
 		</dict>
 		<key>Delete</key>
@@ -848,7 +848,7 @@
 			<key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
 			<dict>
 				<key>boot-args</key>
-				<string>keepsyms=1 -v</string>
+				<string>keepsyms=1</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>SystemAudioVolume</key>
@@ -913,7 +913,7 @@
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemProductName</key>
-			<string></string>
+			<string>iMac18,3</string>
 			<key>SystemSerialNumber</key>
 			<string></string>
 			<key>SystemUUID</key>
@@ -952,7 +952,6 @@
 			<string>HfsPlus.efi</string>
 			<string>OpenRuntime.efi</string>
 			<string>OpenCanopy.efi</string>
-			<string>VerifyMsrE2.efi</string>
 		</array>
 		<key>Audio</key>
 		<dict>
@@ -973,6 +972,8 @@
 		</dict>
 		<key>Input</key>
 		<dict>
+			<key>KeyFiltering</key>
+			<false/>
 			<key>KeyForgetThreshold</key>
 			<integer>5</integer>
 			<key>KeyMergeThreshold</key>
@@ -988,7 +989,7 @@
 			<key>PointerSupportMode</key>
 			<string></string>
 			<key>TimerResolution</key>
-			<integer>100000</integer>
+			<real>50000</real>
 		</dict>
 		<key>Output</key>
 		<dict>
@@ -1013,7 +1014,7 @@
 			<key>SanitiseClearScreen</key>
 			<false/>
 		</dict>
-		<key>Protocols</key>
+		<key>ProtocolOverrides</key>
 		<dict>
 			<key>AppleAudio</key>
 			<false/>
@@ -1059,6 +1060,8 @@
 			<key>UnblockFsConnect</key>
 			<false/>
 		</dict>
+		<key>ReservedMemory</key>
+		<array/>
 	</dict>
 </dict>
 </plist>

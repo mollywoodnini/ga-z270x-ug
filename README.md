@@ -9,9 +9,10 @@ Currently two issues are present:
 
 This EFI was created using firmware version `F9d`. If you use an older verison, consider upgrading. While in theory it should be fine to use an older version, you never know.
 
-6th gen Skylake CPUs will use iMac 17,x. 7th gen Kabylake CPUs will use iMac 18,x.
+- 6th gen Skylake CPUs will use iMac 17,x.
+- 7th gen Kabylake CPUs will use iMac 18,x.
 
-I consider it complete at this point. All else has been worked out. I will keep it updated as needed. With each OC version I will attempt to debug CPU power states.
+I consider this complete at this point. All else has been worked out. I will keep it updated as needed. With each OC version I will attempt to debug CPU power states.
 
 ## Z270 Series
 
@@ -35,7 +36,28 @@ I/O Chipset | ITE | ITE | ITE | ITE | ITE | ITE | ITE | ITE | ITE | ITE
 - [Z270X Gaming K5](https://www.gigabyte.com/us/Motherboard/GA-Z270X-Gaming-K5-rev-10/sp#sp)
 - [Z270X Gaming K7](https://www.gigabyte.com/us/Motherboard/GA-Z270X-Gaming-K7-rev-10/sp#sp)
 
-Using this EFI as a reference will work for most of the boards in this lineup. You cannot use it as reference for Gaming 7, 8 and 9. Gigabyte tends to design their boards the same way so the firmwares are really similar. However, some of these are not the best choice and will leave you with devices that do not work. Boards with Creative Audio and Killer WiFi should be avoided. Killer LAN is supported. 
+Using this EFI as a reference will work for most of the boards in this lineup. You cannot use it as reference for Gaming 7, 8 and 9. Gigabyte tends to design their boards the same way so the firmwares are really similar. However, some of these are not the best choice and will leave you with devices that do not work. Boards with Creative Audio and Killer WiFi should be avoided. Killer LAN is supported.
+
+## CFG Lock
+
+You should [follow the guide](https://dortania.github.io/OpenCore-Desktop-Guide/extras/msr-lock.html) and disable this lock. This is a much cleaner solution than leaving the quirks enabled. I have left them enabled by default so you can boot without a stall. The instructions tell you to use `setup_var`. However, `setup_var2` and `setup_var3` are alternatives if you get an error.
+
+## USB Patching
+
+You can do this one of two ways: Kext or SSDT for OpenCore. Clover is just SSDT. I included the SSDT and an image inside [`post_install`](/post_install/usb) for reference. If you have the exact same number of ports I do, you can use the USB kext. I use one internal USB header (at the bottom) and one USB 3.0 header (lower right of RAM) to connect two 3.0 ports. The rest of the rear ports fit within the limit and are enabled. If you want to adjust your ports, remove this kext and enable the port limit patch.
+
+For Kext and SSDT you can use a tool called [USBMap](https://github.com/corpnewt/USBMap). The Guide favors the Kext. [Read here.](https://dortania.github.io/USB-Map-Guide/intel-mapping/intel.html) To manually create an SSDT [read here.](https://www.tonymacx86.com/threads/guide-creating-a-custom-ssdt-for-usbinjectall-kext.211311/)
+
+## NVRAM
+
+Like Clover, OpenCore works best with this board using emulated NVRAM. I gave it a shot with OC, and while it does work, it is unstable. I recommend you do not use native NVRAM. If you use native NVRAM you may experience the following:
+
+- Logout hangs.
+- Rebooting results in no input response for F12 or DEL.
+- Phantom boot entries.
+- Random behavior from firmware.
+
+I have already enabled the emulation in the config. You will need to [follow the instructions](https://dortania.github.io/OpenCore-Desktop-Guide/post-install/nvram.html?h=logouthook) to complete the setup post-install so values can be written on logout.
 
 ## Debug Branch
 
