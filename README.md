@@ -49,7 +49,7 @@ You can do this one of two ways: Kext or SSDT for OpenCore. Clover is just SSDT.
 - USBMap-17.kext is for iMac17,x
 - USBMap-18.kext is for iMac18,x
 
-If you intend to use the prebuilt kext, you should select the one for your model and rename it to just `USBMap.kext` and place it in `/EFI/OC/Kexts`.
+If you intend to use the prebuilt kext, you should select the one for your model and rename it to `USBMap.kext` and place it in `/EFI/OC/Kexts`. The USB Port limit patch is enabled. Please disable it if you do not intend to create your own layout.
 
 ## NVRAM
 
