@@ -1,4 +1,4 @@
-[OpenCore Guide](https://dortania.github.io/OpenCore-Desktop-Guide/) | [Version 0.5.9](https://github.com/acidanthera/OpenCorePkg/releases)
+[OpenCore Guide](https://dortania.github.io/OpenCore-Install-Guide/) | [Version 0.6.0](https://github.com/acidanthera/OpenCorePkg/releases)
 
 Currently two issues are present:
 
