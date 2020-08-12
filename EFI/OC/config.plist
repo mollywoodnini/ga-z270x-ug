@@ -727,7 +727,8 @@
 	<key>Misc</key>
 	<dict>
 		<key>BlessOverride</key>
-		<array/>
+		<array>
+		</array>
 		<key>Boot</key>
 		<dict>
 			<key>HibernateMode</key>
@@ -916,17 +917,17 @@
 			<key>AdviseWindows</key>
 			<false/>
 			<key>MLB</key>
-			<string></string>
+			<string>C02731609J9H69F1H</string>
 			<key>ROM</key>
-			<data></data>
+			<data>ESIzRFVm</data>
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemProductName</key>
-			<string>iMac18,3</string>
+			<string>iMac18,1</string>
 			<key>SystemSerialNumber</key>
-			<string></string>
+			<string>C02V5TY5H7JY</string>
 			<key>SystemUUID</key>
-			<string></string>
+			<string>FF465A11-A0A4-4D51-82C2-AD4FA4FA0775</string>
 		</dict>
 		<key>Automatic</key>
 		<true/>
@@ -1079,7 +1080,8 @@
 			<false/>
 		</dict>
 		<key>ReservedMemory</key>
-		<array/>
+		<array>
+		</array>
 	</dict>
 </dict>
 </plist>
