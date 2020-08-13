@@ -69,3 +69,22 @@ This branch has all logging turned on. It is slower to boot. This branch is wher
 ---
 
 See WIKI for additional information.
+
+# Post Installation - CFG Lock
+
+https://dortania.github.io/OpenCore-Install-Guide/extras/msr-lock.html
+
+### Beschreibung
+
+Nach der Installation musst du ```AppleCpuPmCfgLock``` und ```AppleXcpmCfgLock``` wieder auf ```false``` setzen.
+Dafür musst du erst folgendes installieren:
+
+Modified GRUB Shell - https://github.com/datasone/grub-mod-setup_var/releases
+
+Dazu legst du die Datei in ```EFI/OC/Tools``` rein, sowie aktivierst es in der config.plist.
+
+Starte deinen Rechner neu, wähle im Picker ***Modified GRUB Shell*** aus
+und gebe folgendes ein:
+```
+setup_var 0x502 0x00
+```
